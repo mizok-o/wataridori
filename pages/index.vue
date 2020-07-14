@@ -14,13 +14,6 @@ export default {
   components: {
     pheader,
     topContent
-  },
-  mounted(){
-    this.log()
-  },
-  methods: {
-    log(){
-    }
   }
 }
 
