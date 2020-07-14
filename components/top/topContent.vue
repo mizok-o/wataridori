@@ -4,17 +4,17 @@
     swiper(:options="swiperOption")
       swiper-slide.swiper-content(v-for="item in items")
         .p-index-top__slider__visual
-          .top__slider__visual-img
-        .p-index-top__slider__textarea
-          h2.top__slider__title {{ item.title }}
-          p.top__slider__text {{ item.text }}
-          a.top__slider__link(:href="item.link")
+          img.top__slider__visual-img(:src="item.src")
+          .p-index-top__slider__textarea
+            h2.top__slider__title {{ item.title }}
+            p.top__slider__text {{ item.text }}
+            a.top__slider__link(:href="item.link")
     .swiper-button-prev
     .swiper-button-next
 </template>
 <script>
 export default{
-data() {
+  data() {
       return {
         swiperOption: {
           slidesPerView: 1.5,
@@ -29,34 +29,34 @@ data() {
           navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
+        },
+        breakpoints: {
+          751: {
+            slidesPerView: 1.2,
+            spaceBetween: 24
+          }
         }
-        // breakpoints: {
-        //   751: {
-        //     slidesPerView: 1.2,
-        //     spaceBetween: 24
-        //   }
-        // }
       },
       items: [
-      {
-        link: '/',
-        src: require('~/assets/img/top/slider_01.jpg'),
-        title: "標高8000メートル登山一人旅",
-        text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
-      },
-      {
-        link: '/',
-        src: require('~/assets/img/top/slider_02.jpg'),
-        title: "標高8000メートル登山一人旅",
-        text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
-      },
-      {
-        link: '/',
-        src: require('~/assets/img/top/slider_03.jpg'),
-        title: "標高8000メートル登山一人旅",
-        text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
-      }
-    ]
+        {
+          link: '/article',
+          src: require('~/assets/img/top/slider_01.jpg'),
+          title: "標高8000メートル登山一人旅",
+          text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
+        },
+        {
+          link: '/article',
+          src: require('~/assets/img/top/slider_02.jpg'),
+          title: "標高8000メートル登山一人旅",
+          text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
+        },
+        {
+          link: '/article',
+          src: require('~/assets/img/top/slider_03.jpg'),
+          title: "標高8000メートル登山一人旅",
+          text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
+        }
+      ]
     }
   }
 }
@@ -68,19 +68,18 @@ data() {
   height: 560px
   margin: 0 0 0
 
-.top__slider__visual-link
-  display: block
-  width: 800px
+/* スライダーリンク */
+.p-index-top__slider__visual
+  position: relative
+  width: auto
   height: 560px
-  margin: 0 auto 0
+  margin: 0 80px 0
 
+/* スライダー画像 */
 .top__slider__visual-img
   width: 100%
   height: 100%
-  background-image: url("~assets/img/top/slider_01.jpg")
-  background-size: auto
-  background-position: center
-  background-repeat: no-repeat
+  border-radius: 3px
 
 .p-index-top__slider__textarea
   position: absolute
@@ -143,7 +142,7 @@ data() {
 .swiper-button-prev
   position: absolute
   bottom: 0
-  left: 15%
+  left: 15vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-right.svg")
@@ -152,7 +151,7 @@ data() {
 .swiper-button-next
   position: absolute
   bottom: 0
-  right: 15%
+  right: 15vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-left.svg")

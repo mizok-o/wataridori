@@ -34,5 +34,6 @@ li, a, ul, ol
     margin: 0
 a
   text-decoration: none
+  color: #111111
 
 </style>
