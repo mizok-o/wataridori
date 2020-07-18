@@ -9,6 +9,8 @@
             h2.top__slider__title {{ item.title }}
             p.top__slider__text {{ item.text }}
             a.top__slider__link(:href="item.link")
+    .swiper-filter-left
+    .swiper-filter-right
     .swiper-button-prev
     .swiper-button-next
 </template>
@@ -20,10 +22,12 @@ export default{
           slidesPerView: 1.5,
           centeredSlides: true,
           paginationClickable: true,
-          loopAdditionalSlides: 2,
-          speed: 1000,
-          // autoplay: {delay: 3000},
+          grabCursor: true,
+          touchRatio: 1.5,
+          speed: 800,
           loop: true,
+          loopAdditionalSlides: 0,
+          autoplay: {delay: 3000},
           nextButton: '.swiper-button-next',
           prevButton: '.swiper-button-prev',
           navigation: {
@@ -52,7 +56,7 @@ export default{
         },
         {
           link: '/article',
-          src: require('~/assets/img/top/slider_03.jpg'),
+          src: require('~/assets/img/top/slider_02.jpg'),
           title: "標高8000メートル登山一人旅",
           text: "ワタリドリは若者の一人旅のサポートに特化したwebメディアです。"
         }
@@ -64,16 +68,18 @@ export default{
 <style lang="sass">
 .p-index-top__content
   position: relative
-  width: auto
-  height: 560px
-  margin: 0 0 0
+  margin: 0
+
+/* .swiper-content
+  min-width: 720px
+  min-height: 320px */
 
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
-  width: auto
-  height: 560px
-  margin: 0 80px 0
+  width: 80%
+  height: 100%
+  margin: 0 10%
 
 /* スライダー画像 */
 .top__slider__visual-img
@@ -126,13 +132,13 @@ export default{
   &:hover
     &::after
       color: #ffffff
-      transition: color 0.6s cubic-bezier(0.83, 0, 0.17, 1)
+      transition: color 0.4s cubic-bezier(0.83, 0, 0.17, 1)
     &::before
       transform: translate(0, 0)
-      transition: transform 0.6s cubic-bezier(0.83, 0, 0.17, 1)
+      transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1)
 
-.swiper-content
-  transition: 1s
+.swiper-slide
+  transition: .6s
 
 .swiper-slide-next, .swiper-slide-prev
   opacity: .1
@@ -142,7 +148,7 @@ export default{
 .swiper-button-prev
   position: absolute
   bottom: 0
-  left: 15vw
+  left: 8.5vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-right.svg")
@@ -151,7 +157,7 @@ export default{
 .swiper-button-next
   position: absolute
   bottom: 0
-  right: 15vw
+  right: 8.5vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-left.svg")

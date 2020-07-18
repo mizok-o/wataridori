@@ -10,7 +10,7 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #fafafa
+  background-color: #ffffff
   color: #111
   -ms-overflow-style: none
   scrollbar-width: none
