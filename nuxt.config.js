@@ -1,6 +1,5 @@
 export default {
   mode: 'universal',
-
   head: {
     title: "wataridori",
     meta: [
@@ -27,13 +26,6 @@ export default {
 
   buildModules: [
   ],
-  modules: ["@nuxtjs/markdownit"],
-  markdownit: {
-    html: true,
-    injected: true,
-    preset: "default"
-  },
-
   modules: [
   '@nuxtjs/style-resources',
   '@nuxtjs/markdownit',
@@ -48,7 +40,8 @@ export default {
  styleResources: {
   sass: [
    '@/assets/sass/_mixin.sass',
-   '@/assets/sass/_user-style.sass'
+   '@/assets/sass/_user-style.sass',
+   '@/assets/sass/_font.sass'
   ],
   scss: [
    '@/assets/scss/_variable.scss',
@@ -60,9 +53,8 @@ export default {
 },
   build: {
      extend(config, ctx) {},
-     transpile: ['gsap'],
     vendor: [
       'vue-awesome-swiper'
     ]
-}
+  }
 }

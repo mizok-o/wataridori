@@ -33,6 +33,8 @@ header.header-container
 
 .header__right
   display: flex
+  +pc-sm-view
+    display: none
 
 .header__right__list-item
   margin-right: 32px
