@@ -27,10 +27,12 @@
 </template>
 <script>
 import pheader from '~/components/layouts/pheader.vue'
+import topArticles from '~/components/top/topArticles.vue'
 import axios from "axios"
 export default {
   components: {
-    pheader
+    pheader,
+    topArticles
   },
   data() {
       return {
@@ -58,13 +60,15 @@ export default {
       items: []
     }
   },
-  async asyncData() {
+  mounted(){
+    this.asyncData()
+  },
+  asyncData() {
     const { data } = await axios.get(
       "https://wataridori.microcms.io/api/v1/top",
       {
         headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" }
-      }
-    )
+      })
     return {
       items: data.contents
     }
@@ -81,8 +85,19 @@ export default {
   position: relative
   margin: 0
 
+.p-index-top__slider-title
+  text-align: center
+  font-size: 32px
+  +sp-view
+    margin-left: 16px
+    text-align: left
+    font-size: 18px
+
 .swiper-container
+  margin-top: 32px
   overflow: visible
+  +sp-view
+    margin-top: 16px
 
 /* スライダーリンク
 .p-index-top__slider__visual
@@ -125,7 +140,7 @@ export default {
 
 .p-index-top__slider__textarea--sp
   position: absolute
-  bottom: -56px
+  bottom: -11%
   left: 0
   width: 88%
   padding: 12px 16px
