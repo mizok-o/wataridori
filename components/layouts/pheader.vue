@@ -1,20 +1,29 @@
 <template lang="pug">
-header.header-container
-  .header-content
-    .header__left
-      a(href="/")
-        img.header__left__logo(src="~/assets/img/header/header-logo.svg")
-    ul.header__right
-      li.header__right__list-item
-        a.header__list-item__link(href="/") トップ
-      li.header__right__list-item
-        a.header__list-item__link(href="/") 記事一覧
-      li.header__right__list-item
-        a.header__list-item__link(href="/") 私たちについて
-      li.header__right__list-item
-        a.header__list-item__link(href="/") タグ
+header
+  .header-container
+    .header-content
+      .header__left
+        a(href="/")
+          img.header__left__logo(src="~/assets/img/header/header-logo.svg")
+      ul.header__right
+        li.header__right__list-item
+          a.header__list-item__link(href="/") トップ
+        li.header__right__list-item
+          a.header__list-item__link(href="/") 記事一覧
+        li.header__right__list-item
+          a.header__list-item__link(href="/") 私たちについて
+        li.header__right__list-item
+          a.header__list-item__link(href="/") タグ
 </template>
 <style lang="sass">
+header
+  position: relative
+  width: 100%
+  height: 48px
+  background-color: #ffffff
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
+
+
 .header-container
   position: fixed
   top: 32px
@@ -23,8 +32,9 @@ header.header-container
   width: auto
   height: 48px
   +sp-view
-    left: 24px
-    top: 16px
+    left: 16px
+    top: 14px
+
 
 .header-content
   display: flex
