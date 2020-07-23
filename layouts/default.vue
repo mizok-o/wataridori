@@ -18,7 +18,6 @@ html
   &::-webkit-scrollbar
     display: none
 body
-  position: relative
   overflow-x: hidden
   width: 100%
   height: 100%

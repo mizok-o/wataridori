@@ -50,11 +50,6 @@ export default{
   margin: 2px 0 0
 
 .top__articles-item-tag
-  span
-    padding: 1px 4px
-    background-color: #333333
-    color: #ffffff
-    border-radius: 3px
 
 .top__articles-item-title
   margin: 6px 0 0
