@@ -22,6 +22,9 @@ header.header-container
   right: 112px
   width: auto
   height: 48px
+  +sp-view
+    left: 24px
+    top: 16px
 
 .header-content
   display: flex
@@ -30,6 +33,8 @@ header.header-container
 
 .header__left__logo
   height: 24px
+  +sp-view
+    height: 20px
 
 .header__right
   display: flex
