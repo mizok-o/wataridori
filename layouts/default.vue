@@ -17,10 +17,6 @@ html
   max-width: 100%
   &::-webkit-scrollbar
     display: none
-body
-  overflow-x: hidden
-  width: 100%
-  height: 100%
 li, a, ul, ol
   list-style: none
   padding: 0

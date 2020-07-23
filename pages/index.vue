@@ -39,6 +39,10 @@ export default {
 }
 </script>
 <style lang="sass">
+.p-index
+  overflow-x: hidden
+  width: 100%
+  height: 100%
 .p-index-top
   width: 100%
   margin: 120px 0 0
