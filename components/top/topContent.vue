@@ -6,7 +6,8 @@
       swiper(:options="swiperOption")
         swiper-slide.swiper-content(v-for="item in items", :key="item.id")
           .p-index-top__slider__visual
-            img.top__slider__visual-img(:src="item.img.url")
+            .top__slider__visual-img
+              img(:src="item.img.url")
             .p-index-top__slider__textarea.u-pc-view
               h3.top__slider__title {{ item.title }}
               p.top__slider__text {{ item.text }}
@@ -25,22 +26,16 @@ import axios from "axios"
 export default{
   props: ['items'],
   data() {
-      return {
-        swiperOption: {
-          slidesPerView: 1.5,
-          centeredSlides: true,
-          paginationClickable: true,
-          touchRatio: 1.5,
-          speed: 800,
-          loop: true,
-          loopAdditionalSlides: 0,
-          autoplay: {delay: 3000},
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        },
+    return {
+      swiperOption: {
+        slidesPerView: 1.5,
+        centeredSlides: true,
+        paginationClickable: true,
+        touchRatio: 1.5,
+        speed: 800,
+        loop: true,
+        loopAdditionalSlides: 0,
+        // autoplay: {delay: 3000},
         breakpoints: {
           1200: {
             slidesPerView: 1
@@ -66,10 +61,13 @@ export default{
 .swiper-container
   margin-top: 32px
   overflow: visible
-  +sp-view
-    margin-top: 16px
 
-/* スライダーリンク
+.swiper-content
+  width: 100%
+  margin: 0 auto
+
+
+/* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
   width: 80%
@@ -79,14 +77,23 @@ export default{
     width: 90%
     margin: 0 5%
   +sp-view
-    width: 100%
-    margin: 0
+    width: calc(100% - 32px)
+    /* height: 424px */
+    margin: 0 16px
+    border: 8px solid #111111
+    border-radius: 4px
 
-/* スライダー画像 */
+/* スライダー画像
 .top__slider__visual-img
   width: 100%
   height: 100%
-  border-radius: 3px
+  +sp-view
+    overflow: hidden
+    width: 100%
+    height: 276px
+  img
+    +sp-view
+      height: 100%
 
 .p-index-top__slider__textarea
   position: absolute
@@ -109,20 +116,18 @@ export default{
   +font-bold
 
 .p-index-top__slider__textarea--sp
-  position: absolute
-  bottom: -11%
-  left: 0
-  width: 88%
-  padding: 12px 16px
-  height: auto
+  display: block
+  width: 100%
+  padding: 16px 16px
   background-color: #ffffff
+
 
 .top__slider__sub
   display: flex
   margin-top: 6px
-  opacity: .3
   time
     margin-right: 8px
+    opacity: .3
 
 .top__slider__link
   position: relative
@@ -161,16 +166,10 @@ export default{
       transform: translate(0, 0)
       transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1)
 
-.swiper-slide
-  transition: .8s
-
-.swiper-slide-next, .swiper-slide-prev
-  opacity: .1
-  pointer-events: none
-
 /* スワイパーボタン */
-.swiper-button-prev
-  position: absolute
+.swiper-button-prev, .swiper-button-next
+  display: none
+//  position: absolute
   bottom: 0
   left: 8.5vw
   width: 48px
@@ -184,8 +183,8 @@ export default{
     left: 0
     width: 40px
     height: 40px
-.swiper-button-next
-  position: absolute
+
+//  position: absolute
   bottom: 0
   right: 8.5vw
   width: 48px
@@ -198,6 +197,6 @@ export default{
   +sp-view
     right: 0
     width: 40px
-    height: 40px
+    height: 40px */
 
 </style>

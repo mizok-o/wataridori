@@ -5,18 +5,21 @@
     .p-index-top
       topContent(:items="items")
       topArticles(:articles="articles")
+      topAbout
 
 </template>
 <script>
 import pheader from '~/components/layouts/pheader.vue'
 import topArticles from '~/components/top/topArticles.vue'
 import topContent from '~/components/top/topContent.vue'
+import topAbout from '~/components/top/topAbout.vue'
 import axios from "axios"
 export default {
   components: {
     pheader,
     topContent,
-    topArticles
+    topArticles,
+    topAbout
   },
   data(){
     return {

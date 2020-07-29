@@ -8,7 +8,7 @@ header
       .header__right--sp.u-sp-view
         .header__right-container
           .header__right__menu
-            .header__right__menu-container
+            .header__right__menu-container(@click="")
               .header__menu-item
               .header__menu-item
       .u-pc-view
@@ -25,27 +25,22 @@ header
 <style lang="sass">
 header
   position: relative
-  width: 100%
-  height: 56px
-  background-color: #ffffff
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1)
+  z-index: 5
 
 .header-container
   position: fixed
   top: 0
-  left: 56px
-  right: 56px
-  width: auto
+  left: 0
+  width: 100%
   height: 56px
-  +sp-view
-    left: 16px
-    right: 16px
+  background-color: #ffffff
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2)
 
 .header-content
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 4px 0
+  padding: 4px 16px
 
 
 .header__left__logo

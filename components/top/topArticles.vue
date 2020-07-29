@@ -8,8 +8,6 @@
           .top__articles-item-img
             img(:src="article.img.url")
           .top__articles-item-textarea
-            .top__articles-item-tag
-              span # {{ article.tag }}
             .top__articles-item-title
               h3 {{ article.title }}
             .top__articles-item-sub
@@ -24,7 +22,7 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles-container
-  margin: 72px 16px 0
+  margin: 48px 16px 0
 
 .p-index-top__articles-item
   border-bottom: solid 1px #B8B8B8
@@ -38,8 +36,8 @@ export default{
 .top__articles-item-img
   position: relative
   overflow: hidden
-  width: 88px
-  height: 88px
+  width: 96px
+  height: 72px
   margin: 0 10px 0 0
   img
     width: auto
@@ -47,12 +45,7 @@ export default{
     max-height: 88px
 
 .top__articles-item-textarea
-  margin: 2px 0 0
-
-.top__articles-item-tag
-
-.top__articles-item-title
-  margin: 6px 0 0
+  /* margin: 2px 0 0 */
 
 .top__articles-item-sub
   display: flex
