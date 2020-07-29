@@ -23,6 +23,8 @@ export default{
 <style lang="sass">
 .p-index-top__articles-container
   margin: 48px 16px 0
+  +sp-view
+    margin: 72px 0 0
 
 .p-index-top__articles-item
   border-bottom: solid 1px #B8B8B8
@@ -32,12 +34,15 @@ export default{
 
 .top__articles-item-container
   display: flex
+  +sp-view
+    width: 100%
+    height: 72px
 
 .top__articles-item-img
   position: relative
   overflow: hidden
   width: 96px
-  height: 72px
+  height: 100%
   margin: 0 10px 0 0
   img
     width: auto
@@ -45,14 +50,16 @@ export default{
     max-height: 88px
 
 .top__articles-item-textarea
-  /* margin: 2px 0 0 */
+  display: flex
+  height: 100%
+  flex-direction: column
+  justify-content: space-between
 
 .top__articles-item-sub
   display: flex
-  margin: 18px 0 0
 
 .top__articles-date
-  margin: 0 12px 0 0
+  margin-right: 12px
   opacity: .3
 
 .top__articles-name

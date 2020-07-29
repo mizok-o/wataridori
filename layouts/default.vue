@@ -30,5 +30,48 @@ li, a, ul, ol
 a
   text-decoration: none
   color: #111111
+//全てに適用
+*,
+*:before,
+*:after
+  +box-sizing
+*,
+*:focus
+  outline: none
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure,
+p,
+pre
+  margin: 0
+
+a
+  text-decoration: none
+  color: inherit
+  &:focus,
+    outline: none
+
+hr
+  margin: 0
+  border: none
+
+main
+  display: block
+
+button
+  background-color: transparent
+  border: none
+  cursor: pointer
+  outline: none
+  padding: 0
+  appearance: none
 
 </style>

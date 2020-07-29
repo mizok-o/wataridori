@@ -6,6 +6,7 @@
       topContent(:items="items")
       topArticles(:articles="articles")
       topAbout
+      pfooter
 
 </template>
 <script>
@@ -13,13 +14,15 @@ import pheader from '~/components/layouts/pheader.vue'
 import topArticles from '~/components/top/topArticles.vue'
 import topContent from '~/components/top/topContent.vue'
 import topAbout from '~/components/top/topAbout.vue'
+import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
 export default {
   components: {
     pheader,
     topContent,
     topArticles,
-    topAbout
+    topAbout,
+    pfooter
   },
   data(){
     return {
@@ -49,5 +52,8 @@ export default {
 .p-index-top
   width: 100%
   margin: 120px 0 0
+  +sp-view
+    width: auto
+    margin: 120px 16px 0
 
 </style>
