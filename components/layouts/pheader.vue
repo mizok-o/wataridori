@@ -40,7 +40,9 @@ header
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 4px 16px
+  padding: 14px 56px
+  +sp-view
+    padding: 4px 16px
 
 
 .header__left__logo

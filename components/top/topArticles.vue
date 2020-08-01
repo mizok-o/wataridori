@@ -22,41 +22,56 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles-container
-  margin: 48px 16px 0
+  margin: 96px 14vw 0
   +sp-view
     margin: 72px 0 0
 
+.p-index-top__articles-title
+  font-size: 32px
+
+.p-index-top__articles-content
+  display: grid
+  grid-template-columns: 240px 240px 240px
+  grid-template-rows: 224px 224px
+  gap: 24px 16px
+
 .p-index-top__articles-item
-  border-bottom: solid 1px #B8B8B8
-  padding: 10px 0
-  &:first-child
-    margin: 6px 0 0
+  +sp-view
+    border-bottom: solid 1px #B8B8B8
+    padding: 10px 0
+    &:first-child
+      margin: 6px 0 0
 
 .top__articles-item-container
-  display: flex
   +sp-view
+    display: flex
     width: 100%
     height: 72px
 
 .top__articles-item-img
-  position: relative
-  overflow: hidden
-  width: 96px
-  height: 100%
-  margin: 0 10px 0 0
   img
-    width: auto
-    height: auto
-    max-height: 88px
+    width: 100%
+  +sp-view
+    position: relative
+    overflow: hidden
+    width: 96px
+    height: 100%
+    margin: 0 10px 0 0
+    img
+      width: auto
+      height: auto
+      max-height: 88px
 
 .top__articles-item-textarea
-  display: flex
-  height: 100%
-  flex-direction: column
-  justify-content: space-between
+  +sp-view
+    display: flex
+    height: 100%
+    flex-direction: column
+    justify-content: space-between
 
 .top__articles-item-sub
   display: flex
+  margin-top: 12px
 
 .top__articles-date
   margin-right: 12px

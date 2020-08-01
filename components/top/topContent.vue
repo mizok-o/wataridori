@@ -28,17 +28,17 @@ export default{
   data() {
     return {
       swiperOption: {
-        slidesPerView: 1.5,
+        slidesPerView: 1.35,
         centeredSlides: true,
         paginationClickable: true,
         touchRatio: 1.5,
         speed: 800,
-        loop: true,
-        loopAdditionalSlides: 0,
-        // autoplay: {delay: 3000},
+        // loop: true,
+        // loopAdditionalSlides: 0,
+        // autoplay: {delay: 2000},
         offsetPxAfter: 20,
         resistanceRatio: 0.85,
-        spaceBetween: 16,
+        // spaceBetween: 16,
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -76,42 +76,42 @@ export default{
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
-  width: 80%
+  width: 97%
   height: 100%
-  margin: 0 10%
-  +pc-sm-view
-    width: 90%
-    margin: 0 5%
+  margin: 0 1.5%
   +sp-view
     max-width: 343px
     width: 100%
     height: 424px
-    margin: 0
+    margin: 0 auto
     border: 8px solid #111111
     border-radius: 4px
 
 /* スライダー画像 */
 .top__slider__visual-img
-  width: 100%
-  height: 100%
+  max-width: 1200px
+  max-height: 720px
+  overflow: hidden
+  +pc-md-view
+    max-height: 640px
   +sp-view
-    overflow: hidden
-    width: 100%
     height: 276px
   img
+    width: 100%
+    height: 100%
     +sp-view
       height: 100%
 
 .p-index-top__slider__textarea
   position: absolute
-  bottom: 40px
-  left: 56px
+  bottom: 48px
+  left: 64px
   width: 688px
   height: 176px
   color: #ffffff
 
 .top__slider__title
-  font-size: 32px
+  font-size: 28px
 
 .top__slider__text
   margin: 4px 0 0
@@ -150,9 +150,10 @@ export default{
   overflow: hidden
   width: 168px
   height: 48px
-  margin-top: 40px
+  margin-top: 24px
   border-radius: 30px
   background-color: #ffffff
+  color: #111111
   +font-bold
   font-size: 16px
   +sp-view

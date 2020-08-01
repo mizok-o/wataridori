@@ -11,7 +11,7 @@ html
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
   background-color: #ffffff
-  color: #111
+  color: #111111
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
