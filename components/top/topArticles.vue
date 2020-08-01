@@ -22,7 +22,8 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles-container
-  margin: 96px 14vw 0
+  margin: 120px 14vw 0
+  /* text-align: center */
   +sp-view
     margin: 72px 0 0
 
@@ -31,9 +32,10 @@ export default{
 
 .p-index-top__articles-content
   display: grid
-  grid-template-columns: 240px 240px 240px
-  grid-template-rows: 224px 224px
+  grid-template-columns: 256px 256px 256px
+  grid-template-rows: 280px 280px
   gap: 24px 16px
+  margin: 32px 0 0
 
 .p-index-top__articles-item
   +sp-view
@@ -43,13 +45,20 @@ export default{
       margin: 6px 0 0
 
 .top__articles-item-container
+  transition: .3s
+  &:hover
+    .top__articles-item-img
+      img
+        transform: scale(1.05)
   +sp-view
     display: flex
     width: 100%
     height: 72px
 
 .top__articles-item-img
+  overflow: hidden
   img
+    transition: .3s
     width: 100%
   +sp-view
     position: relative
@@ -63,6 +72,7 @@ export default{
       max-height: 88px
 
 .top__articles-item-textarea
+  margin: 6px 0 0
   +sp-view
     display: flex
     height: 100%
@@ -79,4 +89,7 @@ export default{
 
 .top__articles-name
   opacity: .7
+  &:hover
+    transition: .3s
+    opacity: 1
 </style>

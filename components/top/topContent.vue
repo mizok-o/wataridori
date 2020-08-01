@@ -63,10 +63,11 @@ export default{
   position: relative
 
 .p-index-top__slider-title
-  text-align: center
+  /* text-align: center */
   font-size: 32px
+  margin-left: 200px
   +sp-view
-    text-align: left
+    /* text-align: left */
     font-size: 18px
 
 .swiper-container
@@ -195,7 +196,7 @@ export default{
   span
     width: 10px
     height: 10px
-    background-color: #111111
+    background-color: #ffffff
     margin-right: 16px
     &:focus
       outline: none
