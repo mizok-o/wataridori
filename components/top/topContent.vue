@@ -20,6 +20,8 @@
                   a(:href="item.insta" target="_blank" rel="noopener")
                     p {{ item.name }}
       .swiper-pagination
+      .swiper-button-prev
+      .swiper-button-next
 </template>
 <script>
 import axios from "axios"
@@ -28,22 +30,24 @@ export default{
   data() {
     return {
       swiperOption: {
-        slidesPerView: 1.35,
+        slidesPerView: 1.75,
         centeredSlides: true,
         paginationClickable: true,
         touchRatio: 1.5,
         speed: 800,
-        // loop: true,
-        // loopAdditionalSlides: 0,
-        // autoplay: {delay: 2000},
-        offsetPxAfter: 20,
-        resistanceRatio: 0.85,
-        // spaceBetween: 16,
+        loop: true,
+        loopedSlides: 3,
+        autoplay: {delay: 3000},
+        // offsetPxAfter: 20,
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
       		clickable: true
         },
+        navigation: {
+      		nextEl: '.swiper-button-next',
+      		prevEl: '.swiper-button-prev'
+      	},
         breakpoints: {
           1200: {
             slidesPerView: 1
@@ -76,9 +80,8 @@ export default{
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
-  width: 97%
+  width: 100%
   height: 100%
-  margin: 0 1.5%
   +sp-view
     max-width: 343px
     width: 100%
@@ -89,23 +92,22 @@ export default{
 
 /* スライダー画像 */
 .top__slider__visual-img
-  max-width: 1200px
-  max-height: 720px
+  max-width: 800px
+  max-height: 480px
   overflow: hidden
-  +pc-md-view
-    max-height: 640px
+  margin: 0 auto
   +sp-view
     height: 276px
   img
-    width: 100%
-    height: 100%
+    width: 800px
+    height: auto
     +sp-view
       height: 100%
 
 .p-index-top__slider__textarea
   position: absolute
-  bottom: 48px
-  left: 64px
+  bottom: 1vw
+  left: 10vw
   width: 688px
   height: 176px
   color: #ffffff
@@ -182,6 +184,8 @@ export default{
       transform: translate(0, 0)
       transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1)
 
+.swiper-slide-prev, .swiper-slide-next
+  pointer-events: none
 
 /* スライド切り替え */
 .swiper-pagination
@@ -198,12 +202,11 @@ export default{
     &:last-child
       margin-right: 0
 
-/* スワイパーボタン
-.swiper-button-prev, .swiper-button-next
-  display: none
-//  position: absolute
+/* スワイパーボタン */
+.swiper-button-prev
+  position: absolute
   bottom: 0
-  left: 8.5vw
+  left: 20vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-right.svg")
@@ -215,10 +218,10 @@ export default{
     left: 0
     width: 40px
     height: 40px
-
-//  position: absolute
+.swiper-button-next
+  position: absolute
   bottom: 0
-  right: 8.5vw
+  right: 20vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-left.svg")
@@ -229,6 +232,6 @@ export default{
   +sp-view
     right: 0
     width: 40px
-    height: 40px */
+    height: 40px
 
 </style>

@@ -45,6 +45,11 @@ export default {
 }
 </script>
 <style lang="sass">
+body
+  background-image: url('~assets/img/top/background.png')
+  background-repeat: no-repeat
+  background-size: cover
+
 .p-index
   overflow-x: hidden
   width: 100%

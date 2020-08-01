@@ -10,8 +10,8 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
-  background-color: #ffffff
-  color: #111111
+  background-color: #111111
+  color: #ffffff
   -ms-overflow-style: none
   scrollbar-width: none
   max-width: 100%
@@ -29,7 +29,7 @@ li, a, ul, ol
     margin: 0
 a
   text-decoration: none
-  color: #111111
+  color: #ffffff
 //全てに適用
 *,
 *:before,
