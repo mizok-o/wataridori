@@ -38,7 +38,7 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__about-container
-  margin: 40px 14% 0
+  margin: 80px 14% 0
   +sp-view
     margin: 40px 0 0
 

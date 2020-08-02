@@ -2,8 +2,8 @@
 .p-index-top__articles-container
   h2.p-index-top__articles-title 記事一覧
   ul.p-index-top__articles-content
-    li(v-for="article in articles").p-index-top__articles-item
-      a(href="/article001")
+    li(v-for="article in articles")
+      a.p-index-top__articles-item-link(href="/article001")
         .top__articles-item-container
           .top__articles-item-img
             img(:src="article.img.url")
@@ -43,9 +43,11 @@ export default{
     grid-template-rows: 280px 280px
   +sp-view
     grid-template-columns: 48% 48%
-    grid-template-rows: 216px 216px
-    gap: 24px 15px
+    grid-template-rows: 48% 48%
+    gap: 15px 15px
     margin: 0
+    @media screen and (max-width: 320px)
+      grid-template-columns: 132px 132px
 
 .top__articles-item-container
   transition: .3s
@@ -54,8 +56,14 @@ export default{
       img
         transform: scale(1.05)
   +sp-view
-    /* display: flex */
     width: 100%
+    height: 100%
+
+.p-index-top__articles-item-link
+  +sp-view
+    display: inline-block
+    width: 100%
+    height: 100%
 
 .top__articles-item-img
   overflow: hidden
@@ -65,20 +73,19 @@ export default{
   +sp-view
     position: relative
     overflow: hidden
-    width: 164px
-    height: 118px
+    width: 100%
+    height: auto
     margin: 0 10px 0 0
-    img
 
 
 .top__articles-item-textarea
-  margin-top: 6px
+  margin-top: 8px
   +sp-view
     display: flex
     height: 96px
     flex-direction: column
     justify-content: space-between
-    /* margin-top: 8px */
+    margin-top: 6px
 
 .top__articles-item-sub
   display: flex

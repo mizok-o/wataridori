@@ -58,7 +58,7 @@ body
   height: 100%
 .p-index-top
   width: 100%
-  margin: 120px 0 0
+  margin: 136px 0 0
   +sp-view
     width: auto
     margin: 120px 20px 0

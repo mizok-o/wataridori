@@ -36,7 +36,7 @@ export default{
         touchRatio: 1.5,
         speed: 800,
         loop: true,
-        loopedSlides: 1,
+        loopedSlides: 3,
         // autoplay: {delay: 3000},
         // offsetPxAfter: 20,
         pagination: {
@@ -79,14 +79,17 @@ export default{
 
 .swiper-content
   +sp-view
-    max-width: 335px
     width: 100%
+    margin: 0 0
+
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
   width: 100%
   height: 100%
   +sp-view
+    max-width: 335px
+    margin: 0 auto
     width: 100%
     height: auto
     border: 8px solid #ffffff
