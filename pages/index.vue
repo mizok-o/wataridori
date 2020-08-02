@@ -61,6 +61,6 @@ body
   margin: 136px 0 0
   +sp-view
     width: auto
-    margin: 120px 20px 0
+    margin: 96px 20px 0
 
 </style>
