@@ -49,6 +49,8 @@ body
   background-image: url('~assets/img/top/background.png')
   background-repeat: no-repeat
   background-size: cover
+  +sp-view
+    background-image: url('~assets/img/top/background--sp.png')
 
 .p-index
   overflow-x: hidden
@@ -59,6 +61,6 @@ body
   margin: 120px 0 0
   +sp-view
     width: auto
-    margin: 120px 16px 0
+    margin: 120px 20px 0
 
 </style>

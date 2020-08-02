@@ -22,13 +22,15 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles-container
-  margin: 120px 14vw 0
-  /* text-align: center */
+  margin: 120px 14% 0
   +sp-view
-    margin: 72px 0 0
+    margin: 96px 0 0
 
 .p-index-top__articles-title
   font-size: 32px
+  +sp-view
+    font-size: 18px
+    margin-bottom: 24px
 
 .p-index-top__articles-content
   display: grid
@@ -36,13 +38,14 @@ export default{
   grid-template-rows: 280px 280px
   gap: 24px 16px
   margin: 32px 0 0
-
-.p-index-top__articles-item
+  +pc-md-view
+    grid-template-columns: 256px 256px
+    grid-template-rows: 280px 280px
   +sp-view
-    border-bottom: solid 1px #B8B8B8
-    padding: 10px 0
-    &:first-child
-      margin: 6px 0 0
+    grid-template-columns: 48% 48%
+    grid-template-rows: 216px 216px
+    gap: 24px 15px
+    margin: 0
 
 .top__articles-item-container
   transition: .3s
@@ -51,9 +54,8 @@ export default{
       img
         transform: scale(1.05)
   +sp-view
-    display: flex
+    /* display: flex */
     width: 100%
-    height: 72px
 
 .top__articles-item-img
   overflow: hidden
@@ -63,32 +65,38 @@ export default{
   +sp-view
     position: relative
     overflow: hidden
-    width: 96px
-    height: 100%
+    width: 164px
+    height: 118px
     margin: 0 10px 0 0
     img
-      width: auto
-      height: auto
-      max-height: 88px
+
 
 .top__articles-item-textarea
-  margin: 6px 0 0
+  margin-top: 6px
   +sp-view
     display: flex
-    height: 100%
+    height: 96px
     flex-direction: column
     justify-content: space-between
+    /* margin-top: 8px */
 
 .top__articles-item-sub
   display: flex
   margin-top: 12px
+  +sp-view
+    display: block
+    margin-top: 4px
 
 .top__articles-date
   margin-right: 12px
-  opacity: .3
+  opacity: .5
 
 .top__articles-name
   opacity: .7
+  +sp-view
+    display: block
+    margin-top: 2px
+    opacity: 1
   &:hover
     transition: .3s
     opacity: 1

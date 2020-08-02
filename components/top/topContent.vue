@@ -30,14 +30,14 @@ export default{
   data() {
     return {
       swiperOption: {
-        slidesPerView: 1.75,
+        slidesPerView: 1.5,
         centeredSlides: true,
         paginationClickable: true,
         touchRatio: 1.5,
         speed: 800,
         loop: true,
-        loopedSlides: 3,
-        autoplay: {delay: 3000},
+        loopedSlides: 1,
+        // autoplay: {delay: 3000},
         // offsetPxAfter: 20,
         pagination: {
           el: '.swiper-pagination',
@@ -49,8 +49,9 @@ export default{
       		prevEl: '.swiper-button-prev'
       	},
         breakpoints: {
-          1200: {
-            slidesPerView: 1
+          1280: {
+            slidesPerView: 1,
+            spaceBetween: 20
           }
         }
       }
@@ -63,32 +64,32 @@ export default{
   position: relative
 
 .p-index-top__slider-title
-  /* text-align: center */
   font-size: 32px
-  margin-left: 200px
+  margin-left: 14%
   +sp-view
-    /* text-align: left */
+    width: 100%
     font-size: 18px
+    margin-left: 0
 
 .swiper-container
   margin-top: 32px
   overflow: visible
+  +sp-view
+    margin-top: 24px
 
 .swiper-content
-  width: 100%
-  margin: 0 auto
-
+  +sp-view
+    max-width: 335px
+    width: 100%
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
   width: 100%
   height: 100%
   +sp-view
-    max-width: 343px
     width: 100%
-    height: 424px
-    margin: 0 auto
-    border: 8px solid #111111
+    height: auto
+    border: 8px solid #ffffff
     border-radius: 4px
 
 /* スライダー画像 */
@@ -98,17 +99,19 @@ export default{
   overflow: hidden
   margin: 0 auto
   +sp-view
-    height: 276px
+    max-width: 327px
+    max-height: 276px
   img
     width: 800px
     height: auto
     +sp-view
-      height: 100%
+      width: 100%
 
 .p-index-top__slider__textarea
   position: absolute
   bottom: 1vw
-  left: 10vw
+  left: 50%
+  transform: translateX(-50%)
   width: 688px
   height: 176px
   color: #ffffff
@@ -121,7 +124,6 @@ export default{
   font-size: 18px
 
 .top__slider__title--sp
-  color: #111111
   font-size: 15px
   +font-bold
 
@@ -130,7 +132,7 @@ export default{
   width: 100%
   height: 132px
   padding: 16px 16px
-  background-color: #ffffff
+  /* background-color: #ffffff */
 
 .p-index-top__slider__textarea--sp__box
   display: flex
@@ -207,32 +209,28 @@ export default{
 .swiper-button-prev
   position: absolute
   bottom: 0
-  left: 20vw
+  left: 15vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-right.svg")
   background-size: cover
   outline: inherit
-  +pc-sm-view
-    left: 2%
-  +sp-view
+  +pc-md-view
     left: 0
-    width: 40px
-    height: 40px
+  +sp-view
+    display: none
 .swiper-button-next
   position: absolute
   bottom: 0
-  right: 20vw
+  right: 15vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-left.svg")
   background-size: cover
   outline: inherit
-  +pc-sm-view
-    right: 2%
-  +sp-view
+  +pc-md-view
     right: 0
-    width: 40px
-    height: 40px
+  +sp-view
+    display: none
 
 </style>
