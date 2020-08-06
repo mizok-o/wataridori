@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-index-top__container
+.p-index-top__container#top
   h2.p-index-top__slider-title おすすめ記事
   .p-index-top__content
     client-only
@@ -60,16 +60,20 @@ export default{
 }
 </script>
 <style lang="sass">
-.p-index-top__content
-  position: relative
+.p-index-top__container
+  margin-top: 56px
 
 .p-index-top__slider-title
   font-size: 32px
-  margin-left: 14%
+  margin: -80px 0 0 14%
+  padding-top: 80px
   +sp-view
     width: 100%
     font-size: 18px
     margin-left: 0
+
+.p-index-top__content
+  position: relative
 
 .swiper-container
   margin-top: 32px
