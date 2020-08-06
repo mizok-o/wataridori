@@ -5,18 +5,28 @@ header
       .header__left
         a(href="/")
           img.header__left__logo(src="~/assets/img/header/header-logo.svg")
-        .header__main(:class="{'header__menu-active' : menuActive}")
+        .header__main--sp.u-sp-view(:class="{'header__menu-active' : menuActive}")
+          ul.header__main--sp-container
+            li.header__main--sp-item
+              a(href="#top" @click="closeMenu") トップ
+            li.header__main--sp-item
+              a(href="#articles" @click="closeMenu") 記事一覧
+            li.header__main--sp-item
+              a(href="#about" @click="closeMenu") 私たちについて
+          .header__main--sp-sns
+            p Follow us
+            a.header__main--sp-sns__link(href="https://www.instagram.com/" @click="openMenu")
       .header__right--sp.u-sp-view(@click="openMenu")
         .header__right__menu-container(:class="{'header__menu-active' : menuActive}")
           .header__menu-item
-      .u-pc-view
-        ul.header__right
+      .header__right.u-pc-view
+        ul
           li.header__right__list-item
             a.header__list-item__link(href="#top") トップ
           li.header__right__list-item
             a.header__list-item__link(href="#articles") 記事一覧
           li.header__right__list-item
-            a.header__list-item__link(href="#about") 私たちについて
+            a.header__list-item__link(href="#about") ワタリドリについて
 </template>
 <script>
 export default {
@@ -28,6 +38,9 @@ export default {
   methods: {
     openMenu(){
       this.menuActive = !this.menuActive
+    },
+    closeMenu(){
+      this.menuActive = !this.menuActive
     }
   }
 }
@@ -35,7 +48,7 @@ export default {
 <style lang="sass">
 header
   position: relative
-  z-index: 5
+  z-index: 2
 
 .header-container
   position: fixed
@@ -54,30 +67,57 @@ header
   +sp-view
     padding: 0 0 0 16px
 
-
 .header__left__logo
   height: 24px
   +sp-view
     height: 20px
 
-.header__main
+.header__main--sp
   position: absolute
   top: 56px
   left: 0
   width: 100vw
   height: 320px
+  padding: 40px 20px 80px
+  color: #111111
+  +font-bold
   background-color: #ffffff
-  transform: translateY(-100%)
+  opacity: 0
   transition: .4s
   z-index: -1
 
+.header__main--sp-container
+  font-size: 18px
+
+.header__main--sp-item
+  padding: 16px 0
+  a
+    display: inline-block
+    width: 100%
+    height: 100%
+
+.header__main--sp-sns
+  display: flex
+  align-items: center
+  padding: 16px 0
+  p
+    opacity: .3
+    +font-en-bold
+    font-size: 11px
+    margin-right: 12px
+
+.header__main--sp-sns__link
+  display: inline-block
+  width: 24px
+  height: 24px
+  background-image: url("~assets/img/header/insta-icon.svg")
+
 .header__menu-active
-  transform: translateY(0)
+  opacity: 1
 
 .header__right
-  display: flex
-
-.header__right--sp
+  ul
+    display: flex
 
 .header__right__menu-container
   position: relative
@@ -86,43 +126,49 @@ header
 
 .header__menu-item
   position: absolute
-  top: 19px
+  top: 27px
   right: 13px
   width: 30px
   height: 1px
   background-color: #111111
+  transition: .4s
   &::before
     content: ""
     position: absolute
-    top: 8px
+    top: -8px
     right: 0
     width: 30px
     height: 1px
     background-color: #111111
+    transition: .4s
   &::after
     content: ""
     position: absolute
-    top: 16px
+    top: 8px
     left: 0
     width: 30px
     height: 1px
     background-color: #111111
+    transition: .4s
 
 .header__menu-active
   .header__menu-item
     position: absolute
     top: 28px
     right: 12px
-    transform: rotate(45deg)
-    transition: .4s
+    background-color: #ffffff
     &::before
-      content: none
+      content: "none"
+      position: absolute
+      top: 0
+      right: 0
+      transform: rotate(45deg)
     &::after
       content: ""
       position: absolute
       top: 0
       right: 0
-      transform: rotate(90deg)
+      transform: rotate(-45deg)
 
 
 .header__right__list-item

@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-index-top__articles-container
+.p-index-top__articles-container#articles
   h2.p-index-top__articles-title 記事一覧
   ul.p-index-top__articles-content
     li(v-for="article in articles")
@@ -28,6 +28,8 @@ export default{
 
 .p-index-top__articles-title
   font-size: 32px
+  margin-top: -80px
+  padding-top: 80px
   +sp-view
     font-size: 18px
     margin-bottom: 24px

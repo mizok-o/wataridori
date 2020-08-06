@@ -1,6 +1,6 @@
 <template lang="pug">
 .p-index-top__about-container#about
-  h2.p-index-top__about-title 一人旅支援メディア「ワタリドリ」
+  h2.p-index-top__about-title ワタリドリについて
   .p-index-top__about-textarea
     p.p-index-top__about-text(:class="{'about-text-show': isAbout}") ワタリドリは若者の海外一人旅のためのメディアです。
       br
@@ -49,33 +49,28 @@ export default{
     font-size: 18px
 
 .p-index-top__about-textarea
+  position: relative
   margin: 24px 0 0
   +sp-view
     margin: 16px 0 0
 
 .p-index-top__about-text
-  position: relative
   overflow: hidden
   line-height: 1.75
   font-size: 18px
   +sp-view
     height: 23px
-    width: 100%
+    width: auto
     font-size: 15px
+    margin-right: 8px
     &::before
       content: "..."
       position: absolute
-      display: inline-block
-      bottom: 0
-      left: 332px
+      top: 0
+      right: 8px
       height: 23px
-      width: 1em
-      font-size: 15px
     @media screen and (max-width: 445px)
       height: 1.5em
-      &::before
-        left: inherit
-        right: 0px
 
 .about-text-show
   overflow: inherit
