@@ -4,24 +4,24 @@
     pheader
     .p-index-top
       topSlider(:items="items")
-      topArticles(:articles="articles")
-      topAbout
+      allArticles(:articles="articles")
+      About
       pfooter
 
 </template>
 <script>
 import pheader from '~/components/layouts/pheader.vue'
-import topArticles from '~/components/top/topArticles.vue'
+import allArticles from '~/components/allArticles.vue'
 import topSlider from '~/components/top/topSlider.vue'
-import topAbout from '~/components/top/topAbout.vue'
+import About from '~/components/About.vue'
 import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
 export default {
   components: {
     pheader,
     topSlider,
-    topArticles,
-    topAbout,
+    allArticles,
+    About,
     pfooter
   },
   data(){

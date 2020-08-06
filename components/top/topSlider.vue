@@ -5,14 +5,14 @@
     client-only
       swiper(:options="swiperOption")
         swiper-slide.swiper-content(v-for="item in items", :key="item.id")
-          .p-index-top__slider__visual
+          a.p-index-top__slider__visual(:href="item.href")
             .top__slider__visual-img
               img(:src="item.img.url")
             .p-index-top__slider__textarea.u-pc-view
               h3.top__slider__title {{ item.title }}
               p.top__slider__text {{ item.text }}
               a.top__slider__link(:href="item.href")
-            a.p-index-top__slider__textarea--sp.u-sp-view(:href="item.href")
+            .p-index-top__slider__textarea--sp.u-sp-view
               .p-index-top__slider__textarea--sp__box
                 h3.top__slider__title--sp {{ item.text }}
                 .top__slider__sub
@@ -92,6 +92,7 @@ export default{
 /* スライダーリンク */
 .p-index-top__slider__visual
   position: relative
+  display: block
   width: 100%
   height: 100%
   +sp-view
