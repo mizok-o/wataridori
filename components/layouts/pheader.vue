@@ -48,7 +48,7 @@ export default {
 <style lang="sass">
 header
   position: relative
-  z-index: 2
+  z-index: 5
 
 .header-container
   position: fixed
@@ -56,6 +56,7 @@ header
   left: 0
   width: 100%
   height: 56px
+  color: #111111
   background-color: #ffffff
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2)
 
@@ -79,10 +80,10 @@ header
   width: 100vw
   height: 320px
   padding: 40px 20px 80px
-  color: #111111
   +font-bold
-  background-color: #ffffff
+  pointer-events: none
   opacity: 0
+  background-color: #ffffff
   transition: .4s
   z-index: -1
 
@@ -113,6 +114,7 @@ header
   background-image: url("~assets/img/header/insta-icon.svg")
 
 .header__menu-active
+  pointer-events: all
   opacity: 1
 
 .header__right
@@ -158,18 +160,15 @@ header
     right: 12px
     background-color: #ffffff
     &::before
-      content: "none"
-      position: absolute
+      content: ""
       top: 0
       right: 0
       transform: rotate(45deg)
     &::after
       content: ""
-      position: absolute
       top: 0
       right: 0
       transform: rotate(-45deg)
-
 
 .header__right__list-item
   margin-right: 40px
@@ -178,17 +177,5 @@ header
     .header__list-item__link
       display: flex
       align-items: center
-      /* &::after
-        content: ""
-        display: block
-        width: 0
-        height: 0
-        margin:  2px 0 0 6px
-        border-top: 7px solid #111111
-        border-left: 5px solid transparent
-        border-right: 5px solid transparent */
-
-.header__list-item__link
-  color: #111
 
 </style>

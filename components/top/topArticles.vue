@@ -32,7 +32,7 @@ export default{
   padding-top: 80px
   +sp-view
     font-size: 18px
-    margin-bottom: 24px
+    margin-bottom: 16px
 
 .p-index-top__articles-content
   display: grid

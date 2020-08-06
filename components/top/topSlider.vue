@@ -34,11 +34,13 @@ export default{
         centeredSlides: true,
         paginationClickable: true,
         touchRatio: 1.5,
-        speed: 800,
+        speed: 600,
         loop: true,
         loopedSlides: 3,
-        // autoplay: {delay: 3000},
-        // offsetPxAfter: 20,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -74,12 +76,13 @@ export default{
 
 .p-index-top__content
   position: relative
+  z-index: 2
 
 .swiper-container
   margin-top: 32px
   overflow: visible
   +sp-view
-    margin-top: 24px
+    margin-top: 16px
 
 .swiper-content
   +sp-view
@@ -216,7 +219,7 @@ export default{
 .swiper-button-prev
   position: absolute
   bottom: 0
-  left: 15vw
+  left: 14vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-right.svg")
@@ -229,7 +232,7 @@ export default{
 .swiper-button-next
   position: absolute
   bottom: 0
-  right: 15vw
+  right: 14vw
   width: 48px
   height: 48px
   background-image: url("~assets/img/top/slider-btn-left.svg")

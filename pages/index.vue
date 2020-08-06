@@ -3,7 +3,7 @@
   .p-index-container
     pheader
     .p-index-top
-      topContent(:items="items")
+      topSlider(:items="items")
       topArticles(:articles="articles")
       topAbout
       pfooter
@@ -12,14 +12,14 @@
 <script>
 import pheader from '~/components/layouts/pheader.vue'
 import topArticles from '~/components/top/topArticles.vue'
-import topContent from '~/components/top/topContent.vue'
+import topSlider from '~/components/top/topSlider.vue'
 import topAbout from '~/components/top/topAbout.vue'
 import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
 export default {
   components: {
     pheader,
-    topContent,
+    topSlider,
     topArticles,
     topAbout,
     pfooter
