@@ -63,7 +63,7 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__container
-  margin-top: 56px
+  margin-top: 96px
 
 .p-index-top__slider-title
   font-size: 32px
@@ -87,7 +87,6 @@ export default{
 .swiper-content
   +sp-view
     width: 100%
-    margin: 0 0
 
 /* スライダーリンク */
 .p-index-top__slider__visual

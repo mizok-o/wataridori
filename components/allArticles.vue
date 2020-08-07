@@ -69,9 +69,12 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
+  width: 256px
+  height: 216px
   img
     transform: scale(1)
     transition: .3s
+    width: 100%
   +sp-view
     position: relative
     overflow: hidden

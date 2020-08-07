@@ -13,7 +13,7 @@
 </script>
 <style lang="sass">
 .p-article__sharearea
-  margin: 48px 14% 0
+  margin: 48px 0% 0
   font-size: 18px
   color: #111111
   +font-bold
@@ -32,7 +32,7 @@
   width: 144px
   height: 48px
   margin-right: 16px
-  color: #ffffff
+  /* color: #ffffff */
   border-radius: 3px
   +sp-view
     width: 48px
@@ -81,7 +81,7 @@
       background-size: cover
 
 .share-twitter
-  background-color: #55ACEE
+  border: 1px solid #55ACEE
   .p-article__share-link
     &::before
       width: 29px
@@ -94,7 +94,7 @@
         width: 23px
 
 .share-face
-  background-color: #49629D
+  border: 1px solid #49629D
   .p-article__share-link
     &::before
       background-image: url("~assets/img/share/share-face.svg")

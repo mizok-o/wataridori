@@ -2,14 +2,11 @@
 .p-article-container
   pheader
   main.p-article__main
-    .p-article__main-container
-      .article__top
-      .p-article__content
-        .p-article__heading
-        .p-article__text
-      share
-      otherArticles(:articles="articles")
-      About
+    topPart
+    mainContent
+    share
+    otherArticles(:articles="articles")
+    About
   pfooter
 
 </template>
@@ -17,6 +14,8 @@
 import pheader from '~/components/layouts/pheader.vue'
 import share from '~/components/article/share.vue'
 import otherArticles from '~/components/article/otherArticles.vue'
+import mainContent from '~/components/article/mainContent.vue'
+import topPart from '~/components/article/topPart.vue'
 import About from '~/components/About.vue'
 import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
@@ -25,6 +24,8 @@ export default {
     pheader,
     share,
     otherArticles,
+    mainContent,
+    topPart,
     About,
     pfooter
   },
@@ -49,12 +50,15 @@ export default {
 </script>
 <style lang="sass">
 .p-article-container
-  width: 100%
-  margin: 120px 0 0
+  max-width: 800px
+  margin: 120px 14%
   color: #111111
   +sp-view
     width: auto
     margin: 112px 20px 0
+
+.p-index-top__articles-container, .p-index-top__about-container
+  margin: 80px 0 0
 
 .p-index-top__about-button
   border: 1px solid #111111
