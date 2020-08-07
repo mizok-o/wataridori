@@ -75,15 +75,21 @@ export default{
 .about-text-show
   overflow: inherit
   height: auto
+  margin-right: 0
   &::before
     opacity: 0
     transition: .4s
 
 .about-text-show + .p-index-top__about__button-area
-  display: none
+  +sp-view
+    display: none
 
 .p-index-top__about__button-area
-  text-align: center
+  display: none
+  +sp-view
+    display: block
+    text-align: center
+
 
 .p-index-top__about-button
   +sp-view

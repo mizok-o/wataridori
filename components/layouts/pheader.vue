@@ -109,9 +109,10 @@ header
 
 .header__main--sp-sns__link
   display: inline-block
-  width: 24px
-  height: 24px
+  width: 20px
+  height: 20px
   background-image: url("~assets/img/header/insta-icon.svg")
+  background-size: cover
 
 .header__menu-active
   pointer-events: all

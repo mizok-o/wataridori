@@ -22,9 +22,9 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles-container
-  margin: 120px 14% 0
+  margin: 80px 14% 0
   +sp-view
-    margin: 96px 0 0
+    margin: 64px 0 0
 
 .p-index-top__articles-title
   font-size: 32px
@@ -52,7 +52,7 @@ export default{
       grid-template-columns: 132px 132px
 
 .top__articles-item-container
-  transition: .4s
+  transition: .3s
   &:hover
     .top__articles-item-img
       img
@@ -69,19 +69,20 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
+  width: 100%
+  height: 216px
   img
-    transform: scale(1)
     transition: .3s
+    width: 100%
+    height: 100%
   +sp-view
     position: relative
     overflow: hidden
     width: 100%
-    height: auto
     margin: 0 10px 0 0
 
-
 .top__articles-item-textarea
-  margin-top: 8px
+  margin-top: 12px
   +sp-view
     display: flex
     height: 96px
@@ -91,14 +92,14 @@ export default{
 
 .top__articles-item-sub
   display: flex
-  margin-top: 12px
+  margin-top: 8px
   +sp-view
     display: block
     margin-top: 4px
 
 .top__articles-date
   margin-right: 12px
-  opacity: .5
+  opacity: .7
 
 .top__articles-name
   opacity: .7
