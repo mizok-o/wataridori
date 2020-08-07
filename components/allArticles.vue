@@ -76,10 +76,9 @@ export default{
     transition: .3s
     width: 100%
   +sp-view
-    position: relative
-    overflow: hidden
     width: 100%
     height: auto
+    max-height: 115px
     margin: 0 10px 0 0
 
 

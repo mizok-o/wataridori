@@ -69,16 +69,16 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
-  width: 100%
+  width: 256px
   height: 216px
   img
+    transform: scale(1)
     transition: .3s
     width: 100%
-    height: 100%
   +sp-view
-    position: relative
-    overflow: hidden
     width: 100%
+    height: auto
+    max-height: 115px
     margin: 0 10px 0 0
 
 .top__articles-item-textarea

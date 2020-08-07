@@ -3,18 +3,20 @@
   partsIntro
   partsHeading
   partsLead
-  .p-article__content
+  partsArticle
 
 </template>
 <script>
 import partsIntro from '~/components/article/parts/partsIntro.vue'
 import partsHeading from '~/components/article/parts/partsHeading.vue'
 import partsLead from '~/components/article/parts/partsLead.vue'
+import partsArticle from '~/components/article/parts/partsArticle.vue'
 export default {
   components: {
     partsIntro,
     partsHeading,
-    partsLead
+    partsLead,
+    partsArticle
   }
 }
 </script>
