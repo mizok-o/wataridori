@@ -5,7 +5,7 @@
     topPart
     mainContent
     share
-    otherArticles(:articles="articles")
+    allArticles(:body="body")
     About
   pfooter
 
@@ -13,7 +13,7 @@
 <script>
 import pheader from '~/components/layouts/pheader.vue'
 import share from '~/components/article/share.vue'
-import otherArticles from '~/components/article/otherArticles.vue'
+import allArticles from '~/components/allArticles.vue'
 import mainContent from '~/components/article/mainContent.vue'
 import topPart from '~/components/article/topPart.vue'
 import About from '~/components/About.vue'
@@ -23,7 +23,7 @@ export default {
   components: {
     pheader,
     share,
-    otherArticles,
+    allArticles,
     mainContent,
     topPart,
     About,
@@ -31,19 +31,21 @@ export default {
   },
   data(){
     return {
-      articles: []
+      body: []
     }
   },
   async asyncData() {
-    const { data } = await axios.get(
-      "https://wataridori.microcms.io/api/v1/top",
-      {
-        headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" }
+    const myHttpClient = axios.create({
+      baseURL: 'https://wataridori.microcms.io/api/v1/',
+      headers: {
+        'X-API-KEY': 'fcd9d6ee-fbc4-426c-b6be-54afc20ab93f'
       }
-    )
-    return {
-      articles: data.contents
-    }
+    })
+    const body = await Promise.all([
+      myHttpClient.get('top'),
+      myHttpClient.get('article')
+    ])
+    return body
   }
 }
 

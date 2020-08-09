@@ -11,7 +11,9 @@ import partsIntro from '~/components/article/parts/partsIntro.vue'
 import partsHeading from '~/components/article/parts/partsHeading.vue'
 import partsLead from '~/components/article/parts/partsLead.vue'
 import partsArticle from '~/components/article/parts/partsArticle.vue'
+import axios from "axios"
 export default {
+  // props: ['body'],
   components: {
     partsIntro,
     partsHeading,

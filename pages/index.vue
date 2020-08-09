@@ -3,7 +3,7 @@
   .p-index-container
     pheader
     .p-index-top
-      topSlider(:items="items")
+      topSlider(:articles="articles")
       allArticles(:articles="articles")
       About
       pfooter
@@ -26,7 +26,6 @@ export default {
   },
   data(){
     return {
-      items: [],
       articles: []
     }
   },
@@ -38,7 +37,6 @@ export default {
       }
     )
     return {
-      items: data.contents,
       articles: data.contents
     }
   }

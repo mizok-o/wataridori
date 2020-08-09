@@ -4,21 +4,21 @@
   .p-index-top__content
     client-only
       swiper(:options="swiperOption")
-        swiper-slide.swiper-content(v-for="item in items", :key="item.id")
-          a.p-index-top__slider__visual(:href="item.href")
+        swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
+          a.p-index-top__slider__visual(:href="article.href")
             .top__slider__visual-img
-              img(:src="item.img.url")
+              img(:src="article.img.url")
             .p-index-top__slider__textarea.u-pc-view
-              h3.top__slider__title {{ item.title }}
-              p.top__slider__text {{ item.text }}
-              a.top__slider__link(:href="item.href")
+              h3.top__slider__title {{ article.title }}
+              p.top__slider__text {{ article.text }}
+              a.top__slider__link(:href="article.href")
             .p-index-top__slider__textarea--sp.u-sp-view
               .p-index-top__slider__textarea--sp__box
-                h3.top__slider__title--sp {{ item.text }}
+                h3.top__slider__title--sp {{ article.text }}
                 .top__slider__sub
-                  time {{ item.date }}
-                  a(:href="item.insta" target="_blank" rel="noopener")
-                    p {{ item.name }}
+                  time {{ article.date }}
+                  a(:href="article.insta" target="_blank" rel="noopener")
+                    p {{ article.name }}
       .swiper-pagination
       .swiper-button-prev
       .swiper-button-next
@@ -26,7 +26,7 @@
 <script>
 import axios from "axios"
 export default{
-  props: ['items'],
+  props: ['articles'],
   data() {
     return {
       swiperOption: {
