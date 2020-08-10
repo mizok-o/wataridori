@@ -5,7 +5,8 @@ footer
 <style lang="sass">
 footer
   text-align: center
-  margin: 64px 0 32px
+  color: #111111
+  margin: 64px 0 40px
   p
     font-size: 10px
     opacity: .3

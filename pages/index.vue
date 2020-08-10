@@ -6,7 +6,7 @@
       topSlider(:articles="articles")
       allArticles(:articles="articles")
       About
-      pfooter
+    pfooter
 
 </template>
 <script>

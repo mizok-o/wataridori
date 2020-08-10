@@ -5,7 +5,7 @@
     topPart
     mainContent
     share
-    allArticles(:body="body")
+    allArticles(:articles="articles")
     About
   pfooter
 
@@ -31,27 +31,25 @@ export default {
   },
   data(){
     return {
-      body: []
+      articles: []
     }
   },
   async asyncData() {
-    const myHttpClient = axios.create({
-      baseURL: 'https://wataridori.microcms.io/api/v1/',
-      headers: {
-        'X-API-KEY': 'fcd9d6ee-fbc4-426c-b6be-54afc20ab93f'
+    const { data } = await axios.get(
+      "https://wataridori.microcms.io/api/v1/top?filters=number[not_equals]1",
+      {
+        headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" }
       }
-    })
-    const body = await Promise.all([
-      myHttpClient.get('top'),
-      myHttpClient.get('article')
-    ])
-    return body
+    )
+    return {
+      articles: data.contents
+    }
   }
 }
 
 </script>
 <style lang="sass">
-.p-article-container
+.p-article__main
   max-width: 800px
   margin: 120px 14%
   color: #111111

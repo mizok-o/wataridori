@@ -37,12 +37,12 @@ export default{
 .p-index-top__articles-content
   display: grid
   grid-template-columns: 256px 256px 256px
-  grid-template-rows: 280px 280px
+  grid-template-rows: 302px
   gap: 24px 16px
   margin: 32px 0 0
   +pc-md-view
     grid-template-columns: 256px 256px
-    grid-template-rows: 280px 280px
+    grid-template-rows: 302px 302px
   +sp-view
     grid-template-columns: 48% 48%
     grid-template-rows: 48% 48%
@@ -83,12 +83,13 @@ export default{
 
 
 .top__articles-item-textarea
-  margin-top: 8px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  height: 77px
+  margin-top: 12px
   +sp-view
-    display: flex
     height: 96px
-    flex-direction: column
-    justify-content: space-between
     margin-top: 6px
 
 .top__articles-item-sub
