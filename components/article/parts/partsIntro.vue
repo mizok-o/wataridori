@@ -31,7 +31,11 @@
   width: 24px
   height: 24px
   transform: translateY(-50%)
+  opacity: .3
   background-image: url('~assets/img/article/intro-insta.svg')
+  &:hover
+    transition: .4s
+    opacity: 1
 
 .p-article__intro-text
   margin-top: 8px

@@ -23,8 +23,6 @@
     margin: 32px auto 0
     text-align: center
 
-/* .p-article__share-title */
-
 .p-article__share-content
   display: flex
 
@@ -32,27 +30,27 @@
   width: 144px
   height: 48px
   margin-right: 16px
-  /* color: #ffffff */
-  border-radius: 3px
   +sp-view
     width: 48px
     height: 48px
     margin: 12px 24px 0 0
-    border-radius: 24px
   &:last-child
     margin-right: 0
 
 .p-article__share-link
   position: relative
   display: block
-  width: 100%
-  height: 100%
-
-.p-article__share-link
+  width: 144px
+  height: 48px
+  border-radius: 3px
+  transition: .4s
+  &:hover
+    color: #ffffff
   &::before
     content: ""
     position: absolute
-    top: 12px
+    top: 50%
+    transform: translateY(-50%)
     left: 20px
     width: 24px
     height: 24px
@@ -62,10 +60,10 @@
     top: 12px
     right: 20px
   +sp-view
+    border-radius: 24px
     &::before
       content: ""
       position: absolute
-      top: 14px
       left: 50%
       transform: translateX(-50%)
       width: 20px
@@ -74,28 +72,35 @@
       display: none
 
 .share-insta
-  background: linear-gradient(45deg, #EF4563, #EF6E45)
+  background-image: url("~assets/img/share/border-insta.svg")
+  background-size: cover
   .p-article__share-link
     &::before
       background-image: url("~assets/img/share/share-insta.svg")
       background-size: cover
+    &:hover
+      background: linear-gradient(45deg, #EF4563, #EF6E45)
 
 .share-twitter
-  border: 1px solid #55ACEE
   .p-article__share-link
+    border: 1px solid #55ACEE
+    &:hover
+      background-color: #55ACEE
     &::before
-      width: 29px
+      height: 20px
       background-image: url("~assets/img/share/share-twi.svg")
       background-size: cover
     &::after
       content: "ツイート"
     +sp-view
       &::before
-        width: 23px
+        height: 20px
 
 .share-face
-  border: 1px solid #49629D
   .p-article__share-link
+    border: 1px solid #49629D
+    &:hover
+      background-color: #49629D
     &::before
       background-image: url("~assets/img/share/share-face.svg")
       background-size: cover
