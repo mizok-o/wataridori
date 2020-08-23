@@ -37,10 +37,10 @@ export default{
         speed: 600,
         loop: true,
         loopedSlides: 3,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false
+        // },
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -92,18 +92,6 @@ export default{
 .p-index-top__slider__visual
   position: relative
   display: block
-  width: 100%
-  height: 100%
-  +sp-view
-    max-width: 335px
-    margin: 0 auto
-    width: 100%
-    height: auto
-    border: 8px solid #ffffff
-    border-radius: 4px
-
-/* スライダー画像 */
-.top__slider__visual-img
   max-width: 800px
   max-height: 480px
   overflow: hidden
@@ -111,6 +99,24 @@ export default{
   +sp-view
     max-width: 327px
     max-height: 276px
+    width: 100%
+    height: auto
+    border: 8px solid #ffffff
+    border-radius: 4px
+  &:hover
+    .p-index-top__slider__textarea
+      .top__slider__link
+        &::after
+          color: #ffffff
+          transition: color 0.4s cubic-bezier(0.83, 0, 0.17, 1)
+        &::before
+          transform: translate(0, 0)
+          transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1)
+
+/* スライダー画像 */
+.top__slider__visual-img
+  width: 100%
+  height: 100%
   img
     width: 800px
     height: auto
@@ -142,7 +148,6 @@ export default{
   width: 100%
   height: 132px
   padding: 16px 16px
-  /* background-color: #ffffff */
 
 .p-index-top__slider__textarea--sp__box
   display: flex
@@ -189,16 +194,20 @@ export default{
     transform: translate(-100%, 120%)
     border-radius: 30px
     background-color: #F88023
-  &:hover
-    &::after
-      color: #ffffff
-      transition: color 0.4s cubic-bezier(0.83, 0, 0.17, 1)
-    &::before
-      transform: translate(0, 0)
-      transition: transform 0.4s cubic-bezier(0.83, 0, 0.17, 1)
 
 .swiper-slide-prev, .swiper-slide-next
+  position: relative
   pointer-events: none
+  .p-index-top__slider__visual
+    transition: .4s
+    &::before
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(256, 256, 256, .7)
 
 /* スライド切り替え */
 .swiper-pagination

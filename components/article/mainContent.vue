@@ -3,7 +3,7 @@
   partsIntro
   partsHeading
   partsLead
-  partsArticle
+  partsArticle(:articles="articles")
 
 </template>
 <script>
@@ -13,7 +13,7 @@ import partsLead from '~/components/article/parts/partsLead.vue'
 import partsArticle from '~/components/article/parts/partsArticle.vue'
 import axios from "axios"
 export default {
-  // props: ['body'],
+  props: ['articles'],
   components: {
     partsIntro,
     partsHeading,

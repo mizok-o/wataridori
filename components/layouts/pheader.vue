@@ -55,16 +55,16 @@ header
   top: 0
   left: 0
   width: 100%
-  height: 56px
-  color: #111111
-  background-color: #ffffff
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2)
+  height: 128px
+  color: #ffffff
+  /* background-color: #ffffff */
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) */
 
 .header-content
   display: flex
   justify-content: space-between
   align-items: center
-  padding: 14px 56px
+  padding: 32px 56px
   +sp-view
     padding: 0 0 0 16px
 

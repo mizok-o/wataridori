@@ -1,11 +1,10 @@
 <template lang="pug">
 .p-article__body
-  p
+  section
 </template>
 <script>
-import axios from "axios"
 export default{
-  // props: ['body']
+  props: ['articles']
 }
 </script>
 <style lang="sass">

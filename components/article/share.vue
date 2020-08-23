@@ -55,6 +55,7 @@
   height: 48px
   padding: 0 24px
   border-radius: 3px
+  transition: .4s
   svg
     transition: .4s
   &:hover
@@ -64,18 +65,20 @@
 
 .share-insta
   .p-article__share-link
-    border: solid 1px transparent
-    border-image: url('/assets/img/share/border-insta.svg')
+    background: linear-gradient(45deg, #EF4563, #EF6E45)
     &::after
       content: ""
       position: absolute
       top: 0
       left: 0
-      background: linear-gradient(45deg, #EF4563, #EF6E45)
-      border-radius: inherit
-      margin: -1px
+      width: calc(100% - 2px)
+      height: calc(100% - 2px)
+      margin: 1px
+      border-radius: 2px
       transition: .4s
-      z-index: -1
+      background-color: #ffffff
+    svg, span
+      z-index: 1
     &:hover
       &::after
         opacity: 0
