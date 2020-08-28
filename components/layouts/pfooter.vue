@@ -5,9 +5,9 @@ footer
 <style lang="sass">
 footer
   text-align: center
-  color: #111111
-  margin: 64px 0 40px
+  color: #222222
+  margin: 112px auto 0
   p
     font-size: 10px
-    opacity: .3
+    opacity: .5
 </style>

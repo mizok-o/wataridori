@@ -4,19 +4,19 @@
 
 <style lang="sass">
 html
-  font-size: 13px
-  -ms-text-size-adjust: 100%
-  -webkit-text-size-adjust: 100%
-  -moz-osx-font-smoothing: grayscale
-  -webkit-font-smoothing: antialiased
+  font-size: 18px
   box-sizing: border-box
-  background-color: #ffffff
-  color: #ffffff
+  background-color: #F2EEE9
+  color: #222222
   -ms-overflow-style: none
   scrollbar-width: none
-  max-width: 100%
+
+body
+  position: relative
+  overflow-x: hidden
   &::-webkit-scrollbar
     display: none
+
 li, a, ul, ol
   list-style: none
   padding: 0

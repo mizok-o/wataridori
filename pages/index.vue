@@ -3,9 +3,10 @@
   .p-index-container
     pheader
     .p-index-top
-      topSlider(:articles="articles")
+      .p-index-top__content
+        topContent
+        topSlider(:articles="articles")
       allArticles(:articles="articles")
-      About
     pfooter
 
 </template>
@@ -13,15 +14,15 @@
 import pheader from '~/components/layouts/pheader.vue'
 import allArticles from '~/components/allArticles.vue'
 import topSlider from '~/components/top/topSlider.vue'
-import About from '~/components/About.vue'
+import topContent from '~/components/top/topContent.vue'
 import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
 export default {
   components: {
     pheader,
     topSlider,
+    topContent,
     allArticles,
-    About,
     pfooter
   },
   data(){
@@ -43,22 +44,18 @@ export default {
 }
 </script>
 <style lang="sass">
-body
-  background-image: url('~assets/img/top/background.png')
-  background-repeat: no-repeat
-  background-size: cover
-  +sp-view
-    background-image: url('~assets/img/top/background--sp.png')
 
-.p-index
-  overflow-x: hidden
-  width: 100%
-  height: 100%
 .p-index-top
-  width: 100%
-  margin: 136px 0 0
+  margin: 112px 200px 0
   +sp-view
     width: auto
     margin: 96px 20px 0
+
+.p-index-top__content
+  position: relative
+  display: flex
+  justify-content: space-between
+  width: 100%
+  height: 488px
 
 </style>

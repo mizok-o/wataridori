@@ -2,31 +2,23 @@
 header
   .header-container
     .header-content
-      .header__left
-        a(href="/")
-          img.header__left__logo(src="~/assets/img/header/header-logo.svg")
-        .header__main--sp.u-sp-view(:class="{'header__menu-active' : menuActive}")
-          ul.header__main--sp-container
-            li.header__main--sp-item
-              a(href="#top" @click="closeMenu") トップ
-            li.header__main--sp-item
-              a(href="#articles" @click="closeMenu") 記事一覧
-            li.header__main--sp-item
-              a(href="#about" @click="closeMenu") 私たちについて
-          .header__main--sp-sns
-            p Follow us
-            a.header__main--sp-sns__link(href="https://www.instagram.com/" @click="openMenu")
-      .header__right--sp.u-sp-view(@click="openMenu")
-        .header__right__menu-container(:class="{'header__menu-active' : menuActive}")
+      .header__left(@click="openMenu")
+        .header__left__menu-container(:class="{'header__menu-active' : menuActive}")
           .header__menu-item
-      .header__right.u-pc-view
-        ul
-          li.header__right__list-item
-            a.header__list-item__link(href="#top") トップ
-          li.header__right__list-item
-            a.header__list-item__link(href="#articles") 記事一覧
-          li.header__right__list-item
-            a.header__list-item__link(href="#about") ワタリドリについて
+      .header__main
+        a.header__main__link(href="/")
+          img.header__main__logo(src="~/assets/img/header/header.svg")
+        //ul.header__main-container(:class="{'header__menu-active' : menuActive}")
+          li.header__main-item
+            a(href="#top" @click="closeMenu") トップ
+          li.header__main-item
+            a(href="#articles" @click="closeMenu") 記事一覧
+          li.header__main-item
+            a(href="#about" @click="closeMenu") 私たちについて
+      .header__right
+        .header__right-sns
+          p Follow us
+          a.header__right-sns__link(href="https://www.instagram.com/")
 </template>
 <script>
 export default {
@@ -48,89 +40,65 @@ export default {
 <style lang="sass">
 header
   position: relative
-  z-index: 5
+  width: 100%
+  height: 92px
+  z-index: 2
 
 .header-container
   position: fixed
   top: 0
   left: 0
   width: 100%
-  height: 128px
-  color: #ffffff
-  /* background-color: #ffffff */
-  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2) */
+  height: 92px
+  color: #222222
+  background-color: #ffffff
 
 .header-content
   display: flex
+  width: 100%
+  height: 100%
   justify-content: space-between
   align-items: center
-  padding: 32px 56px
   +sp-view
     padding: 0 0 0 16px
 
-.header__left__logo
-  height: 24px
-  +sp-view
-    height: 20px
+.header__left
+  width: 200px
+  height: 100%
+  &:hover
+    .header__left__menu-container
+      .header__menu-item
+        &::after
+          top: 5px
+        &::before
+          top: -5px
 
-.header__main--sp
-  position: absolute
-  top: 56px
-  left: 0
-  width: 100vw
-  height: 320px
-  padding: 40px 20px 80px
-  +font-bold
-  pointer-events: none
-  opacity: 0
-  background-color: #ffffff
-  transition: .4s
-  z-index: -1
+.header__left
+  &:hover
+    .header__menu-active
+      .header__menu-item
+        &::after
+          top: 0
+        &::before
+          top: 0
 
-.header__main--sp-container
-  font-size: 18px
-
-.header__main--sp-item
-  padding: 16px 0
-  a
-    display: inline-block
-    width: 100%
-    height: 100%
-
-.header__main--sp-sns
-  display: flex
-  align-items: center
-  padding: 16px 0
-  p
-    opacity: .3
-    +font-en-bold
-    font-size: 11px
-    margin-right: 12px
-
-.header__main--sp-sns__link
-  display: inline-block
-  width: 20px
-  height: 20px
-  background-image: url("~assets/img/header/insta-icon.svg")
-  background-size: cover
-
-.header__menu-active
-  pointer-events: all
-  opacity: 1
-
-.header__right
-  ul
-    display: flex
-
-.header__right__menu-container
+.header__left__menu-container
   position: relative
-  width: 56px
-  height: 56px
+  width: 100%
+  height: 100%
+  cursor: pointer
+  &::before
+    content: "menu"
+    position: absolute
+    top: 32px
+    left: 96px
+    display: block
+    transition: .4s
 
 .header__menu-item
   position: absolute
-  top: 27px
-  right: 13px
+  top: 46px
+  left: 56px
   width: 30px
   height: 1px
   background-color: #111111
@@ -155,10 +123,12 @@ header
     transition: .4s
 
 .header__menu-active
+  &::before
+    opacity: 0
   .header__menu-item
     position: absolute
-    top: 28px
-    right: 12px
+    top: 46px
+    left: 56px
     background-color: #ffffff
     &::before
       content: ""
@@ -170,6 +140,60 @@ header
       top: 0
       right: 0
       transform: rotate(-45deg)
+
+.header__main
+  width: 120px
+  height: 100%
+
+.header__main__link
+  display: block
+  width: 100%
+  height: 100%
+
+.header__main__logo
+  margin: 25px 0
+
+
+/* .header__main
+  position: absolute
+  top: 56px
+  left: 0
+  width: 100vw
+  height: 320px
+  padding: 40px 20px 80px
+  +font-bold
+  pointer-events: none
+  opacity: 0
+  background-color: #ffffff
+  transition: .4s
+  z-index: -1 */
+
+
+.header__right
+  width: auto
+  height: 100%
+  margin-right: 56px
+
+.header__right-sns
+  display: flex
+  align-items: center
+  padding: 35px 0
+  p
+    opacity: .3
+    +font-en-bold
+    font-size: 11px
+    margin-right: 12px
+
+.header__right-sns__link
+  display: inline-block
+  width: 20px
+  height: 20px
+  background-image: url("~assets/img/header/insta-icon.svg")
+  background-size: cover
+
+.header__menu-active
+  pointer-events: all
+  opacity: 1
 
 .header__right__list-item
   margin-right: 40px
