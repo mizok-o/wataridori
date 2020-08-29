@@ -42,12 +42,7 @@ export default{
         navigation: {
       		nextEl: '.swiper-button-next',
       		prevEl: '.swiper-button-prev'
-      	},
-        breakpoints: {
-          1280: {
-            spaceBetween: 20
-          }
-        }
+      	}
       }
     }
   }
@@ -55,14 +50,24 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__slider
-  width: 332px
+  width: 100%
+  margin-top: 112px
+  +pc-md-view
+    margin-top: 104px
+  +sp-view
+    margin-top: 56px
 
 .p-index-top__slider-title
   font-size: 24px
+  +sp-view
+    font-size: 20px
 
 .p-index-top__slider-content
   position: relative
-  margin: 32px 0 0
+  width: 332px
+  margin: 32px auto 0
+  +sp-view
+    margin: 16px 0 0
 
 .p-index-top__slider__visual
   position: relative
@@ -71,6 +76,9 @@ export default{
       img
         transform: scale(1.1)
         opacity: .7
+        +sp-view
+          transform: scale(1)
+          opacity: 1
     .top__slider__visual-tag
       opacity: 1
       transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
@@ -99,6 +107,8 @@ export default{
   border: 1px solid #ffffff
   border-radius: 30px
   opacity: 0
+  +sp-view
+    opacity: 1
 
 .p-index-top__slider__textarea
   height: 152px
@@ -145,15 +155,15 @@ export default{
 
 /* スライド切り替え */
 .swiper-pagination
-  bottom: -32px
+  bottom: -40px
   left: 50%
   transform: translateX(-50%)
-  z-index: auto
+  z-index: 1
   span
-    width: 10px
-    height: 10px
+    width: 13px
+    height: 13px
     background-color: #222222
-    margin-right: 16px
+    margin-right: 24px
     &:focus
       outline: none
     &:last-child

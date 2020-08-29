@@ -13,12 +13,26 @@
 .p-index-top__about
   width: 708px
   margin-top: -8px
+  +pc-md-view
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    width: 100%
+  +pc-sm-view
+    display: block
+  +sp-view
+    width: 304px
+    margin: 0
 
 .p-index-top__about-title
   font-size: 40px
   line-height: 175%
   margin-top: -80px
   padding-top: 80px
+  +pc-lg-view
+    font-size: 32px
+  +sp-view
+    font-size: 24px
 
 .p-index-top__about__btn-container
   position: relative
@@ -26,7 +40,11 @@
   display: block
   width: 224px
   height: 56px
-  margin-top: 32px
+  margin-top: 28px
+  +sp-view
+    width: 184px
+    height: 48px
+    margin-top: 16px
   &::after
     content: ""
     position: absolute
@@ -72,5 +90,9 @@
     background-repeat: no-repeat
     background-size: cover
     z-index: 1
+  +sp-view
+    &::before
+      margin: 0 10px 0 16px
+      font-size: 15px
 
 </style>

@@ -26,15 +26,23 @@ export default{
 .p-index-top__articles
   position: relative
   margin: 144px 0 0
+  +pc-md-view
+    width: 576px
+    margin: 216px auto 0
+  +pc-sm-view
+    margin: 272px 0 0
   +sp-view
-    margin: 96px 0 0
+    width: 100%
+    margin: 248px 0 0
 
 .p-index-top__articles-title
   font-size: 32px
   margin-top: -80px
   padding-top: 80px
+  +pc-md-view
+    font-size: 24px
   +sp-view
-    font-size: 18px
+    font-size: 20px
     margin-bottom: 16px
 
 .p-index-top__articles-img
@@ -44,12 +52,15 @@ export default{
   transform-origin: top left
   transform: rotate(10deg)
   z-index: -3
+  +sp-view
+    top: -40px
+    transform: rotate(0)
 
 .p-index-top__articles-img-content
   display: flex
   width: 4096px
   height: 80px
-  animation: automove 16s linear infinite
+  animation: automove 14s linear infinite
   img
     width: 992px
     height: 100%
@@ -99,11 +110,11 @@ export default{
     transform: scale(1)
     transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
     width: 100%
+    /* min-height: 186px */
   +sp-view
     width: 100%
     height: auto
-    max-height: 115px
-    margin: 0 10px 0 0
+    max-height: 194px
 
 .top__slider__type, .top__slider__title
   z-index: 10
@@ -118,10 +129,17 @@ export default{
   transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
   +sp-view
     height: 96px
-    margin-top: 6px
+    padding: 12px
+    margin-top: -6px
   .top__slider__title
+    margin-top: 12px
     font-size: 18px
-    margin: 12px 0 0
+    +sp-view
+      margin-top: 8px
+      font-size: 14px
+  .top__slider__type
+    +sp-view
+      font-size: 12px
   &::after
     content: ""
     position: absolute
@@ -138,8 +156,8 @@ export default{
 
 @keyframes automove
   0%
-    transform: translate(-50%)
-  100%
     transform: translate(0)
+  100%
+    transform: translate(-50%)
 
 </style>
