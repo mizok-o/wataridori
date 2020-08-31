@@ -1,27 +1,22 @@
 <template lang="pug">
 .p-article__content-container
-  partsIntro
-  partsHeading
-  partsLead
-  partsArticle(:articles="articles")
+  partsInfo
+  partsBody(:articles="articles")
 
 </template>
 <script>
-import partsIntro from '~/components/article/parts/partsIntro.vue'
-import partsHeading from '~/components/article/parts/partsHeading.vue'
-import partsLead from '~/components/article/parts/partsLead.vue'
-import partsArticle from '~/components/article/parts/partsArticle.vue'
+import partsInfo from '~/components/article/parts/partsInfo.vue'
+import partsBody from '~/components/article/parts/partsBody.vue'
 import axios from "axios"
 export default {
   props: ['articles'],
   components: {
-    partsIntro,
-    partsHeading,
-    partsLead,
-    partsArticle
+    partsInfo,
+    partsBody
   }
 }
 </script>
 <style lang="sass">
-
+.p-article__content-container
+  margin-top: 32px
 </style>

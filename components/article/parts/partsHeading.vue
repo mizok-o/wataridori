@@ -11,5 +11,5 @@
 </script>
 <style lang="sass">
 .p-article__heading
-  font-size: 18px
+  margin-top: 48px
 </style>

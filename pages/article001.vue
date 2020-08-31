@@ -2,11 +2,10 @@
 .p-article-container
   pheader
   main.p-article__main
-    topPart
+    topPart(:articles="articles")
     mainContent
     share
     allArticles(:articles="articles")
-    About
   pfooter
 
 </template>
@@ -16,7 +15,6 @@ import share from '~/components/article/share.vue'
 import allArticles from '~/components/allArticles.vue'
 import mainContent from '~/components/article/mainContent.vue'
 import topPart from '~/components/article/topPart.vue'
-import About from '~/components/About.vue'
 import pfooter from '~/components/layouts/pfooter.vue'
 import axios from "axios"
 export default {
@@ -26,7 +24,6 @@ export default {
     allArticles,
     mainContent,
     topPart,
-    About,
     pfooter
   },
   data(){
@@ -36,7 +33,7 @@ export default {
   },
   async asyncData() {
     const { data } = await axios.get(
-      "https://wataridori.microcms.io/api/v1/top?filters=number[not_equals]1",
+      "https://wataridori.microcms.io/api/v1/top?filters=id[equals]nijuqimrr",
       {
         headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" }
       }
@@ -51,7 +48,7 @@ export default {
 <style lang="sass">
 .p-article__main
   max-width: 800px
-  margin: 120px 14%
+  margin: 112px 14%
   color: #111111
   +sp-view
     width: auto

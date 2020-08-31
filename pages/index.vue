@@ -46,23 +46,22 @@ export default {
 <style lang="sass">
 
 .p-index-top
-  margin: 112px 200px 0
+  margin: 112px 240px 0
+  +pc-lg-view
+    margin: 112px 200px 0
   +pc-md-view
     margin: 112px 168px 0
   +pc-sm-view
     margin: 112px 112px 0
   +sp-view
-    width: auto
-    margin: 48px 20px 0
+    margin: 56px 20px 0
 
 .p-index-top__content
   position: relative
   display: flex
   justify-content: space-between
   width: 100%
-  height: 488px
   +pc-md-view
     display: block
-    height: 800px
 
 </style>

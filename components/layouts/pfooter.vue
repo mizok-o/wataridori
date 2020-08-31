@@ -4,9 +4,11 @@ footer
 </template>
 <style lang="sass">
 footer
-  text-align: center
-  color: #222222
+  width: 112px
   margin: 112px auto 32px
+  color: #222222
+  +sp-view
+    margin-top: 56px
   p
     font-size: 10px
     opacity: .5

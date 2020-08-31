@@ -6,16 +6,17 @@
 html
   font-size: 18px
   box-sizing: border-box
-  background-color: #F2EEE9
+  background-color: #FAF8F5
   color: #222222
   -ms-overflow-style: none
   scrollbar-width: none
 
 body
-  position: relative
-  overflow-x: hidden
   &::-webkit-scrollbar
     display: none
+  #nuxt
+    position: relative
+    overflow-x: hidden
 
 li, a, ul, ol
   list-style: none

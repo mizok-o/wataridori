@@ -30,10 +30,10 @@ export default{
         speed: 600,
         loop: true,
         loopedSlides: 3,
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false
-        // },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -50,10 +50,12 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__slider
-  width: 100%
-  margin-top: 112px
+  margin-right: 120px
+  +pc-lg-view
+    margin: 0
   +pc-md-view
-    margin-top: 104px
+    margin: 104px 0 0
+    width: 100%
   +sp-view
     margin-top: 56px
 
@@ -67,6 +69,7 @@ export default{
   width: 332px
   margin: 32px auto 0
   +sp-view
+    width: 100%
     margin: 16px 0 0
 
 .p-index-top__slider__visual
@@ -123,45 +126,17 @@ export default{
 
 .top__slider__title
   font-size: 18px
-  margin: 12px 0 12px
-
-/* .p-index-top__slider__textarea
-  position: relative
-  overflow: hidden
-  height: 136px
-  padding: 20px
-  background-color: #ffffff
-  z-index: -1
-  transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
-  +sp-view
-    height: 96px
-    margin-top: 6px
-  .top__slider__title
-    font-size: 18px
-    margin: 12px 0 0
-  &::after
-    content: ""
-    position: absolute
-    top: 100%
-    left: 0
-    display: block
-    width: 120%
-    height: 200%
-    transform-origin: top left
-    transform: rotate(30deg)
-    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
-    background-color: #222222
-    z-index: -1 */
+  margin: 8px 0
 
 /* スライド切り替え */
 .swiper-pagination
-  bottom: -40px
+  bottom: -32px
   left: 50%
   transform: translateX(-50%)
   z-index: 1
   span
-    width: 13px
-    height: 13px
+    width: 10px
+    height: 10px
     background-color: #222222
     margin-right: 24px
     &:focus

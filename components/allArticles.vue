@@ -1,21 +1,22 @@
 <template lang="pug">
 .p-index-top__articles#articles
   h2.p-index-top__articles-title 記事一覧
-  .p-index-top__articles-img
+  //.p-index-top__articles-img
     .p-index-top__articles-img-content
       img(src="~/assets/img/top/tabi.svg")
       img(src="~/assets/img/top/tabi.svg")
       img(src="~/assets/img/top/tabi.svg")
       img(src="~/assets/img/top/tabi.svg")
-  ul.p-index-top__articles-content
-    li(v-for="article in articles")
-      a.p-index-top__articles-item-link(href="/article001")
-        .top__articles-item-container
-          .top__articles-item-img
-            img(:src="article.img.url")
-          .top__articles-item-textarea
-            p.top__slider__type {{ article.type }}
-            h3.top__slider__title {{ article.title }}
+  .p-index-top__articles-content
+    ul
+      li(v-for="article in articles")
+        a.p-index-top__articles-item-link(href="/article001")
+          .top__articles-item-container
+            .top__articles-item-img
+              img(:src="article.img.url")
+            .top__articles-item-textarea
+              p.top__articles__type {{ article.type }}
+              h3.top__articles__title {{ article.title }}
 </template>
 <script>
 export default{
@@ -24,16 +25,13 @@ export default{
 </script>
 <style lang="sass">
 .p-index-top__articles
-  position: relative
-  margin: 144px 0 0
+  margin-top: 112px
   +pc-md-view
     width: 576px
-    margin: 216px auto 0
-  +pc-sm-view
-    margin: 272px 0 0
+    margin: 132px 0 0
   +sp-view
     width: 100%
-    margin: 248px 0 0
+    margin: 96px 0 0
 
 .p-index-top__articles-title
   font-size: 32px
@@ -45,7 +43,7 @@ export default{
     font-size: 20px
     margin-bottom: 16px
 
-.p-index-top__articles-img
+/* .p-index-top__articles-img
   position: absolute
   top: 320px
   left: -200px
@@ -54,9 +52,9 @@ export default{
   z-index: -3
   +sp-view
     top: -40px
-    transform: rotate(0)
+    transform: rotate(0) */
 
-.p-index-top__articles-img-content
+/* .p-index-top__articles-img-content
   display: flex
   width: 4096px
   height: 80px
@@ -64,24 +62,24 @@ export default{
   img
     width: 992px
     height: 100%
-    margin-right: 32px
+    margin-right: 32px */
 
 .p-index-top__articles-content
-  display: grid
-  grid-template-columns: 280px 280px 280px
-  grid-template-rows: 306px
-  gap: 24px 16px
-  margin: 32px 0 0
-  +pc-md-view
-    grid-template-columns: 280px 280px
-    grid-template-rows: 306px 306px
-  +sp-view
-    grid-template-columns: 48% 48%
-    grid-template-rows: 48% 48%
-    gap: 15px 15px
-    margin: 0
-    @media screen and (max-width: 320px)
-      grid-template-columns: 132px 132px
+  margin: 0 auto
+  ul
+    display: grid
+    grid-template-columns: 262px 262px 262px
+    grid-template-rows: 306px
+    gap: 20px 16px
+    margin-top: 32px
+    +pc-md-view
+      grid-template-columns: 262px 262px
+      grid-template-rows: 306px 306px
+    +sp-view
+      grid-template-columns: 47.4% 47.4%
+      grid-template-rows: 48% 48%
+      gap: 15px
+      margin: 0
 
 .top__articles-item-container
   &:hover
@@ -104,7 +102,7 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
-  width: 280px
+  width: 262px
   height: 188px
   img
     transform: scale(1)
@@ -116,8 +114,23 @@ export default{
     height: auto
     max-height: 194px
 
-.top__slider__type, .top__slider__title
+.top__articles__type, .top__articles__title
   z-index: 10
+
+.top__articles__type
+  opacity: .7
+  font-size: 15px
+  +font-en
+  letter-spacing: 2px
+  +sp-view
+    font-size: 13px
+
+.top__articles__title
+  font-size: 18px
+  margin: 12px 0 0
+  +sp-view
+    margin: 4px 0 0
+    font-size: 15px
 
 .top__articles-item-textarea
   position: relative
@@ -131,13 +144,13 @@ export default{
     height: 96px
     padding: 12px
     margin-top: -6px
-  .top__slider__title
+  .top__article__title
     margin-top: 12px
     font-size: 18px
     +sp-view
       margin-top: 8px
       font-size: 14px
-  .top__slider__type
+  .top__article__type
     +sp-view
       font-size: 12px
   &::after

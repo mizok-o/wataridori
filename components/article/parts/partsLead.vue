@@ -18,15 +18,15 @@
 <style lang="sass">
 .p-article__lead
   width: 100%
-  margin: 24px 0
-  padding: 16px
+  margin-top: 32px
+  padding: 24px
   border: 1px solid rgba(0, 0, 0, .5)
 
 .p-article__lead-title
   font-size: 24px
 
 .p-article__lead-content
-  margin: 16px 24px
+  margin: 12px 16px
 
 .p-article__lead-item
   +font-bold
@@ -36,7 +36,6 @@
 .p-article__lead-link
   display: inline-block
   width: 100%
-  height: 100%
-  padding: 12px 0
+  padding: 16px 0
 
 </style>

@@ -2,7 +2,7 @@
 header
   .header-container
     .header-content
-      .header__left(@click="openMenu")
+      //.header__left(@click="openMenu")
         .header__left__menu-container(:class="{'header__menu-active' : menuActive}")
           .header__menu-item
       .header__main
@@ -16,9 +16,8 @@ header
           li.header__main-item
             a(href="#about" @click="closeMenu") 私たちについて
       .header__right
-        .header__right-sns
-          p Follow us
-          a.header__right-sns__link(href="https://www.instagram.com/")
+        a.header__right-sns(href="https://www.instagram.com/")
+          .header__right-sns__icon
 </template>
 <script>
 export default {
@@ -26,30 +25,32 @@ export default {
     return{
       menuActive: false
     }
-  },
-  methods: {
-    openMenu(){
-      this.menuActive = !this.menuActive
-    },
-    closeMenu(){
-      this.menuActive = !this.menuActive
-    }
   }
+  // methods: {
+  //   openMenu(){
+  //     this.menuActive = !this.menuActive
+  //   },
+  //   closeMenu(){
+  //     this.menuActive = !this.menuActive
+  //   }
+  // }
 }
 </script>
 <style lang="sass">
 header
   position: relative
   width: 100%
-  height: 92px
+  height: 80px
   z-index: 2
+  +sp-view
+    height: 64px
 
 .header-container
   position: fixed
   top: 0
   left: 0
   width: 100%
-  height: 92px
+  height: 64px
   color: #222222
   background-color: #ffffff
 
@@ -59,10 +60,8 @@ header
   height: 100%
   justify-content: space-between
   align-items: center
-  +sp-view
-    padding: 0 0 0 16px
 
-.header__left
+/* .header__left
   width: 200px
   height: 100%
   &:hover
@@ -71,9 +70,9 @@ header
         &::after
           top: 5px
         &::before
-          top: -5px
+          top: -5px */
 
-.header__left
+/* .header__left
   &:hover
     .header__menu-active
       .header__menu-item
@@ -81,8 +80,8 @@ header
           top: 0
         &::before
           top: 0
-
-.header__left__menu-container
+ */
+/* .header__left__menu-container
   position: relative
   width: 100%
   height: 100%
@@ -90,14 +89,14 @@ header
   &::before
     content: "menu"
     position: absolute
-    top: 32px
+    top: 25px
     left: 96px
     display: block
-    transition: .4s
+    transition: .4s */
 
-.header__menu-item
+/* .header__menu-item
   position: absolute
-  top: 46px
+  top: 40px
   left: 56px
   width: 30px
   height: 1px
@@ -120,14 +119,14 @@ header
     width: 30px
     height: 1px
     background-color: #111111
-    transition: .4s
+    transition: .4s */
 
-.header__menu-active
+/* .header__menu-active
   &::before
     opacity: 0
   .header__menu-item
     position: absolute
-    top: 46px
+    top: 40px
     left: 56px
     background-color: #ffffff
     &::before
@@ -139,11 +138,13 @@ header
       content: ""
       top: 0
       right: 0
-      transform: rotate(-45deg)
+      transform: rotate(-45deg) */
 
 .header__main
-  width: 120px
+  width: 200px
   height: 100%
+  +sp-view
+    width: auto
 
 .header__main__link
   display: block
@@ -151,7 +152,11 @@ header
   height: 100%
 
 .header__main__logo
-  margin: 25px 0
+  width: 112px
+  margin: 12px 40px
+  +sp-view
+    width: 104px
+    margin: 14px 20px
 
 
 /* .header__main
@@ -168,32 +173,36 @@ header
   transition: .4s
   z-index: -1 */
 
-
 .header__right
-  width: auto
+  width: 96px
   height: 100%
-  margin-right: 56px
+  +sp-view
+    width: 60px
 
 .header__right-sns
-  display: flex
-  align-items: center
-  padding: 35px 0
-  p
-    opacity: .3
-    +font-en-bold
-    font-size: 11px
-    margin-right: 12px
-
-.header__right-sns__link
   display: inline-block
+  width: 100%
+  height: 100%
+  &:hover
+    .header__right-sns__icon
+      opacity: 1
+
+.header__right-sns__icon
   width: 20px
   height: 20px
+  margin: 22px auto
+  transition: .3s
+  opacity: .3
   background-image: url("~assets/img/header/insta-icon.svg")
   background-size: cover
+  +sp-view
+    margin: 22px 20px
+    opacity: 1
+    transition: 0s
 
-.header__menu-active
+/* .header__menu-active
   pointer-events: all
-  opacity: 1
+  opacity: 1 */
 
 .header__right__list-item
   margin-right: 40px

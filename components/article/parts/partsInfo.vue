@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-article__intro
+section.p-article__intro
   .p-article__intro-titlearea
     p 椎野暁斗
     a.p-article__intro-insta(href="https://www.instagram.com/akiiin1021/")
@@ -13,31 +13,29 @@
 </script>
 <style lang="sass">
 .p-article__intro
-  width: 100%
-  margin: 16px 0 32px
-  padding: 16px 16px
+  padding: 24px
   border: 1px solid rgba(0, 0, 0, .5)
 
 .p-article__intro-titlearea
   position: relative
-  height: 24px
+  font-size: 20px
   +font-bold
-  font-size: 18px
 
 .p-article__intro-insta
   position: absolute
   top: 50%
-  left: 88px
-  width: 24px
-  height: 24px
+  left: 96px
+  width: 20px
+  height: 20px
   transform: translateY(-50%)
   opacity: .3
+  transition: .4s
   background-image: url('~assets/img/article/intro-insta.svg')
+  background-size: cover
   &:hover
-    transition: .4s
     opacity: 1
 
 .p-article__intro-text
-  margin-top: 8px
-  font-size: 15px
+  margin-top: 12px
+  font-size: 16px
 </style>

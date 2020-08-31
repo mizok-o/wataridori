@@ -13,11 +13,6 @@
 .p-index-top__about
   width: 708px
   margin-top: -8px
-  +pc-md-view
-    display: flex
-    justify-content: space-between
-    align-items: flex-end
-    width: 100%
   +pc-sm-view
     display: block
   +sp-view
@@ -30,6 +25,8 @@
   margin-top: -80px
   padding-top: 80px
   +pc-lg-view
+    font-size: 36px
+  +pc-md-view
     font-size: 32px
   +sp-view
     font-size: 24px
