@@ -4,7 +4,6 @@ section.p-article__lead
   ol.p-article__lead-content
     li.p-article__lead-item(v-for="item in lead", :key="item.id")
       n-link.p-article__lead-link(v-scroll-to="`#${item.id}`" to) {{ item.text }}
-
 </template>
 <script>
 export default {

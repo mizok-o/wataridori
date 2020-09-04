@@ -10,7 +10,6 @@ import partsInfo from '~/components/article/parts/partsInfo.vue'
 import partsBody from '~/components/article/parts/partsBody.vue'
 import partsHeading from '~/components/article/parts/partsHeading.vue'
 import partsLead from '~/components/article/parts/partsLead.vue'
-import axios from "axios"
 export default {
   props: ['content'],
   components: {
