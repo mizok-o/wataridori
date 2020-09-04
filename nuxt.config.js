@@ -39,7 +39,9 @@ export default {
   modules: [
   '@nuxtjs/style-resources',
   '@nuxtjs/markdownit',
-  '@nuxtjs/axios'
+  '@nuxtjs/axios',
+  'vue-scrollto/nuxt',
+   ['vue-scrollto/nuxt', { duration: 300 }]
  ],
  markdownit: {
   html: true,

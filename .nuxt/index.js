@@ -11,6 +11,7 @@ import { setContext, getLocation, getRouteData, normalizeError } from './utils'
 
 /* Plugins */
 
+import nuxt_plugin_vuescrollto_091f4a30 from 'nuxt_plugin_vuescrollto_091f4a30' // Source: ./vue-scrollto.js (mode: 'client')
 import nuxt_plugin_axios_4db0d801 from 'nuxt_plugin_axios_4db0d801' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_markdownit_7eaa5e64 from 'nuxt_plugin_markdownit_7eaa5e64' // Source: ./markdown-it.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_0e14f460 from 'nuxt_plugin_vueawesomeswiper_0e14f460' // Source: ../plugins/vue-awesome-swiper (mode: 'client')
@@ -151,6 +152,10 @@ async function createApp (ssrContext) {
   }
 
   // Plugin execution
+
+  if (process.client && typeof nuxt_plugin_vuescrollto_091f4a30 === 'function') {
+    await nuxt_plugin_vuescrollto_091f4a30(app.context, inject)
+  }
 
   if (typeof nuxt_plugin_axios_4db0d801 === 'function') {
     await nuxt_plugin_axios_4db0d801(app.context, inject)
