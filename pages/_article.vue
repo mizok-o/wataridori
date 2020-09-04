@@ -2,8 +2,8 @@
 .p-article-container
   pheader
   main.p-article__main
-    topPart(:articles="articles")
-    mainContent
+    topPart(:content="content")
+    mainContent(:content="content")
     share
     allArticles(:articles="articles")
   pfooter
@@ -28,18 +28,26 @@ export default {
   },
   data(){
     return {
-      articles: []
+      content: '',
+      article: ''
     }
   },
-  async asyncData() {
-    const { data } = await axios.get(
-      "https://wataridori.microcms.io/api/v1/top?filters=id[equals]nijuqimrr",
-      {
-        headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" }
-      }
+  async asyncData({ env, params }) {
+    const entries = await axios.get(
+      "https://wataridori.microcms.io/api/v1/top",
+      { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
     )
+    const articleNext = await axios.get(
+      "https://wataridori.microcms.io/api/v1/top?filters=id[not_equals]nijuqimrr",
+      { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
+    )
+    // console.log(entries);
+    // console.log(params.article);
+    const content = entries.data.contents.find(article => article.id === params.article)
+    const articles = entries.data.contents.filter(article => article !== content)
     return {
-      articles: data.contents
+      content: content,
+      articles: articles
     }
   }
 }
@@ -48,11 +56,14 @@ export default {
 <style lang="sass">
 .p-article__main
   max-width: 800px
-  margin: 112px 14%
+  margin: 48px 14%
   color: #111111
   +sp-view
     width: auto
-    margin: 112px 20px 0
+    margin: 32px 20px 0
+  .p-index-top__articles
+    +sp-view
+      margin-top: 32px
 
 .p-index-top__articles-container, .p-index-top__about-container
   margin: 80px 0 0

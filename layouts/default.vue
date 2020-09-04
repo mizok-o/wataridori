@@ -5,8 +5,9 @@
 <style lang="sass">
 html
   font-size: 18px
+  +font-regular
   box-sizing: border-box
-  background-color: #FAF8F5
+  background-color: #ffffff
   color: #222222
   -ms-overflow-style: none
   scrollbar-width: none

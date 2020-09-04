@@ -23,7 +23,17 @@ export default {
   plugins: [
     { src: '~plugins/vue-awesome-swiper', ssr: false }
   ],
-
+  generate: {
+    async routes () {
+      const articles = await axios.get(
+        "https://wataridori.microcms.io/api/v1/top",
+        { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
+      )
+      return [
+        ...articles.data.map(article => `/${article.id}`)
+      ]
+    }
+  },
   buildModules: [
   ],
   modules: [

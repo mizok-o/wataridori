@@ -1,16 +1,10 @@
 <template lang="pug">
 .p-index-top__articles#articles
   h2.p-index-top__articles-title 記事一覧
-  //.p-index-top__articles-img
-    .p-index-top__articles-img-content
-      img(src="~/assets/img/top/tabi.svg")
-      img(src="~/assets/img/top/tabi.svg")
-      img(src="~/assets/img/top/tabi.svg")
-      img(src="~/assets/img/top/tabi.svg")
   .p-index-top__articles-content
     ul
       li(v-for="article in articles")
-        a.p-index-top__articles-item-link(href="/article001")
+        a.p-index-top__articles-item-link(:href="article.id")
           .top__articles-item-container
             .top__articles-item-img
               img(:src="article.img.url")
@@ -43,37 +37,16 @@ export default{
     font-size: 20px
     margin-bottom: 16px
 
-/* .p-index-top__articles-img
-  position: absolute
-  top: 320px
-  left: -200px
-  transform-origin: top left
-  transform: rotate(10deg)
-  z-index: -3
-  +sp-view
-    top: -40px
-    transform: rotate(0) */
-
-/* .p-index-top__articles-img-content
-  display: flex
-  width: 4096px
-  height: 80px
-  animation: automove 14s linear infinite
-  img
-    width: 992px
-    height: 100%
-    margin-right: 32px */
-
 .p-index-top__articles-content
   margin: 0 auto
   ul
     display: grid
-    grid-template-columns: 262px 262px 262px
+    grid-template-columns: 256px 256px 256px
     grid-template-rows: 306px
     gap: 20px 16px
     margin-top: 32px
     +pc-md-view
-      grid-template-columns: 262px 262px
+      grid-template-columns: 256px 256px
       grid-template-rows: 306px 306px
     +sp-view
       grid-template-columns: 47.4% 47.4%
@@ -102,13 +75,12 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
-  width: 262px
+  width: 256px
   height: 188px
   img
     transform: scale(1)
     transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
     width: 100%
-    /* min-height: 186px */
   +sp-view
     width: 100%
     height: auto
@@ -118,19 +90,18 @@ export default{
   z-index: 10
 
 .top__articles__type
-  opacity: .7
+  opacity: .5
   font-size: 15px
   +font-en
   letter-spacing: 2px
   +sp-view
-    font-size: 13px
+    font-size: 12px
 
 .top__articles__title
   font-size: 18px
-  margin: 12px 0 0
+  margin: 4px 0 0
   +sp-view
-    margin: 4px 0 0
-    font-size: 15px
+    font-size: 14px
 
 .top__articles-item-textarea
   position: relative
@@ -141,18 +112,9 @@ export default{
   z-index: -1
   transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
   +sp-view
-    height: 96px
+    height: 88px
     padding: 12px
     margin-top: -6px
-  .top__article__title
-    margin-top: 12px
-    font-size: 18px
-    +sp-view
-      margin-top: 8px
-      font-size: 14px
-  .top__article__type
-    +sp-view
-      font-size: 12px
   &::after
     content: ""
     position: absolute

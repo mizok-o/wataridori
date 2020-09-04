@@ -1,6 +1,6 @@
 <template lang="pug">
 .p-article__sharearea
-  p.p-article__share-title.u-sp-view シェア
+  //p.p-article__share-title シェア
   ul.p-article__share-content
     li.p-article__share-item.share-twitter
       a.p-article__share-link(href="#")
@@ -23,7 +23,6 @@
   +sp-view
     width: 100%
     margin-top: 32px
-    text-align: center
 
 .p-article__share-content
   display: flex
@@ -31,13 +30,10 @@
 .p-article__share-item
   width: 136px
   height: 48px
-  margin-right: 12px
+  margin-right: 24px
   +sp-view
-    width: 48px
-    height: 48px
-    margin: 12px 24px 0 0
-  &:last-child
-    margin-right: 0
+    width: 120px
+    height: 40px
 
 .p-article__share-link
   display: flex
@@ -48,9 +44,18 @@
   padding: 0 24px
   font-size: 15px
   border-radius: 3px
-  transition: .4s
+  transition: .2s
+  color: #ffffff
+  +sp-view
+    width: 120px
+    height: 40px
+    padding: 0 16px
+    color: #ffffff
   svg
-    transition: .4s
+    transition: .2s
+    fill: #ffffff
+    +sp-view
+      fill: #ffffff
   &:hover
     color: #ffffff
     svg
@@ -58,16 +63,21 @@
 
 .share-twitter
   .p-article__share-link
+    background-color: #55ACEE
     border: 1px solid #55ACEE
     &:hover
       background-color: #55ACEE
     +sp-view
+      background-color: #55ACEE
       &::before
         height: 20px
 
 .share-face
   .p-article__share-link
+    background-color: #49629D
     border: 1px solid #49629D
+    +sp-view
+      background-color: #49629D
     &:hover
       background-color: #49629D
 
