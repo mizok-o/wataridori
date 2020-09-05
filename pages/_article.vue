@@ -4,7 +4,7 @@
   main.p-article__main
     topPart(:content="content")
     mainContent(:content="content")
-    share
+    share(:content="content")
     allArticles(:articles="articles")
   pfooter
 
@@ -44,6 +44,7 @@ export default {
 
     const content = entries.data.contents.find(article => article.id === params.article)
     const articles = entries.data.contents.filter(article => article !== content)
+
     return {
       content: content,
       articles: articles
