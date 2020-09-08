@@ -7,7 +7,7 @@ html
   font-size: 18px
   +font-regular
   box-sizing: border-box
-  background-color: #ffffff
+  background-color: #fffefc
   color: #222222
   -ms-overflow-style: none
   scrollbar-width: none

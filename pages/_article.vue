@@ -4,8 +4,8 @@
   main.p-article__main
     topPart(:content="content")
     mainContent(:content="content")
-    share(:content="content")
     allArticles(:articles="articles")
+  share(:content="content")
   pfooter
 
 </template>
