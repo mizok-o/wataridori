@@ -86,6 +86,9 @@ export default {
   ]
 },
   build: {
-     extend(config, ctx) {}
+     extend(config, ctx) {},
+    vendor: [
+      'vue-awesome-swiper'
+    ]
   }
 }
