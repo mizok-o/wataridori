@@ -69,8 +69,7 @@ export default {
      return [
        ...articles.data.contents.map(article => `/${article.id}`)
      ]
-   },
-   dir: 'dist'
+   }
  },
  styleResources: {
   sass: [
