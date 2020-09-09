@@ -1,95 +1,95 @@
 <template lang="pug">
-.p-index-top__content
-  client-only
-    swiper(:options="swiperOption")
-      swiper-slide.swiper-content(v-for="item in items")
-        .p-index-top__slider__visual
-          a.top__slider__visual-link(:href="item.link")
-            .top__slider__visual-img
-        .p-index-top__slider__textarea
-          .top__slider__title
-          .top__slider__text
-    .swiper-button-prev
-    .swiper-button-next
+.p-index-top__about
+  h1.p-index-top__about-title 1人海外旅の魅力を伝えたい
+    br
+    |大学生が運営するメディア
+    br
+    |ワタリドリ
+  a(href="/").p-index-top__about__btn-container
+    button.p-index-top__about-btn
+
 </template>
-<script>
-export default{
-data() {
-      return {
-        swiperOption: {
-          slidesPerView: 1.5,
-          centeredSlides: true,
-          paginationClickable: true,
-          loopAdditionalSlides: 2,
-          speed: 1000,
-          autoplay: {delay: 3000},
-          loop: true,
-          nextButton: '.swiper-button-next',
-          prevButton: '.swiper-button-prev',
-          navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
-        }
-        // breakpoints: {
-        //   751: {
-        //     slidesPerView: 1.2,
-        //     spaceBetween: 24
-        //   }
-        // }
-      },
-      items: [
-      {
-        link: '/'
-      },
-      {
-        link: '/'
-      },
-      {
-        link: '/'
-      }
-    ]
-    }
-  }
-}
-</script>
 <style lang="sass">
-.p-index-top__content
+.p-index-top__about
+  width: 708px
+  margin-top: -8px
+  +pc-sm-view
+    display: block
+  +sp-view
+    width: 304px
+    margin: 0
+
+.p-index-top__about-title
+  font-size: 40px
+  line-height: 175%
+  margin-top: -80px
+  padding-top: 80px
+  +pc-lg-view
+    font-size: 36px
+  +pc-md-view
+    font-size: 32px
+  +sp-view
+    font-size: 24px
+
+.p-index-top__about__btn-container
   position: relative
-  width: auto
-  height: 560px
-  margin: 0 0 0
-
-.top__slider__visual-link
+  overflow: hidden
   display: block
-  width: 800px
-  height: 560px
-  margin: 0 auto 0
+  width: 224px
+  height: 56px
+  margin-top: 28px
+  +sp-view
+    width: 184px
+    height: 48px
+    margin-top: 16px
+  &::after
+    content: ""
+    position: absolute
+    top: 100%
+    left: 0
+    display: block
+    width: 150%
+    height: 200%
+    transform-origin: top left
+    transform: rotate(30deg)
+    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
+    background-color: #222222
+  &:hover
+    &::after
+      transform: translateY(-100%) rotate(0)
+    .p-index-top__about-btn
+      &::after
+        transform: translateX(12px)
 
-.top__slider__visual-img
+.p-index-top__about-btn
+  display: flex
   width: 100%
   height: 100%
-  background-image: url("~assets/img/top/slider_01.jpg")
-  background-size: auto
-  background-position: center
+  align-items: center
+  background-image: url('~assets/img/top/button.svg')
   background-repeat: no-repeat
+  background-size: cover
+  z-index: -1
+  &::before
+    content: "私たちについて"
+    margin: 0 12px 0 24px
+    font-size: 18px
+    +font-bold
+    color: #ffffff
+    z-index: 1
+  &::after
+    content: ""
+    display: block
+    width: 34px
+    height: 9px
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
+    background-image: url('~assets/img/top/arrow-right.svg')
+    background-repeat: no-repeat
+    background-size: cover
+    z-index: 1
+  +sp-view
+    &::before
+      margin: 0 10px 0 16px
+      font-size: 15px
 
-/* スワイパーボタン */
-.swiper-button-prev
-  position: absolute
-  bottom: 0
-  left: 15%
-  width: 48px
-  height: 48px
-  background-image: url("~assets/img/top/slider-btn-right.svg")
-  background-size: cover
-  outline: inherit
-.swiper-button-next
-  position: absolute
-  bottom: 0
-  right: 15%
-  width: 48px
-  height: 48px
-  background-image: url("~assets/img/top/slider-btn-left.svg")
-  background-size: cover
-  outline: inherit
 </style>
