@@ -1,9 +1,10 @@
 <template lang="pug">
 .p-index
-  .p-index-container
+  .p-index-container#top
     pheader
     .p-index-top
       .p-index-top__content
+        a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
         topContent
         topSlider(:articles="articles")
       allArticles(:articles="articles")
@@ -27,7 +28,22 @@ export default {
   },
   data(){
     return {
-      articles: []
+      articles: [],
+      buttonActive: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollWindow)
+  },
+  methods: {
+    scrollWindow() {
+      const top = 200
+      this.scroll = window.scrollY
+      if (top <= this.scroll) {
+        this.buttonActive = true
+      } else {
+        this.buttonActive = false
+      }
     }
   },
   async asyncData() {
@@ -63,5 +79,21 @@ export default {
   width: 100%
   +pc-md-view
     display: block
+
+.p-index-top__home
+  display: inline-block
+  position: fixed
+  bottom: 48px
+  right: 20px
+  width: 48px
+  height: 48px
+  border: 1px solid #111111
+  border-radius: 24px
+  opacity: 0
+  transition: .4s
+  z-index: 12
+
+.showButton
+  opacity: 1
 
 </style>

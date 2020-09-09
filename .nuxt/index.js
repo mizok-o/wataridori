@@ -15,6 +15,7 @@ import nuxt_plugin_vuescrollto_091f4a30 from 'nuxt_plugin_vuescrollto_091f4a30' 
 import nuxt_plugin_axios_4db0d801 from 'nuxt_plugin_axios_4db0d801' // Source: ./axios.js (mode: 'all')
 import nuxt_plugin_markdownit_7eaa5e64 from 'nuxt_plugin_markdownit_7eaa5e64' // Source: ./markdown-it.js (mode: 'all')
 import nuxt_plugin_vueawesomeswiper_0e14f460 from 'nuxt_plugin_vueawesomeswiper_0e14f460' // Source: ../plugins/vue-awesome-swiper (mode: 'client')
+import nuxt_plugin_vsmoothscroll_12e9f5fe from 'nuxt_plugin_vsmoothscroll_12e9f5fe' // Source: ../plugins/v-smooth-scroll (mode: 'client')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -53,7 +54,7 @@ async function createApp (ssrContext) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"wataridori","prefix":"og: http:\u002F\u002Fogp.me\u002Fns#  fb: http:\u002F\u002Fogp.me\u002Fns\u002Ffb# article: http:\u002F\u002Fogp.me\u002Fns\u002Farticle#","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My best Nuxt.js project"},{"hid":"og:site_name","property":"og:site_name","content":"wataridori"},{"hid":"og:type","property":"og:type","content":"website"},{"hid":"og:url","property":"og:url","content":"https:\u002F\u002Fwataridori.netlify.app"},{"hid":"og:title","property":"og:title","content":"ワタリドリメディア"},{"hid":"og:description","property":"og:description","content":"ワタリドリは大学生が運営する一人旅を支援するメディアです"},{"hid":"og:image","property":"og:image","content":"https:\u002F\u002Fwataridori.netlify.app\u002Fassets\u002Fimg\u002Ftop\u002Fogp.jpg"},{"hid":"og:image:width","property":"og:image:width","content":"1200"},{"hid":"og:image:height","property":"og:image:height","content":"600"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:description","content":"ワタリドリは大学生が運営する一人旅を支援するメディアです"},{"name":"twitter:title","content":"ワタリドリメディア"},{"name":"twitter:image","content":"https:\u002F\u002Fwataridori.netlify.app\u002Fassets\u002Fimg\u002Ftop\u002Fogp.jpg"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.typekit.net\u002Fita8kbu.css"}],"script":[{"src":"https:\u002F\u002Fuse.typekit.net\u002Ftiv6nbi.js"}],"style":[]},
+    head: {"title":"wataridori","prefix":"og: http:\u002F\u002Fogp.me\u002Fns#  fb: http:\u002F\u002Fogp.me\u002Fns\u002Ffb# article: http:\u002F\u002Fogp.me\u002Fns\u002Farticle#","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"My best Nuxt.js project"},{"hid":"og:site_name","property":"og:site_name","content":"wataridori"},{"hid":"og:type","property":"og:type","content":"website"},{"hid":"og:url","property":"og:url","content":"https:\u002F\u002Fwataridori.netlify.app"},{"hid":"og:title","property":"og:title","content":"ワタリドリメディア"},{"hid":"og:description","property":"og:description","content":"ワタリドリは大学生が運営する一人旅を支援するメディアです"},{"hid":"og:image","property":"og:image","content":"https:\u002F\u002Fwataridori.netlify.app\u002Fogp.jpg"},{"hid":"og:image:width","property":"og:image:width","content":"1200"},{"hid":"og:image:height","property":"og:image:height","content":"600"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:description","content":"ワタリドリは大学生が運営する一人旅を支援するメディアです"},{"name":"twitter:title","content":"ワタリドリメディア"},{"name":"twitter:image","content":"https:\u002F\u002Fwataridori.netlify.app\u002Fogp.jpg"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"},{"rel":"stylesheet","href":"https:\u002F\u002Fuse.typekit.net\u002Fita8kbu.css"}],"script":[{"src":"https:\u002F\u002Fuse.typekit.net\u002Ftiv6nbi.js"}],"style":[]},
 
     router,
     nuxt: {
@@ -167,6 +168,10 @@ async function createApp (ssrContext) {
 
   if (process.client && typeof nuxt_plugin_vueawesomeswiper_0e14f460 === 'function') {
     await nuxt_plugin_vueawesomeswiper_0e14f460(app.context, inject)
+  }
+
+  if (process.client && typeof nuxt_plugin_vsmoothscroll_12e9f5fe === 'function') {
+    await nuxt_plugin_vsmoothscroll_12e9f5fe(app.context, inject)
   }
 
   // If server-side, wait for async component to be resolved first
