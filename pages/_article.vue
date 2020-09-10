@@ -74,6 +74,7 @@ export default {
   margin: 48px 14%
   color: #111111
   +sp-view
+    display: block
     width: auto
     margin: 32px 20px 0
   .p-index-top__articles

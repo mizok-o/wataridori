@@ -28,18 +28,24 @@ export default{
   margin: 128px 0 0 48px
   +sp-view
     width: 100%
-    margin-top: 32px
+    margin: 32px 0 0
 
 .p-article__share-content
   position: -webkit-sticky
   position: sticky
   top: 120px
+  +sp-view
+    position: static
+    display: flex
 
 .p-article__share-item
   width: 48px
   height: 48px
   &:last-child
     margin-top: 16px
+  +sp-view
+    &:last-child
+      margin: 0 0 0 16px
 
 .p-article__share-link
   display: block
@@ -51,10 +57,6 @@ export default{
   transition: .2s
   color: #ffffff
   +sp-view
-    width: 48px
-    height: 48px
-    padding: 0 16px
-    color: #ffffff
   svg
     transition: .2s
     fill: #ffffff
@@ -72,17 +74,11 @@ export default{
     border: 1px solid #55ACEE
     &:hover
       background-color: #55ACEE
-    +sp-view
-      background-color: #55ACEE
-      &::before
-        height: 20px
 
 .share-face
   .p-article__share-link
     background-color: #49629D
     border: 1px solid #49629D
-    +sp-view
-      background-color: #49629D
     &:hover
       background-color: #49629D
 

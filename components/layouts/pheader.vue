@@ -61,6 +61,8 @@ header
   margin: 0 14%
   justify-content: space-between
   align-items: center
+  +sp-view
+    margin: 0
 
 /* .header__left
   width: 200px
@@ -191,15 +193,14 @@ header
 .header__right-sns__icon
   width: 20px
   height: 20px
-  margin: 22px 76px
+  margin: 22px 38px
   transition: .3s
   opacity: .3
   background-image: url("~assets/img/header/insta-icon.svg")
   background-size: cover
   +sp-view
-    margin: 22px 20px
+    margin: 22px
     opacity: 1
-    transition: 0s
 
 /* .header__menu-active
   pointer-events: all

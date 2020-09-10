@@ -16,7 +16,7 @@ export default {
   padding: 24px
   border: 1px solid rgba(0, 0, 0, .5)
   +sp-view
-    padding: 12px
+    padding: 16px
 
 .p-article__intro-titlearea
   display: flex
@@ -40,8 +40,8 @@ export default {
 
 .p-article__intro-text
   margin-top: 16px
-  font-size: 16px
+  font-size: 15px
   +sp-view
     margin-top: 4px
-    font-size: 14px
+    font-size: 13px
 </style>

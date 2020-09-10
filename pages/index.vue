@@ -2,7 +2,7 @@
 .p-index#top
   .p-index-container
     pheader
-    .p-index-top
+    main.p-index-top
       .p-index-top__content
         a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
         topContent

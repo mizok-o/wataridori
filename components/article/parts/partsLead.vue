@@ -31,7 +31,7 @@ export default {
   border: 1px solid rgba(0, 0, 0, .5)
   +sp-view
     margin-top: 24px
-    padding: 12px
+    padding: 16px
 
 .p-article__lead-title
   font-size: 20px
