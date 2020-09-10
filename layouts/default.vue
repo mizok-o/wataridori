@@ -16,7 +16,7 @@ body
   &::-webkit-scrollbar
     display: none
   #nuxt
-    position: relative
+    /* position: relative */
     overflow-x: hidden
 
 li, a, ul, ol

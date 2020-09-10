@@ -25,26 +25,21 @@ export default{
 </script>
 <style lang="sass">
 .p-article__sharearea
-  position: fixed
-  top: 20%
-  right: 16%
-  margin-top: 64px
-  color: #111111
-  +font-bold
+  margin: 128px 0 0 48px
   +sp-view
     width: 100%
     margin-top: 32px
 
 .p-article__share-content
-  /* display: flex */
+  position: -webkit-sticky
+  position: sticky
+  top: 120px
 
 .p-article__share-item
-  width: 64px
-  height: 64px
-  margin-right: 16px
-  +sp-view
-    width: 48px
-    height: 48px
+  width: 48px
+  height: 48px
+  &:last-child
+    margin-top: 16px
 
 .p-article__share-link
   display: block

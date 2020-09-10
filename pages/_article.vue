@@ -1,11 +1,13 @@
 <template lang="pug">
-.p-article-container
+.p-article-container#top
   pheader
   main.p-article__main
-    topPart(:content="content")
-    mainContent(:content="content")
-    allArticles(:articles="articles")
-  share(:content="content")
+    a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
+    .p-article__main-content
+      topPart(:content="content")
+      mainContent(:content="content")
+      allArticles(:articles="articles")
+    share(:content="content")
   pfooter
 </template>
 <script>
@@ -28,7 +30,22 @@ export default {
   data(){
     return {
       content: '',
-      article: ''
+      article: '',
+      buttonActive: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.scrollWindow)
+  },
+  methods: {
+    scrollWindow() {
+      const top = 200
+      this.scroll = window.scrollY
+      if (top <= this.scroll) {
+        this.buttonActive = true
+      } else {
+        this.buttonActive = false
+      }
     }
   },
   async asyncData({ env, params }) {
@@ -40,10 +57,8 @@ export default {
       "https://wataridori.microcms.io/api/v1/top?filters=id[not_equals]nijuqimrr",
       { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
     )
-
     const content = entries.data.contents.find(article => article.id === params.article)
     const articles = entries.data.contents.filter(article => article !== content)
-
     return {
       content: content,
       articles: articles
@@ -54,6 +69,7 @@ export default {
 </script>
 <style lang="sass">
 .p-article__main
+  display: flex
   max-width: 800px
   margin: 48px 14%
   color: #111111
@@ -72,5 +88,19 @@ export default {
   &::after
     color: #111111
 
+.p-index-top__home
+  display: inline-block
+  position: fixed
+  bottom: 48px
+  right: 20px
+  width: 48px
+  height: 48px
+  border: 1px solid #111111
+  border-radius: 24px
+  opacity: 0
+  transition: .4s
+  z-index: 12
 
+.showButton
+  opacity: 1
 </style>

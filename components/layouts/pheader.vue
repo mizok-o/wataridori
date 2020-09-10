@@ -40,7 +40,7 @@ export default {
 header
   position: relative
   width: 100%
-  height: 80px
+  height: 64px
   z-index: 2
   +sp-view
     height: 64px
@@ -56,8 +56,9 @@ header
 
 .header-content
   display: flex
-  width: 100%
+  /* max-width: 800px */
   height: 100%
+  margin: 0 14%
   justify-content: space-between
   align-items: center
 
@@ -153,7 +154,7 @@ header
 
 .header__main__logo
   width: 112px
-  margin: 12px 40px
+  margin: 12px 0
   +sp-view
     width: 104px
     margin: 14px 20px
@@ -190,7 +191,7 @@ header
 .header__right-sns__icon
   width: 20px
   height: 20px
-  margin: 22px auto
+  margin: 22px 76px
   transition: .3s
   opacity: .3
   background-image: url("~assets/img/header/insta-icon.svg")
@@ -204,12 +205,12 @@ header
   pointer-events: all
   opacity: 1 */
 
-.header__right__list-item
+/* .header__right__list-item
   margin-right: 40px
   &:last-child
     margin-right: 0
     .header__list-item__link
       display: flex
-      align-items: center
+      align-items: center */
 
 </style>

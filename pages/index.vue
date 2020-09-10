@@ -1,6 +1,6 @@
 <template lang="pug">
-.p-index
-  .p-index-container#top
+.p-index#top
+  .p-index-container
     pheader
     .p-index-top
       .p-index-top__content
