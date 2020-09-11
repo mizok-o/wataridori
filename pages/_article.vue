@@ -1,8 +1,8 @@
 <template lang="pug">
-.p-article-container#top
+.p-article-container
   pheader
   main.p-article__main
-    a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
+    //a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
     .p-article__main-content
       topPart(:content="content")
       mainContent(:content="content")
