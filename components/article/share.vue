@@ -25,8 +25,11 @@ export default{
 </script>
 <style lang="sass">
 .p-article__sharearea
-  margin: 128px 0 0 48px
+  margin: 156px 0 0 48px
   +sp-view
+    position: fixed
+    bottom: 20px
+    left: 20px
     width: 100%
     margin: 32px 0 0
 
@@ -44,6 +47,8 @@ export default{
   &:last-child
     margin-top: 16px
   +sp-view
+    width: 36px
+    height: 36px
     &:last-child
       margin: 0 0 0 16px
 
@@ -57,10 +62,14 @@ export default{
   transition: .2s
   color: #ffffff
   +sp-view
+    width: 36px
+    height: 36px
+    padding: 7px
   svg
     transition: .2s
     fill: #ffffff
     +sp-view
+      width: 20px
       fill: #ffffff
   &:hover
     color: #ffffff
@@ -72,6 +81,10 @@ export default{
     padding: 12px 0 0 9px
     background-color: #55ACEE
     border: 1px solid #55ACEE
+    +sp-view
+      padding: 5px
+      svg
+        width: 26px
     &:hover
       background-color: #55ACEE
 
