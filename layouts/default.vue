@@ -9,12 +9,8 @@ html
   box-sizing: border-box
   background-color: #fcfbf9
   color: #222222
-  -ms-overflow-style: none
-  scrollbar-width: none
 
 body
-  &::-webkit-scrollbar
-    display: none
   #nuxt
     /* position: relative */
     overflow-x: hidden
