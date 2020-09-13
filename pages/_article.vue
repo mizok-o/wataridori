@@ -1,8 +1,8 @@
 <template lang="pug">
-.p-article-container
+.p-article-container#top
   pheader
   main.p-article__main
-    //a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
+    a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
     .p-article__main-content
       topPart(:content="content")
       mainContent(:content="content")
@@ -71,7 +71,7 @@ export default {
 .p-article__main
   display: flex
   max-width: 800px
-  margin: 48px 14%
+  margin: 112px 14%
   color: #111111
   +sp-view
     display: block
@@ -93,7 +93,7 @@ export default {
   display: inline-block
   position: fixed
   bottom: 48px
-  right: 20px
+  right: 14%
   width: 48px
   height: 48px
   border: 1px solid #111111
