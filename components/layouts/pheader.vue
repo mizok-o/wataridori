@@ -46,6 +46,8 @@ header
   height: 48px
   margin: 48px 0 0
   z-index: 2
+  +sp-view
+    margin-top: 20px
 
 .header-container
   width: 100%
@@ -59,7 +61,7 @@ header
   justify-content: space-between
   align-items: center
   +sp-view
-    margin: 0
+    margin: 0 20px
 
 /* .header__left
   width: 200px
@@ -178,9 +180,10 @@ header
   height: 48px
   margin: 8px 0
   +sp-view
-    width: 60px
+    margin: 0
 
 .header__right-sns
+  position: relative
   display: block
   width: 100%
   height: 100%
@@ -194,14 +197,20 @@ header
     border: 1px solid #fcfbf9
     .header__right-sns__icon
       fill: #ffffff
+/*   +sp-view
+  background: linear-gradient(90deg, #EF4563, #EF6E45)
+  border: none
+  svg
+    fill: #ffffff */
+
 
 .header__right-sns__icon
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
   width: 22px
   height: 22px
-  margin: 12px
-  +sp-view
-    margin: 22px
-    opacity: 1
 
 /* .header__menu-active
   pointer-events: all
