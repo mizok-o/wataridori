@@ -11,8 +11,8 @@ html
   color: #222222
 
 body
-  #nuxt
-    /* position: relative */
+  #__nuxt
+    position: relative
     overflow-x: hidden
 
 li, a, ul, ol
