@@ -2,7 +2,7 @@
 .p-article-container#top
   pheader
   main.p-article__main
-    a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 600, offset: -50 }")
+    topBackButton
     .p-article__main-content
       topPart(:content="content")
       mainContent(:content="content")
@@ -12,6 +12,7 @@
 </template>
 <script>
 import pheader from '~/components/layouts/pheader.vue'
+import topBackButton from '~/components/top/topBackButton.vue'
 import share from '~/components/article/share.vue'
 import allArticles from '~/components/allArticles.vue'
 import mainContent from '~/components/article/mainContent.vue'
@@ -21,6 +22,7 @@ import axios from "axios"
 export default {
   components: {
     pheader,
+    topBackButton,
     share,
     allArticles,
     mainContent,
@@ -30,22 +32,7 @@ export default {
   data(){
     return {
       content: '',
-      article: '',
-      buttonActive: false
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.scrollWindow)
-  },
-  methods: {
-    scrollWindow() {
-      const top = 200
-      this.scroll = window.scrollY
-      if (top <= this.scroll) {
-        this.buttonActive = true
-      } else {
-        this.buttonActive = false
-      }
+      article: ''
     }
   },
   async asyncData({ env, params }) {
@@ -88,20 +75,4 @@ export default {
   border: 1px solid #111111
   &::after
     color: #111111
-
-.p-index-top__home
-  display: inline-block
-  position: fixed
-  bottom: 48px
-  right: 14%
-  width: 48px
-  height: 48px
-  border: 1px solid #111111
-  border-radius: 24px
-  opacity: 0
-  transition: .4s
-  z-index: 12
-
-.showButton
-  opacity: 1
 </style>

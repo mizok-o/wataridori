@@ -44,8 +44,6 @@ export default{
 .p-article__share-item
   width: 48px
   height: 48px
-  &:last-child
-    margin-top: 16px
 
 .p-article__share-link
   position: relative
@@ -73,6 +71,8 @@ export default{
     &:hover
       background-color: #55ACEE
       border: 1px solid #fcfbf9
+      svg
+        fill: #ffffff
     +sp-view
       border: 1px solid #55ACEE
       svg
