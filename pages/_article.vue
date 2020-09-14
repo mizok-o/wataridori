@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-article-container#top
+.p-article-container
   pheader
   main.p-article__main
     topBackButton

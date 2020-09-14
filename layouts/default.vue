@@ -1,7 +1,15 @@
 <template lang="pug">
   nuxt
 </template>
-
+<script>
+export default {
+  head: {
+    bodyAttrs: {
+      id: 'top'
+    }
+  }
+}
+</script>
 <style lang="sass">
 html
   font-size: 18px
