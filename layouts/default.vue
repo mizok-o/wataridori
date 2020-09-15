@@ -20,8 +20,9 @@ html
 
 body
   #__nuxt
-    position: relative
-    overflow-x: hidden
+    +sp-view
+      position: relative
+      overflow-x: hidden
 
 li, a, ul, ol
   list-style: none

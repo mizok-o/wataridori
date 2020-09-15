@@ -38,7 +38,6 @@ export default{
   position: sticky
   top: 120px
   +sp-view
-    position: static
     display: flex
 
 .p-article__share-item
