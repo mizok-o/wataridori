@@ -8,7 +8,7 @@
           a.p-index-top__slider__visual(:href="article.id")
             .top__slider__visual-img
               img(:src="article.img.url")
-            p.top__slider__visual-tag 世界一周
+            //p.top__slider__visual-tag 世界一周
             .p-index-top__slider__textarea
               p.top__slider__type {{ article.type }}
               h3.top__slider__title {{ article.title }}
@@ -30,10 +30,10 @@ export default{
         speed: 600,
         loop: true,
         loopedSlides: 3,
-        // autoplay: {
-        //   delay: 3000,
-        //   disableOnInteraction: false
-        // },
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false
+        },
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -98,20 +98,6 @@ export default{
     transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
     +sp-view
       width: 100%
-
-.top__slider__visual-tag
-  position: absolute
-  top: 16px
-  left: 20px
-  width: 78px
-  font-size: 15px
-  color: #ffffff
-  padding: 0px 8px
-  border: 1px solid #ffffff
-  border-radius: 30px
-  opacity: 0
-  +sp-view
-    opacity: 1
 
 .p-index-top__slider__textarea
   height: 152px
