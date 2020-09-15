@@ -5,7 +5,7 @@
     client-only
       swiper(:options="swiperOption")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.href")
+          a.p-index-top__slider__visual(:href="article.id")
             .top__slider__visual-img
               img(:src="article.img.url")
             p.top__slider__visual-tag 世界一周
@@ -30,10 +30,10 @@ export default{
         speed: 600,
         loop: true,
         loopedSlides: 3,
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 3000,
+        //   disableOnInteraction: false
+        // },
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -70,7 +70,7 @@ export default{
   margin: 32px auto 0
   +sp-view
     width: 100%
-    margin: 16px 0 0
+    margin-top: 16px
 
 .p-index-top__slider__visual
   position: relative
