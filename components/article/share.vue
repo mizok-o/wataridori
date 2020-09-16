@@ -26,18 +26,21 @@ export default{
 <style lang="sass">
 .p-article__sharearea
   margin: 156px 0 0 48px
-  +sp-view
+  +pc-md-view
     position: fixed
-    bottom: 32px
-    left: 20px
+    bottom: 48px
+    left: 9%
     width: 100%
     margin: 32px 0 0
+  +sp-view
+    bottom: 32px
+    left: 20px
 
 .p-article__share-content
   position: -webkit-sticky
   position: sticky
   top: 120px
-  +sp-view
+  +pc-md-view
     display: flex
 
 .p-article__share-item
@@ -56,7 +59,7 @@ export default{
   svg
     transition: .4s
     fill: #222222
-    +sp-view
+    +pc-md-view
       position: absolute
       top: 50%
       left: 50%
@@ -69,18 +72,13 @@ export default{
     border: 1px solid #222222
     &:hover
       background-color: #55ACEE
-      border: 1px solid #fcfbf9
+      border: 1px solid #55ACEE
       svg
         fill: #ffffff
-    +sp-view
+    +pc-md-view
       border: 1px solid #55ACEE
       svg
         fill: #55ACEE
-      &:hover
-        border: 1px solid #55ACEE
-        background-color: rgba(0, 0, 0, 0)
-        svg
-          fill: #55ACEE
 
 /* .share-face
   .p-article__share-link

@@ -44,10 +44,10 @@ header
   position: relative
   width: 100%
   height: 48px
-  margin: 48px 0 0
+  padding-top: 48px
   z-index: 2
   +sp-view
-    margin-top: 20px
+    padding-top: 20px
 
 .header-container
   width: 100%
@@ -60,6 +60,8 @@ header
   margin: 0 14%
   justify-content: space-between
   align-items: center
+  +pc-md-view
+    margin: 0 9%
   +sp-view
     margin: 0 20px
 

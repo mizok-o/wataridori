@@ -42,8 +42,12 @@ export default{
   pointer-events: none
   transition: .2s
   z-index: 12
+  +pc-md-view
+    right: 9%
   +sp-view
+    bottom: 32px
     right: 20px
+
 
 .p-index-top__home-img
   width: 20px
