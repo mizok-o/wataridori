@@ -5,8 +5,9 @@
     |大学生が運営するメディア
     br
     |ワタリドリ
-  a(href="/").p-index-top__about__btn-container
-    button.p-index-top__about-btn
+  a(href="/").p-index-top__about__btn-link
+    .p-index-top__about__btn-container
+      button.p-index-top__about-btn
 
 </template>
 <style lang="sass">
@@ -29,7 +30,7 @@
   +sp-view
     font-size: 24px
 
-.p-index-top__about__btn-container
+.p-index-top__about__btn-link
   position: relative
   overflow: hidden
   display: block
@@ -40,54 +41,57 @@
     width: 184px
     height: 48px
     margin-top: 16px
-  &::after
-    content: ""
-    position: absolute
-    top: 100%
-    left: 0
-    display: block
-    width: 150%
-    height: 200%
-    transform-origin: top left
-    transform: rotate(30deg)
-    transition: 1.3s cubic-bezier(0.16, 1, 0.3, 1)
-    background-color: #222222
   &:hover
-    &::after
-      transform: translateY(-100%) rotate(0)
-    .p-index-top__about-btn
+    .p-index-top__about__btn-container
       &::after
-        transform: translateX(12px)
+        left: 168px
+    .p-index-top__about-btn
+      transform: translateY(50%) rotate(0)
 
-.p-index-top__about-btn
-  display: flex
-  width: 100%
+.p-index-top__about__btn-container
+  position: relative
+  width: 200%
   height: 100%
-  align-items: center
-  background-image: url('~assets/img/top/button.svg')
-  background-repeat: no-repeat
-  background-size: cover
-  z-index: -1
+  background-color: #222222
   &::before
     content: "私たちについて"
-    margin: 0 12px 0 24px
+    position: absolute
+    top: 50%
+    left: 16px
+    transform: translateY(-50%)
     font-size: 18px
     +font-bold
     color: #ffffff
     z-index: 1
   &::after
     content: ""
+    position: absolute
+    top: 50%
+    left: 160px
+    transform: translateY(-50%)
     display: block
     width: 34px
     height: 9px
-    transition: .3s cubic-bezier(0.85, 0, 0.15, 1)
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
     background-image: url('~assets/img/top/arrow-right.svg')
     background-repeat: no-repeat
     background-size: cover
     z-index: 1
   +sp-view
     &::before
-      margin: 0 10px 0 16px
       font-size: 15px
+
+.p-index-top__about-btn
+  position: absolute
+  top: -300%
+  left: 0
+  width: 100%
+  height: 400%
+  transform-origin: top left
+  transform: rotate(30deg)
+  background-image: url('~assets/img/top/back.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  transition: 1s cubic-bezier(0.85, 0, 0.15, 1)
 
 </style>
