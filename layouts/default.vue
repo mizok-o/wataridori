@@ -20,8 +20,8 @@ html
 
 body
   #__nuxt
+    position: relative
     +sp-view
-      position: relative
       overflow-x: hidden
 
 li, a, ul, ol

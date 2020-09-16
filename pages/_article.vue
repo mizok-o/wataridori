@@ -60,6 +60,8 @@ export default {
   max-width: 800px
   margin: 112px 14%
   color: #111111
+  +pc-md-view
+    margin: 96px 9%
   +sp-view
     display: block
     width: auto
@@ -71,8 +73,7 @@ export default {
 .p-index-top__articles-container, .p-index-top__about-container
   margin: 80px 0 0
 
-.p-index-top__about-button
-  border: 1px solid #111111
-  &::after
-    color: #111111
+.p-article__main-content
+  width: 100%
+
 </style>

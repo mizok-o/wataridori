@@ -29,4 +29,7 @@ export default{
       height: 1px
       opacity: .5
       background-color: #222222
+  img
+    width: 100%
+    height: auto
 </style>
