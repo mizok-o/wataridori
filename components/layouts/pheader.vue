@@ -13,7 +13,7 @@ header
           li.header__left-item
             a(href="#about" @click="closeMenu") 私たちについて
       .header__right
-        a.header__right__sub-link(href="#article")
+        a.header__right__sub-link(href="#articles" v-smooth-scroll="{ duration: 500, offset: -112 }")
           p 記事一覧
         a.header__right-sns(href="https://www.instagram.com/")
           svg.header__right-sns__icon(width='22' height='22' fill='#222222' xmlns='http://www.w3.org/2000/svg')
@@ -23,36 +23,38 @@ header
 </template>
 <script>
 export default {
-  data(){
-    return{
-      menuActive: false
+  mounted() {
+    window.addEventListener('scroll', this.scrollWindow)
+  },
+  methods: {
+    scrollWindow() {
+      const top = 200
+      this.scroll = window.scrollY
+      if (top <= this.scroll) {
+        this.buttonActive = true
+      } else {
+        this.buttonActive = false
+      }
     }
   }
-  // methods: {
-  //   openMenu(){
-  //     this.menuActive = !this.menuActive
-  //   },
-  //   closeMenu(){
-  //     this.menuActive = !this.menuActive
-  //   }
-  // }
 }
 </script>
 <style lang="sass">
 header
+  width: 100%
+  height: 48px
+
+.header-container
   position: fixed
   top: 0
   left: 0
   width: 100%
-  z-index: 2
-
-.header-container
-  width: 100%
-  padding: 16px 0
+  padding: 24px 0
   color: #222222
+  z-index: 13
   background-color: rgba(256, 256, 256, .8)
   +sp-view
-    padding: 4px 0
+    padding: 8px 0
 
 .header-content
   display: flex
@@ -172,7 +174,7 @@ header
   display: block
   width: 48px
   height: 100%
-  margin-left: 120px
+  margin-left: 48px
   border-radius: 24px
   border: 1px solid #222222
   transition: .4s

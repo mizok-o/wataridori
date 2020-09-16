@@ -46,11 +46,10 @@ export default {
 }
 </script>
 <style lang="sass">
-
 .p-index-top
-  margin: 160px 14% 0
+  margin: 112px 14% 0
   +sp-view
-    margin: 88px 20px 0
+    margin: 48px 20px 0
 
 .p-index-top__content
   position: relative

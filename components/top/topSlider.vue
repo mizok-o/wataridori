@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-index-top__slider#top
+.p-index-top__slider
   h2.p-index-top__slider-title おすすめ記事
   .p-index-top__slider-content
     client-only
@@ -8,7 +8,6 @@
           a.p-index-top__slider__visual(:href="article.id")
             .top__slider__visual-img
               img(:src="article.img.url")
-            //p.top__slider__visual-tag 世界一周
             .p-index-top__slider__textarea
               p.top__slider__type {{ article.type }}
               h3.top__slider__title {{ article.title }}
@@ -65,6 +64,7 @@ export default {
     font-size: 20px
 
 .p-index-top__slider-content
+  position: relative
   width: 332px
   margin: 32px auto 0
   +sp-view
