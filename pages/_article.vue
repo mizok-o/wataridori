@@ -65,7 +65,7 @@ export default {
   +sp-view
     display: block
     width: auto
-    margin: 80px 20px 0
+    margin: 24px 20px 0
   .p-index-top__articles
     +sp-view
       margin-top: 32px
