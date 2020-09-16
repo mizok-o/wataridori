@@ -13,7 +13,7 @@ header
           li.header__left-item
             a(href="#about" @click="closeMenu") 私たちについて
       .header__right
-        a.header__right__sub-link(href="#articles" v-smooth-scroll="{ duration: 500, offset: -112 }")
+        a.header__right__sub-link(href="#articles" v-smooth-scroll="{ duration: 500 }")
           p 記事一覧
         a.header__right-sns(href="https://www.instagram.com/")
           svg.header__right-sns__icon(width='22' height='22' fill='#222222' xmlns='http://www.w3.org/2000/svg')
@@ -42,7 +42,7 @@ export default {
 <style lang="sass">
 header
   width: 100%
-  height: 48px
+  height: 96px
 
 .header-container
   position: fixed
@@ -67,84 +67,6 @@ header
   +sp-view
     margin: 0 20px
 
-/* .header__left
-  width: 200px
-  height: 100%
-  &:hover
-    .header__left__menu-container
-      .header__menu-item
-        &::after
-          top: 5px
-        &::before
-          top: -5px */
-
-/* .header__left
-  &:hover
-    .header__menu-active
-      .header__menu-item
-        &::after
-          top: 0
-        &::before
-          top: 0
- */
-/* .header__left__menu-container
-  position: relative
-  width: 100%
-  height: 100%
-  cursor: pointer
-  &::before
-    content: "menu"
-    position: absolute
-    top: 25px
-    left: 96px
-    display: block
-    transition: .4s */
-
-/* .header__menu-item
-  position: absolute
-  top: 40px
-  left: 56px
-  width: 30px
-  height: 1px
-  background-color: #111111
-  transition: .4s
-  &::before
-    content: ""
-    position: absolute
-    top: -8px
-    right: 0
-    width: 30px
-    height: 1px
-    background-color: #111111
-    transition: .4s
-  &::after
-    content: ""
-    position: absolute
-    top: 8px
-    left: 0
-    width: 30px
-    height: 1px
-    background-color: #111111
-    transition: .4s */
-
-/* .header__menu-active
-  &::before
-    opacity: 0
-  .header__menu-item
-    position: absolute
-    top: 40px
-    left: 56px
-    background-color: #ffffff
-    &::before
-      content: ""
-      top: 0
-      right: 0
-      transform: rotate(45deg)
-    &::after
-      content: ""
-      top: 0
-      right: 0
-      transform: rotate(-45deg) */
 
 .header__left
   height: 100%
@@ -201,6 +123,9 @@ header
   display: block
   +sp-view
     font-size: 16px
+    &:hover
+      &::after
+        transform: scale(0)
   &::after
     content: ""
     position: absolute
