@@ -49,7 +49,7 @@ export default {
 .p-index-top
   margin: 112px 14% 0
   +sp-view
-    margin: 48px 20px 0
+    margin: 32px 20px 0
 
 .p-index-top__content
   position: relative
