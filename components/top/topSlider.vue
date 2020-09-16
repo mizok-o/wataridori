@@ -69,7 +69,6 @@ export default{
   width: 332px
   margin: 32px auto 0
   +sp-view
-    width: 100%
     margin-top: 16px
 
 .p-index-top__slider__visual

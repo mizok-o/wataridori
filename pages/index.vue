@@ -48,9 +48,9 @@ export default {
 <style lang="sass">
 
 .p-index-top
-  margin: 112px 14% 0
+  margin: 160px 14% 0
   +sp-view
-    margin: 40px 20px 0
+    margin: 88px 20px 0
 
 .p-index-top__content
   position: relative

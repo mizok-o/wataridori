@@ -2,18 +2,17 @@
 header
   .header-container
     .header-content
-      //.header__left(@click="openMenu")
-        .header__left__menu-container(:class="{'header__menu-active' : menuActive}")
-          .header__menu-item
-      .header__main
-        a.header__main__link(href="/")
-          //img.header__main__logo(src="~/assets/img/header/header.svg")
-        //ul.header__main-container(:class="{'header__menu-active' : menuActive}")
-          li.header__main-item
+      .header__left
+        a.header__left__top-link(href="/")
+          img.header__left__logo(src="~/assets/img/header/header.svg")
+        a.header__left__sub-link(href="#article")
+          p 記事一覧
+        //ul.header__left-container(:class="{'header__menu-active' : menuActive}")
+          li.header__left-item
             a(href="#top" @click="closeMenu") トップ
-          li.header__main-item
+          li.header__left-item
             a(href="#articles" @click="closeMenu") 記事一覧
-          li.header__main-item
+          li.header__left-item
             a(href="#about" @click="closeMenu") 私たちについて
       .header__right
         a.header__right-sns(href="https://www.instagram.com/")
@@ -144,26 +143,47 @@ header
       right: 0
       transform: rotate(-45deg) */
 
-.header__main
-  width: 200px
-  height: 100%
+.header__left
+  display: flex
+  align-items: center
+  height: 48px
   +sp-view
     width: auto
 
-.header__main__link
+.header__left__top-link
   display: block
-  width: 100%
   height: 100%
+  margin-right: 120px
+  +sp-view
+    margin-right: 48px
 
-.header__main__logo
+.header__left__logo
   width: 112px
-  margin: 12px 0
+  margin: 4px 0
   +sp-view
     width: 104px
-    margin: 14px 20px
+
+.header__left__sub-link
+  position: relative
+  display: block
+  &::after
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 1px
+    background-color: #222222
+    transform: scale(0, 1)
+    transform-origin: top left
+    transition: .2s
+  &:hover
+    &::after
+      transform-origin: top right
+      transform: scale(1, 1)
 
 
-/* .header__main
+/* .header__left
   position: absolute
   top: 56px
   left: 0

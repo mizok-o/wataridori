@@ -58,14 +58,14 @@ export default {
 .p-article__main
   display: flex
   max-width: 800px
-  margin: 112px 14%
+  margin: 160px 14%
   color: #111111
   +pc-md-view
     margin: 96px 9%
   +sp-view
     display: block
     width: auto
-    margin: 32px 20px 0
+    margin: 80px 20px 0
   .p-index-top__articles
     +sp-view
       margin-top: 32px
