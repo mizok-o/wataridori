@@ -72,18 +72,13 @@ export default{
     border: 1px solid #222222
     &:hover
       background-color: #55ACEE
-      border: 1px solid #fcfbf9
+      border: 1px solid #55ACEE
       svg
         fill: #ffffff
     +pc-md-view
       border: 1px solid #55ACEE
       svg
         fill: #55ACEE
-      &:hover
-        border: 1px solid #55ACEE
-        background-color: rgba(0, 0, 0, 0)
-        svg
-          fill: #55ACEE
 
 /* .share-face
   .p-article__share-link
