@@ -29,8 +29,8 @@ export default{
 
 .p-index-top__articles-title
   font-size: 32px
-  margin-top: -80px
-  padding-top: 80px
+  margin-top: -136px
+  padding-top: 136px
   +pc-md-view
     font-size: 24px
   +sp-view

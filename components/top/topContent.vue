@@ -22,8 +22,6 @@
 .p-index-top__about-title
   font-size: 40px
   line-height: 175%
-  margin-top: -80px
-  padding-top: 80px
   +pc-lg-view
     font-size: 36px
   +pc-md-view

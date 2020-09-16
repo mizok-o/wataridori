@@ -18,8 +18,8 @@ export default{
 .p-article__body-content
   h2
     position: relative
-    margin-top: -80px
-    padding-top: 80px
+    margin-top: -136px
+    padding-top: 136px
     &::before
       content: ""
       position: absolute

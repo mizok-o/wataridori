@@ -1,5 +1,5 @@
 <template lang="pug">
-.p-index-top__slider#top
+.p-index-top__slider
   h2.p-index-top__slider-title おすすめ記事
   .p-index-top__slider-content
     client-only
@@ -8,7 +8,6 @@
           a.p-index-top__slider__visual(:href="article.id")
             .top__slider__visual-img
               img(:src="article.img.url")
-            //p.top__slider__visual-tag 世界一周
             .p-index-top__slider__textarea
               p.top__slider__type {{ article.type }}
               h3.top__slider__title {{ article.title }}
@@ -18,7 +17,7 @@
 </template>
 <script>
 import axios from "axios"
-export default{
+export default {
   props: ['articles'],
   data() {
     return {
@@ -57,7 +56,7 @@ export default{
     margin: 104px 0 0
     width: 100%
   +sp-view
-    margin-top: 56px
+    margin: 56px auto 0
 
 .p-index-top__slider-title
   font-size: 24px
@@ -69,7 +68,6 @@ export default{
   width: 332px
   margin: 32px auto 0
   +sp-view
-    width: 100%
     margin-top: 16px
 
 .p-index-top__slider__visual
@@ -103,6 +101,7 @@ export default{
   height: 152px
   padding: 20px
   background-color: #ffffff
+  width: 332px
 
 .top__slider__type
   opacity: .7

@@ -39,7 +39,7 @@ export default{
 .p-article__share-content
   position: -webkit-sticky
   position: sticky
-  top: 120px
+  top: 160px
   +pc-md-view
     display: flex
 
