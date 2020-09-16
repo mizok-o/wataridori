@@ -76,13 +76,12 @@ export default {
     .top__slider__visual-img
       img
         transform: scale(1.1)
-        opacity: .7
         +sp-view
           transform: scale(1)
-          opacity: 1
-    .top__slider__visual-tag
-      opacity: 1
-      transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
+    .p-index-top__slider__textarea
+      color: #ffffff
+      &::after
+        transform: translateY(-100%) rotate(0)
 
 .top__slider__visual-img
   position: relative
@@ -98,10 +97,26 @@ export default {
       width: 100%
 
 .p-index-top__slider__textarea
+  position: relative
+  overflow: hidden
   height: 152px
   padding: 20px
   background-color: #ffffff
   width: 332px
+  z-index: -1
+  &::after
+    content: ""
+    position: absolute
+    top: 100%
+    left: 0
+    display: block
+    width: 120%
+    height: 200%
+    transform-origin: top left
+    transform: rotate(30deg)
+    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
+    background-color: #222222
+    z-index: -1
 
 .top__slider__type
   opacity: .7

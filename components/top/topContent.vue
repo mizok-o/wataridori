@@ -50,7 +50,7 @@
     height: 200%
     transform-origin: top left
     transform: rotate(30deg)
-    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
+    transition: 1.3s cubic-bezier(0.16, 1, 0.3, 1)
     background-color: #222222
   &:hover
     &::after
@@ -80,7 +80,7 @@
     display: block
     width: 34px
     height: 9px
-    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
+    transition: .3s cubic-bezier(0.85, 0, 0.15, 1)
     background-image: url('~assets/img/top/arrow-right.svg')
     background-repeat: no-repeat
     background-size: cover
