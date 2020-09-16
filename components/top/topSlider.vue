@@ -18,7 +18,7 @@
 </template>
 <script>
 import axios from "axios"
-export default{
+export default {
   props: ['articles'],
   data() {
     return {
@@ -57,7 +57,7 @@ export default{
     margin: 104px 0 0
     width: 100%
   +sp-view
-    margin-top: 56px
+    margin: 56px auto 0
 
 .p-index-top__slider-title
   font-size: 24px
@@ -65,7 +65,6 @@ export default{
     font-size: 20px
 
 .p-index-top__slider-content
-  position: relative
   width: 332px
   margin: 32px auto 0
   +sp-view
@@ -102,6 +101,7 @@ export default{
   height: 152px
   padding: 20px
   background-color: #ffffff
+  width: 332px
 
 .top__slider__type
   opacity: .7
