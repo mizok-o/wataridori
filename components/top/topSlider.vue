@@ -3,9 +3,9 @@
   h2.p-index-top__slider-title おすすめ記事
   .p-index-top__slider-content
     client-only
-      swiper(:options="swiperOption")
+      swiper(:options="swiperOption" ref="myswiper")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.id")
+          a.p-index-top__slider__visual(:href="article.id" @mouseover="stopSwiper" ,@mouseleave="startSwiper")
             .top__slider__visual-img
               img(:src="article.img.url")
             .p-index-top__slider__textarea
@@ -30,9 +30,10 @@ export default {
         loop: true,
         loopedSlides: 3,
         autoplay: {
-          delay: 3000,
+          delay: 2000,
           disableOnInteraction: false
         },
+        disableOnInteraction: false,
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -43,6 +44,14 @@ export default {
       		prevEl: '.swiper-button-prev'
       	}
       }
+    }
+  },
+  methods: {
+    stopSwiper: function (){
+      this.$refs.myswiper.swiper.autoplay.stop()
+    },
+    startSwiper(){
+      this.$refs.myswiper.swiper.autoplay.start()
     }
   }
 }
@@ -164,7 +173,7 @@ export default {
     background-image: url("~assets/img/top/slider-btn-left.svg")
     background-size: auto
     background-repeat: no-repeat
-    transition: .3s
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
   +sp-view
     display: none
   &:hover
@@ -191,7 +200,7 @@ export default {
     background-image: url("~assets/img/top/slider-btn-right.svg")
     background-size: auto
     background-repeat: no-repeat
-    transition: .3s
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
   +sp-view
     display: none
   &:hover
