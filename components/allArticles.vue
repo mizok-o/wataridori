@@ -58,7 +58,7 @@ export default{
   &:hover
     .top__articles-item-img
       img
-        transform: scale(1.1)
+        transform: scale(1.12)
     .top__articles-item-textarea
       color: #ffffff
       &::after
@@ -128,11 +128,5 @@ export default{
     transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
     background-color: #222222
     z-index: -1
-
-@keyframes automove
-  0%
-    transform: translate(0)
-  100%
-    transform: translate(-50%)
 
 </style>

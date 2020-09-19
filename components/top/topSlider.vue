@@ -3,9 +3,9 @@
   h2.p-index-top__slider-title おすすめ記事
   .p-index-top__slider-content
     client-only
-      swiper(:options="swiperOption")
+      swiper(:options="swiperOption" ref="myswiper")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.id")
+          a.p-index-top__slider__visual(:href="article.id" @mouseover="stopSwiper" ,@mouseleave="startSwiper")
             .top__slider__visual-img
               img(:src="article.img.url")
             .p-index-top__slider__textarea
@@ -30,9 +30,10 @@ export default {
         loop: true,
         loopedSlides: 3,
         autoplay: {
-          delay: 3000,
+          delay: 2500,
           disableOnInteraction: false
         },
+        disableOnInteraction: false,
         pagination: {
           el: '.swiper-pagination',
       		type: 'bullets',
@@ -43,6 +44,14 @@ export default {
       		prevEl: '.swiper-button-prev'
       	}
       }
+    }
+  },
+  methods: {
+    stopSwiper: function (){
+      this.$refs.myswiper.swiper.autoplay.stop()
+    },
+    startSwiper(){
+      this.$refs.myswiper.swiper.autoplay.start()
     }
   }
 }
@@ -76,13 +85,12 @@ export default {
     .top__slider__visual-img
       img
         transform: scale(1.1)
-        opacity: .7
         +sp-view
           transform: scale(1)
-          opacity: 1
-    .top__slider__visual-tag
-      opacity: 1
-      transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
+    .p-index-top__slider__textarea
+      color: #ffffff
+      &::after
+        transform: translateY(-100%) rotate(0)
 
 .top__slider__visual-img
   position: relative
@@ -98,10 +106,26 @@ export default {
       width: 100%
 
 .p-index-top__slider__textarea
+  position: relative
+  overflow: hidden
   height: 152px
   padding: 20px
   background-color: #ffffff
   width: 332px
+  z-index: -1
+  &::after
+    content: ""
+    position: absolute
+    top: 100%
+    left: 0
+    display: block
+    width: 120%
+    height: 200%
+    transform-origin: top left
+    transform: rotate(30deg)
+    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
+    background-color: #222222
+    z-index: -1
 
 .top__slider__type
   opacity: .7
@@ -149,7 +173,7 @@ export default {
     background-image: url("~assets/img/top/slider-btn-left.svg")
     background-size: auto
     background-repeat: no-repeat
-    transition: .3s
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
   +sp-view
     display: none
   &:hover
@@ -176,7 +200,7 @@ export default {
     background-image: url("~assets/img/top/slider-btn-right.svg")
     background-size: auto
     background-repeat: no-repeat
-    transition: .3s
+    transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
   +sp-view
     display: none
   &:hover
