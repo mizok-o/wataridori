@@ -9,7 +9,7 @@ export default{
 </script>
 <style lang="sass">
 .p-article__body
-  margin-top: 64px
+  margin-top: 48px
   p
     line-height: 175%
   +sp-view

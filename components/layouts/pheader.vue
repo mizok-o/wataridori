@@ -42,17 +42,17 @@ export default {
 <style lang="sass">
 header
   width: 100%
-  height: 96px
+  height: 80px
 
 .header-container
   position: fixed
   top: 0
   left: 0
   width: 100%
-  padding: 24px 0
+  padding: 16px 0
   color: #222222
   z-index: 13
-  background-color: rgba(256, 256, 256, .8)
+  background-color: rgba(256, 256, 256, .95)
   +sp-view
     padding: 8px 0
 
@@ -121,11 +121,7 @@ header
 .header__right__sub-link
   position: relative
   display: block
-  +sp-view
-    font-size: 16px
-    &:hover
-      &::after
-        transform: scale(0)
+  font-size: 16px
   &::after
     content: ""
     position: absolute
@@ -141,17 +137,9 @@ header
     &::after
       transform-origin: top right
       transform: scale(1, 1)
-
-/* .header__menu-active
-  pointer-events: all
-  opacity: 1 */
-
-/* .header__right__list-item
-  margin-right: 40px
-  &:last-child
-    margin-right: 0
-    .header__list-item__link
-      display: flex
-      align-items: center */
+  +sp-view
+    &:hover
+      &::after
+        transform: scale(0)
 
 </style>

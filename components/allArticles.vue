@@ -31,8 +31,8 @@ export default{
   font-size: 32px
   margin-top: -136px
   padding-top: 136px
-  +pc-md-view
-    font-size: 24px
+  /* +pc-md-view
+    font-size: 24px */
   +sp-view
     font-size: 20px
     margin-bottom: 16px
@@ -43,7 +43,7 @@ export default{
     display: grid
     grid-template-columns: 256px 256px 256px
     grid-template-rows: 306px
-    gap: 20px 16px
+    gap: 24px 16px
     margin-top: 32px
     +pc-md-view
       grid-template-columns: 256px 256px
@@ -59,10 +59,6 @@ export default{
     .top__articles-item-img
       img
         transform: scale(1.12)
-    .top__articles-item-textarea
-      color: #ffffff
-      &::after
-        transform: translateY(-100%) rotate(0)
   +sp-view
     width: 100%
     height: 100%
@@ -104,29 +100,12 @@ export default{
     font-size: 14px
 
 .top__articles-item-textarea
-  position: relative
-  overflow: hidden
   height: 120px
   padding: 20px
   background-color: #ffffff
-  z-index: -1
-  transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
   +sp-view
     height: 88px
     padding: 12px
     margin-top: -6px
-  &::after
-    content: ""
-    position: absolute
-    top: 100%
-    left: 0
-    display: block
-    width: 120%
-    height: 200%
-    transform-origin: top left
-    transform: rotate(30deg)
-    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
-    background-color: #222222
-    z-index: -1
 
 </style>

@@ -25,7 +25,7 @@ export default{
 </script>
 <style lang="sass">
 .p-article__sharearea
-  margin: 156px 0 0 48px
+  margin: 128px 0 0 48px
   +pc-md-view
     position: fixed
     bottom: 48px
@@ -58,7 +58,7 @@ export default{
   color: #ffffff
   svg
     transition: .4s
-    fill: #222222
+    fill: #55ACEE
     +pc-md-view
       position: absolute
       top: 50%
@@ -69,16 +69,13 @@ export default{
 .share-twitter
   .p-article__share-link
     padding: 15px 13px 0
-    border: 1px solid #222222
+    border: 1px solid #55ACEE
     &:hover
       background-color: #55ACEE
-      border: 1px solid #55ACEE
       svg
         fill: #ffffff
-    +pc-md-view
-      border: 1px solid #55ACEE
-      svg
-        fill: #55ACEE
+
+
 
 /* .share-face
   .p-article__share-link

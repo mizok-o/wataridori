@@ -14,13 +14,13 @@ export default{
 </script>
 <style lang="sass">
 .p-article__top__sub
-  +sp-view
-    display: flex
-    align-items: center
+  display: flex
+  align-items: center
 
 .p-article__top__date
   font-size: 15px
   opacity: .5
+  margin-right: 24px
   +sp-view
     font-size: 13px
     margin-right: 16px

@@ -26,20 +26,18 @@ export default {
 <style lang="sass">
 .p-article__lead
   width: 100%
-  margin-top: 32px
-  padding: 24px
+  margin-top: 48px
+  padding: 16px
   border: 1px solid rgba(0, 0, 0, .5)
   +sp-view
     margin-top: 24px
     padding: 16px
 
 .p-article__lead-title
-  font-size: 20px
-  +sp-view
-    font-size: 18px
+  font-size: 24px
 
 .p-article__lead-content
-  margin: 24px 16px 12px
+  margin: 20px 16px
   +sp-view
     margin: 12px 8px
 
@@ -55,6 +53,6 @@ export default {
 .p-article__lead-link
   display: inline-block
   width: 100%
-  padding: 8px 0
+  padding: 12px 0
 
 </style>
