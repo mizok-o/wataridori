@@ -22,7 +22,7 @@ export default {
 </script>
 <style lang="sass">
 .p-article__content-container
-  margin-top: 48px
+  margin-top: 32px
   +sp-view
-    margin-top: 24px
+    margin-top: 16px
 </style>

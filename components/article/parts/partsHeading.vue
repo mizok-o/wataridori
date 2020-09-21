@@ -9,9 +9,8 @@ export default {
 </script>
 <style lang="sass">
 .p-article__heading
-  font-size: 18px
-  margin-top: 32px
+  margin-top: 48px
   +sp-view
-    font-size: 15px
-    margin-top: 24px
+    font-size: 16px
+    margin-top: 32px
 </style>
