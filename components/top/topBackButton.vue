@@ -1,6 +1,7 @@
 <template lang="pug">
 a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 500, offset: -220 }" @click="invisible")
-  img.p-index-top__home-img(src="~/assets/img/top/arrow_top.svg")
+  .p-index-top__home-img
+    img(src="~/assets/img/top/arrow_top.svg")
 </template>
 <script>
 export default{
@@ -36,8 +37,6 @@ export default{
   right: 14%
   width: 48px
   height: 48px
-  border: 1px solid #111111
-  border-radius: 24px
   opacity: 0
   pointer-events: none
   transition: .2s
@@ -45,14 +44,29 @@ export default{
   +pc-md-view
     right: 9%
   +sp-view
-    bottom: 32px
-    right: 20px
+    bottom: 24px
+    right: 12px
 
 
 .p-index-top__home-img
-  width: 20px
-  height: 12px
-  margin: 16px 13px
+  width: 100%
+  height: 100%
+  border: 1px solid #111111
+  border-radius: 24px
+  img
+    width: 20px
+    height: 12px
+    margin: 16px 13px
+  +sp-view
+    width: 32px
+    height: 32px
+    margin: 8px
+    border-radius: 16px
+    img
+      width: 15px
+      height: 11px
+      margin: 9px 8px
+
 
 .showButton
   opacity: 1

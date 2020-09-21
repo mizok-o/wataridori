@@ -66,7 +66,7 @@ header
   +pc-md-view
     margin: 0 9%
   +sp-view
-    margin: 0 20px
+    margin: 0 7px 0 20px
 
 .header__left
   height: 100%
@@ -104,7 +104,7 @@ header
     .header__right__sns__icon
       fill: #ffffff
   +sp-view
-    margin-left: 32px
+    margin-left: 16px
     border-radius: 0
     border: none
     &:hover

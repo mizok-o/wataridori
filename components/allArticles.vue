@@ -60,13 +60,12 @@ export default{
   &::before
     content: ""
     position: absolute
-    bottom: 0px
-    right: 0px
+    bottom: 0
+    right: 0
     display: block
     width: 88%
     height: 88%
     z-index: -1
-    border-radius: 12px
     opacity: .1
     filter: blur(24px)
     background-color: #222222
