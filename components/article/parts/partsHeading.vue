@@ -11,6 +11,6 @@ export default {
 .p-article__heading
   margin-top: 48px
   +sp-view
-    font-size: 15px
-    margin-top: 24px
+    font-size: 16px
+    margin-top: 32px
 </style>

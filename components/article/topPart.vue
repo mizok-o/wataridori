@@ -22,19 +22,18 @@ export default{
   opacity: .5
   margin-right: 24px
   +sp-view
-    font-size: 13px
     margin-right: 16px
 
 .p-article__top__sub-title
   font-size: 18px
   +sp-view
-    font-size: 13px
+    font-size: 15px
 
 .p-article__top__title
   font-size: 36px
   margin-top: 16px
   +sp-view
-    font-size: 20px
+    font-size: 24px
     margin-top: 8px
 
 .p-article__top__view
@@ -46,6 +45,6 @@ export default{
     width: 100%
   +sp-view
     height: auto
-    margin-top: 24px
+    margin-top: 16px
 
 </style>

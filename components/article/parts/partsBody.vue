@@ -12,14 +12,20 @@ export default{
   margin-top: 48px
   p
     line-height: 175%
+    +sp-view
+      font-size: 16px
   +sp-view
-    margin-top: 24px
+    margin-top: 32px
 
 .p-article__body-content
   h2
     position: relative
-    margin-top: -136px
-    padding-top: 136px
+    margin-top: -80px
+    padding-top: 80px
+    +sp-view
+      font-size: 20px
+      margin-top: -57px
+      padding-top: 57px
     &::before
       content: ""
       position: absolute

@@ -3,7 +3,7 @@ section.p-article__lead
   h2.p-article__lead-title 目次
   ol.p-article__lead-content
     li.p-article__lead-item(v-for="item in lead", :key="item.id")
-      n-link.p-article__lead-link(v-scroll-to="`#${item.id}`" to) {{ item.text }}
+      nuxt-link.p-article__lead-link(v-scroll-to="`#${item.id}`" to) {{ item.text }}
 </template>
 <script>
 export default {
@@ -30,20 +30,22 @@ export default {
   padding: 16px
   border: 1px solid rgba(0, 0, 0, .5)
   +sp-view
-    margin-top: 24px
-    padding: 16px
+    margin-top: 32px
+    padding: 12px
 
 .p-article__lead-title
   font-size: 24px
+  +sp-view
+    font-size: 20px
 
 .p-article__lead-content
   margin: 20px 16px
   +sp-view
-    margin: 12px 8px
+    margin: 12px
 
 .p-article__lead-item
   +font-bold
-  font-size: 15px
+  font-size: 16px
   border-bottom: 1px solid rgba(0, 0, 0, .5)
   +sp-view
     font-size: 14px
@@ -54,5 +56,7 @@ export default {
   display: inline-block
   width: 100%
   padding: 12px 0
+  +sp-view
+    padding: 10px 0
 
 </style>

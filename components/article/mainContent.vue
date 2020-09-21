@@ -24,5 +24,5 @@ export default {
 .p-article__content-container
   margin-top: 32px
   +sp-view
-    margin-top: 24px
+    margin-top: 16px
 </style>
