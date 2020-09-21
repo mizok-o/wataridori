@@ -113,7 +113,6 @@ header
       .header__right__sns__icon
         fill: #EF4563
 
-
 .header__right__sns
   position: relative
   display: block
@@ -125,9 +124,6 @@ header
   +sp-view
     border-radius: 0
     border: none
-
-
-
 
 .header__right__sns__icon
   position: absolute
@@ -157,6 +153,7 @@ header
       transform-origin: top right
       transform: scale(1, 1)
   +sp-view
+    font-size: 15px
     &:hover
       &::after
         transform: scale(0)
