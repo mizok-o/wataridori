@@ -5,12 +5,13 @@
     client-only
       swiper(:options="swiperOption" ref="myswiper")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.id" @mouseover="stopSwiper" ,@mouseleave="startSwiper")
-            .top__slider__visual-img
-              img(:src="article.img.url")
-            .p-index-top__slider__textarea
-              p.top__slider__type {{ article.type }}
-              h3.top__slider__title {{ article.title }}
+          a.p-index-top__slider__visual(:href="article.id")
+            .p-index-top__slider__visual-container(@mouseover="stopSwiper" ,@mouseleave="startSwiper")
+              .top__slider__visual-img
+                img(:src="article.img.url")
+              .p-index-top__slider__textarea
+                p.top__slider__type {{ article.type }}
+                h3.top__slider__title {{ article.title }}
       .swiper-pagination
       .swiper-button-prev
       .swiper-button-next
@@ -79,7 +80,7 @@ export default {
   +sp-view
     margin-top: 16px
 
-.p-index-top__slider__visual
+.p-index-top__slider__visual-container
   position: relative
   &:hover
     .top__slider__visual-img
@@ -91,6 +92,8 @@ export default {
       color: #ffffff
       &::after
         transform: translateY(-100%) rotate(0)
+  +sp-view
+    pointer-events: none
 
 .top__slider__visual-img
   position: relative
