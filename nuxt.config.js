@@ -31,7 +31,6 @@ export default {
     ]
   },
   loading: { color: '#fff' },
-
   css: [
     'swiper/dist/css/swiper.min.css'
   ],
@@ -42,53 +41,79 @@ export default {
   buildModules: [
   ],
   modules: [
-  '@nuxtjs/style-resources',
-  '@nuxtjs/markdownit',
-  '@nuxtjs/axios',
-  'vue-scrollto/nuxt',
-   ['vue-scrollto/nuxt', { duration: 300 }]
- ],
- markdownit: {
-  html: true,
-  injected: true,
-  preset: 'default',
- },
- axios: {},
+    '@nuxtjs/style-resources',
+    '@nuxtjs/markdownit',
+    '@nuxtjs/axios',
+    'vue-scrollto/nuxt',
+     ['vue-scrollto/nuxt', { duration: 300 }],
+     '@nuxtjs/pwa'
+  ],
+  markdownit: {
+    html: true,
+    injected: true,
+    preset: 'default',
+  },
+  manifest: {
+    name: "みたらし",
+    title: "みたらし",
+    'og:title': 'みたらし',
+    description: 'きなこ',
+    'og:description': 'きなこ',
+    lang: 'ja',
+    theme_color: "#529b58",
+    background_color: "#bde0c0",
+    display: "standalone",
+    scope: "/",
+    start_url: "/"
+  },
+  axios: {},
  // env: {
  //    baseUrl: baseUrl,
  //  },
  //  router: {
  //    base: baseDir,
  //  },
- generate: {
-   async routes () {
-     const articles = await axios.get(
-       "https://wataridori.microcms.io/api/v1/top",
-       { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
-     )
-     return [
-       ...articles.data.contents.map(article => `/${article.id}`)
-     ]
-   }
- },
- styleResources: {
-  sass: [
-   '@/assets/sass/_mixin.sass',
-   '@/assets/sass/_user-style.sass',
-   '@/assets/sass/_font.sass'
-  ],
-  scss: [
-   '@/assets/scss/_variable.scss',
-   '@/assets/scss/_mixin.scss'
-  ],
-  stylus: [
-   '@/assets/stylus/layout.styl'
-  ]
-},
+  generate: {
+    async routes () {
+      const articles = await axios.get(
+        "https://wataridori.microcms.io/api/v1/top",
+        { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
+      )
+      return [
+        ...articles.data.contents.map(article => `/${article.id}`)
+      ]
+    }
+  },
+  styleResources: {
+    sass: [
+      '@/assets/sass/_mixin.sass',
+      '@/assets/sass/_user-style.sass',
+      '@/assets/sass/_font.sass'
+    ],
+    scss: [
+      '@/assets/scss/_variable.scss',
+      '@/assets/scss/_mixin.scss'
+    ],
+    stylus: [
+      '@/assets/stylus/layout.styl'
+    ]
+  },
   build: {
-     extend(config, ctx) {},
+    extend (config, ctx) {
+      if (ctx.dev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    },
     vendor: [
       'vue-awesome-swiper'
     ]
+  },
+  workbox: {
+    dev: true
   }
 }
