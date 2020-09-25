@@ -44,13 +44,6 @@
     width: 184px
     height: 48px
     margin-top: 16px
-  &:hover
-    .p-index-top__about__btn-container
-      &::after
-        left: 136px
-    .p-index-top__about-btn
-      &::after
-        transform: translateY(50%) rotate(0)
 
 .p-index-top__about__btn-container
   position: relative
@@ -81,7 +74,14 @@
     background-repeat: no-repeat
     background-size: cover
     z-index: 1
+  &:hover
+    &::after
+      left: 168px
+    .p-index-top__about-btn
+      &::after
+        transform: translateY(50%) rotate(0)
   +sp-view
+    pointer-events: none
     &::before
       font-size: 14px
     &::after

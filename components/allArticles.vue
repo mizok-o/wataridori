@@ -84,6 +84,7 @@ export default{
   +sp-view
     width: 100%
     height: 100%
+    pointer-events: none
 
 .top__articles-item-img
   overflow: hidden
