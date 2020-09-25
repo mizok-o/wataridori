@@ -111,7 +111,7 @@ header
       background: none
       border: none
       .header__right__sns__icon
-        fill: #EF4563
+        fill: #111111
 
 .header__right__sns
   position: relative

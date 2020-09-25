@@ -17,7 +17,8 @@
   +pc-sm-view
     display: block
   +sp-view
-    width: 304px
+    max-width: 320px
+    width: auto
     margin: 0
 
 .p-index-top__about-title
@@ -29,6 +30,8 @@
     font-size: 32px
   +sp-view
     font-size: 24px
+  @media screen and (max-width: 358px)
+    font-size: 21px
 
 .p-index-top__about__btn-link
   position: relative
@@ -44,9 +47,10 @@
   &:hover
     .p-index-top__about__btn-container
       &::after
-        left: 168px
+        left: 136px
     .p-index-top__about-btn
-      transform: translateY(50%) rotate(0)
+      &::after
+        transform: translateY(50%) rotate(0)
 
 .p-index-top__about__btn-container
   position: relative
@@ -79,19 +83,23 @@
     z-index: 1
   +sp-view
     &::before
-      font-size: 15px
+      font-size: 14px
+    &::after
+      left: 128px
 
 .p-index-top__about-btn
-  position: absolute
-  top: -300%
-  left: 0
-  width: 100%
-  height: 400%
-  transform-origin: top left
-  transform: rotate(30deg)
-  background-image: url('~assets/img/top/back.svg')
-  background-repeat: no-repeat
-  background-size: cover
-  transition: 1s cubic-bezier(0.85, 0, 0.15, 1)
+  &::after
+    content: ""
+    position: absolute
+    top: -300%
+    left: 0
+    width: 100%
+    height: 400%
+    transform-origin: top left
+    transform: rotate(30deg)
+    background-image: url('~assets/img/top/back.svg')
+    background-repeat: no-repeat
+    background-size: cover
+    transition: 1s cubic-bezier(0.85, 0, 0.15, 1)
 
 </style>

@@ -5,8 +5,8 @@
     client-only
       swiper(:options="swiperOption" ref="myswiper")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.id")
-            .p-index-top__slider__visual-container(@mouseover="stopSwiper" ,@mouseleave="startSwiper")
+          a.p-index-top__slider__visual(:href="article.id" @mouseover="stopSwiper" ,@mouseleave="startSwiper")
+            .p-index-top__slider__visual-container
               .top__slider__visual-img
                 img(:src="article.img.url")
               .p-index-top__slider__textarea
@@ -28,12 +28,12 @@ export default {
         paginationClickable: true,
         touchRatio: 1.5,
         speed: 600,
-        loop: true,
+        // loop: true,
         loopedSlides: 3,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false
-        },
+        // autoplay: {
+        //   delay: 2500,
+        //   disableOnInteraction: false
+        // },
         disableOnInteraction: false,
         pagination: {
           el: '.swiper-pagination',
@@ -78,6 +78,8 @@ export default {
   width: 332px
   margin: 32px auto 0
   +sp-view
+    max-width: 320px
+    width: auto
     margin-top: 16px
 
 .p-index-top__slider__visual-container
@@ -86,12 +88,6 @@ export default {
     .top__slider__visual-img
       img
         transform: scale(1.1)
-        +sp-view
-          transform: scale(1)
-    .p-index-top__slider__textarea
-      color: #ffffff
-      &::after
-        transform: translateY(-100%) rotate(0)
   +sp-view
     pointer-events: none
 
@@ -107,6 +103,8 @@ export default {
     transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
     +sp-view
       width: 100%
+  @media screen and (max-width: 374px)
+    width: 100%
 
 .p-index-top__slider__textarea
   position: relative
@@ -116,19 +114,11 @@ export default {
   background-color: #ffffff
   width: 332px
   z-index: -1
-  &::after
-    content: ""
-    position: absolute
-    top: 100%
-    left: 0
-    display: block
-    width: 120%
-    height: 200%
-    transform-origin: top left
-    transform: rotate(30deg)
-    transition: 2s cubic-bezier(0.16, 1, 0.3, 1)
-    background-color: #222222
-    z-index: -1
+  @media screen and (max-width: 374px)
+    width: 100%
+    padding: 16px
+    .top__slider__title
+      font-size: 16px
 
 .top__slider__type
   opacity: .7
