@@ -77,6 +77,18 @@ export default {
   position: relative
   width: 332px
   margin: 32px auto 0
+  &::before
+    content: ""
+    position: absolute
+    bottom: 0
+    right: 0
+    display: block
+    width: 88%
+    height: 88%
+    z-index: -1
+    opacity: .1
+    filter: blur(24px)
+    background-color: #222222
   +sp-view
     max-width: 320px
     width: auto

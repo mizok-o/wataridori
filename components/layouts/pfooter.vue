@@ -12,4 +12,5 @@ footer
   p
     font-size: 10px
     opacity: .5
+    white-space: nowrap
 </style>
