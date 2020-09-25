@@ -24,7 +24,7 @@ export default{
     position: fixed
     bottom: 48px
     left: 9%
-    width: 100%
+    width: 48px
     margin: 32px 0 0
   +sp-view
     bottom: 32px
