@@ -42,16 +42,16 @@ export default{
     margin: 16px 0
   ul
     display: grid
-    grid-template-columns: 256px 256px 256px
+    grid-template-columns: 282px 282px 282px
     grid-template-rows: 306px
     gap: 24px 16px
     margin-top: 32px
     +pc-md-view
-      grid-template-columns: 256px 256px
+      grid-template-columns: 282px 282px
       grid-template-rows: 306px 306px
     +sp-view
       grid-template-columns: 48% 48%
-      grid-template-rows: 48% 48%
+      grid-template-rows: 200px 200px
       gap: 4%
       margin: 0
 
@@ -76,8 +76,6 @@ export default{
     width: 100%
     height: 100%
 
-
-
 .top__articles-item-container
   &:hover
     .top__articles-item-img
@@ -89,16 +87,15 @@ export default{
 
 .top__articles-item-img
   overflow: hidden
-  width: 256px
+  width: 282px
   height: 188px
   +sp-view
     width: 100%
-    height: 50%
+    height: 104px
   img
     transform: scale(1)
     transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
     width: 100%
-
 
 .top__articles__type, .top__articles__title
   z-index: 10
@@ -116,14 +113,15 @@ export default{
   margin: 4px 0 0
   +sp-view
     font-size: 14px
+  @media screen and (max-width: 374px)
+    font-size: 13px
 
 .top__articles-item-textarea
   height: 120px
   padding: 20px
   background-color: #ffffff
   +sp-view
-    height: 50%
+    height: 96px
     padding: 8px
-    /* margin-top: -6px */
 
 </style>
