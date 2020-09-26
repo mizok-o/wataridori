@@ -4,7 +4,7 @@
   .p-index-top__articles-content
     ul
       li.p-index-top__articles-item(v-for="article in articles")
-        a.p-index-top__articles-item-link(:href="'/' + article.id")
+        a.p-index-top__articles-item-link(:href="article.id")
           .top__articles-item-container
             .top__articles-item-img
               img(:src="article.img.url")
