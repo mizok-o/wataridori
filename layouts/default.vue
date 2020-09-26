@@ -7,12 +7,16 @@ export default {
     bodyAttrs: {
       id: 'top'
     }
+  },
+  mounted() {
+    Typekit.load({async: true})
   }
 }
 </script>
 <style lang="sass">
 html
   font-size: 18px
+  line-height: 1.4
   +font-regular
   box-sizing: border-box
   background-color: #fcfbf9
