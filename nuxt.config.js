@@ -87,7 +87,8 @@ export default {
       return [
         ...articles.data.contents.map(article => `/${article.id}`)
       ]
-    }
+    },
+    fallback: true
   },
   styleResources: {
     sass: [
