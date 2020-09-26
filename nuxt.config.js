@@ -51,8 +51,14 @@ export default {
     '@nuxtjs/axios',
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
-     '@nuxtjs/pwa'
+     '@nuxtjs/pwa',
+     'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['YuGothic:400,700', 'Lato:300,700']
+    }
+  },
   markdownit: {
     html: true,
     injected: true,
