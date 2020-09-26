@@ -29,7 +29,8 @@ export default {
       { name: "msapplication-TileColor", content: "#da532c" },
       { name: "theme-color", content: "#ffffff" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"}
+      { rel:'stylesheet', href: 'https://use.typekit.net/pnv8ggp.css' }
+
     ],
     script: [
       { src: 'https://use.typekit.net/tiv6nbi.js' }
@@ -51,14 +52,8 @@ export default {
     '@nuxtjs/axios',
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
-     '@nuxtjs/pwa',
-     'nuxt-webfontloader'
+     '@nuxtjs/pwa'
   ],
-  webfontloader: {
-    google: {
-      families: ['YuGothic:400,700', 'Lato:300,700']
-    }
-  },
   markdownit: {
     html: true,
     injected: true,
@@ -100,10 +95,6 @@ export default {
       '@/assets/sass/_mixin.sass',
       '@/assets/sass/_user-style.sass',
       '@/assets/sass/_font.sass'
-    ],
-    scss: [
-      '@/assets/scss/_variable.scss',
-      '@/assets/scss/_mixin.scss'
     ],
     stylus: [
       '@/assets/stylus/layout.styl'
