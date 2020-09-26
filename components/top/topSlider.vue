@@ -5,8 +5,8 @@
     client-only
       swiper(:options="swiperOption" ref="myswiper")
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
-          a.p-index-top__slider__visual(:href="article.id" @mouseover="stopSwiper" ,@mouseleave="startSwiper")
-            .p-index-top__slider__visual-container
+          a.p-index-top__slider__visual(:href="article.id")
+            .p-index-top__slider__visual-container(@mouseover="stopSwiper" ,@mouseleave="startSwiper")
               .top__slider__visual-img
                 img(:src="article.img.url")
               .p-index-top__slider__textarea
@@ -90,7 +90,7 @@ export default {
     filter: blur(24px)
     background-color: #222222
   +sp-view
-    max-width: 320px
+    max-width: 325px
     width: auto
     margin-top: 16px
 
