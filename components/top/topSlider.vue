@@ -90,7 +90,7 @@ export default {
     filter: blur(24px)
     background-color: #222222
   +sp-view
-    max-width: 320px
+    max-width: 325px
     width: auto
     margin-top: 16px
 

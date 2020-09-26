@@ -47,7 +47,6 @@ export default{
     bottom: 24px
     right: 12px
 
-
 .p-index-top__home-img
   width: 100%
   height: 100%
@@ -67,8 +66,7 @@ export default{
       height: 11px
       margin: 9px 8px
 
-
 .showButton
   opacity: 1
-  pointer-events: all
+  pointer-events: auto
 </style>
