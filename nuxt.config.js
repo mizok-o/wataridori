@@ -29,11 +29,10 @@ export default {
       { name: "msapplication-TileColor", content: "#da532c" },
       { name: "theme-color", content: "#ffffff" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:'stylesheet', href: 'https://use.typekit.net/pnv8ggp.css' }
-
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" }
     ],
     script: [
-      { src: 'https://use.typekit.net/tiv6nbi.js' }
+      { src: 'https://use.typekit.net/mzu4boj.js' }
     ]
   },
   loading: { color: '#fff' },
@@ -52,8 +51,14 @@ export default {
     '@nuxtjs/axios',
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
-     '@nuxtjs/pwa'
+     '@nuxtjs/pwa',
+     'nuxt-webfontloader'
   ],
+  webfontloader: {
+    google: {
+      families: ['Noto+Sans+JP']
+    }
+  },
   markdownit: {
     html: true,
     injected: true,
