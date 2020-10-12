@@ -50,11 +50,23 @@ export default {
       content: content,
       articles: articles
     }
+  },
+  mounted(){
+    window:onload = () => {
+      this.$el.classList.add('show-content')
+    }
   }
 }
 
 </script>
 <style lang="sass">
+.p-article-container
+  opacity: 0
+  transition: .8s
+
+.show-content
+  opacity: 1
+
 .p-article__main
   display: flex
   max-width: 800px

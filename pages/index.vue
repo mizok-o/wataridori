@@ -40,10 +40,22 @@ export default {
     return {
       articles: articles.data.contents
     }
+  },
+  mounted(){
+    window:onload = () => {
+      this.$el.classList.add('show-content')
+    }
   }
 }
 </script>
 <style lang="sass">
+.p-index-container
+  opacity: 0
+  transition: .8s
+
+.show-content
+  opacity: 1
+
 .p-index-top
   margin: 112px 14% 0
   +sp-view

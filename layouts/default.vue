@@ -10,9 +10,6 @@ export default {
   },
   mounted() {
     Typekit.load({async: true})
-    window:onload = () => {
-      document.body.classList.add('show-content')
-    }
   }
 }
 </script>
@@ -26,15 +23,10 @@ html
   color: #222222
 
 body
-  opacity: 0
-  transition: .8s
   #__nuxt
     position: relative
     +sp-view
       overflow-x: hidden
-
-.show-content
-  opacity: 1
 
 li, a, ul, ol
   list-style: none
