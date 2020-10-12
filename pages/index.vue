@@ -42,14 +42,14 @@ export default {
     }
   },
   mounted(){
-    window:onload = () => {
-      this.$el.classList.add('show-content')
-    }
+    window.addEventListener("load", function() {
+      document.body.classList.add('show-content')
+    })
   }
 }
 </script>
 <style lang="sass">
-.p-index-container
+body
   opacity: 0
   transition: .8s
 
