@@ -14,6 +14,7 @@
     "@barba/core": "^2.9.7",
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/dotenv": "^1.4.1",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/pwa": "^3.0.2",
     "cheerio": "^1.0.0-rc.3",
