@@ -10,7 +10,7 @@ export default {
   },
   mounted() {
     Typekit.load({async: true})
-    window.onload = () => {
+    window:onload = () => {
       document.body.classList.add('show-content')
     }
   }
