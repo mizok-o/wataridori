@@ -1,3 +1,6 @@
+require('dotenv').config();
+const { API_KEY } = process.env;
+
 import axios from "axios"
 
 export default {
@@ -29,10 +32,10 @@ export default {
       { name: "msapplication-TileColor", content: "#da532c" },
       { name: "theme-color", content: "#ffffff" },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel:"stylesheet", href:"https://use.typekit.net/ita8kbu.css"}
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" }
     ],
     script: [
-      { src: 'https://use.typekit.net/tiv6nbi.js' }
+      { src: 'https://use.typekit.net/mzu4boj.js' }
     ]
   },
   loading: { color: '#fff' },
@@ -45,14 +48,24 @@ export default {
   ],
   buildModules: [
   ],
+  env: {
+    API_KEY
+  },
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
     '@nuxtjs/axios',
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
-     '@nuxtjs/pwa'
+     '@nuxtjs/pwa',
+     'nuxt-webfontloader',
+     ['@nuxtjs/google-analytics', {id: 'UA-180340144-1'}]
   ],
+  webfontloader: {
+    google: {
+      families: ['Noto+Sans+JP']
+    }
+  },
   markdownit: {
     html: true,
     injected: true,
@@ -94,10 +107,6 @@ export default {
       '@/assets/sass/_mixin.sass',
       '@/assets/sass/_user-style.sass',
       '@/assets/sass/_font.sass'
-    ],
-    scss: [
-      '@/assets/scss/_variable.scss',
-      '@/assets/scss/_mixin.scss'
     ],
     stylus: [
       '@/assets/stylus/layout.styl'
