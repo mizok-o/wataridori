@@ -1,5 +1,5 @@
 <template lang="pug">
-section.p-article__heading
+section.p-article__heading(v-if="content.heading")
   article(v-html="content.heading")
 </template>
 <script>
