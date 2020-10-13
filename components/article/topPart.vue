@@ -5,7 +5,7 @@ section.p-article__top-container
     p.p-article__top__sub-title {{ content.tag }}
   h1.p-article__top__title {{ content.title }}
   .p-article__top__view
-    img(:src="content.img.url")
+    .p-article__top__view-img(:style="{ backgroundImage: `url(${content.img.url})` }")
 </template>
 <script>
 export default{
@@ -41,10 +41,15 @@ export default{
   width: 100%
   height: 480px
   margin-top: 32px
-  img
-    width: 100%
   +sp-view
     height: auto
     margin-top: 16px
+
+.p-article__top__view-img
+  height: 0
+  padding-top: 60%
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
 
 </style>

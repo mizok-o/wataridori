@@ -6,8 +6,8 @@
       li.p-index-top__articles-item(v-for="article in articles")
         a.p-index-top__articles-item-link(:href="'/' + article.id")
           .top__articles-item-container
-            .top__articles-item-img
-              img(:src="article.img.url")
+            .top__articles-item
+              .top__articles-item-img(:style="{ backgroundImage: `url(${article.img.url})` }")
             .top__articles-item-textarea
               p.top__articles__type {{ article.type }}
               h3.top__articles__title {{ article.title }}
@@ -78,25 +78,30 @@ export default{
 
 .top__articles-item-container
   &:hover
-    .top__articles-item-img
-      img
+    .top__articles-item
+      .top__articles-item-img
         transform: scale(1.12)
   +sp-view
     width: 100%
     height: 100%
     pointer-events: none
 
-.top__articles-item-img
+.top__articles-item
   overflow: hidden
   width: 282px
   height: 188px
   +sp-view
     width: 100%
     height: 104px
-  img
-    transform: scale(1)
-    transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
-    width: 100%
+
+.top__articles-item-img
+  height: 0
+  padding-top: 67.75%
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  transform: scale(1)
+  transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
 
 .top__articles__type, .top__articles__title
   z-index: 10

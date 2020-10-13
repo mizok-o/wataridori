@@ -7,8 +7,8 @@
         swiper-slide.swiper-content(v-for="article in articles", :key="article.id")
           a.p-index-top__slider__visual(:href="article.id")
             .p-index-top__slider__visual-container(@mouseover="stopSwiper" ,@mouseleave="startSwiper")
-              .top__slider__visual-img
-                img(:src="article.img.url")
+              .top__slider__img-container
+                .top__slider__img(:style="{ backgroundImage: `url(${article.img.url})` }")
               .p-index-top__slider__textarea
                 p.top__slider__type {{ article.type }}
                 h3.top__slider__title {{ article.title }}
@@ -97,25 +97,29 @@ export default {
 .p-index-top__slider__visual-container
   position: relative
   &:hover
-    .top__slider__visual-img
-      img
+    .top__slider__img-container
+      .top__slider__img
         transform: scale(1.1)
   +sp-view
     pointer-events: none
 
-.top__slider__visual-img
+.top__slider__img-container
   position: relative
   overflow: hidden
   width: 332px
   height: 272px
   background-color: #222222
-  img
-    min-width: 332px
-    height: 272px
-    transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
-    +sp-view
-      width: 100%
   @media screen and (max-width: 374px)
+    width: 100%
+
+.top__slider__img
+  height: 0
+  padding-top: 81.92%
+  background-size: cover
+  background-position: center center
+  background-repeat: no-repeat
+  transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
+  +sp-view
     width: 100%
 
 .p-index-top__slider__textarea
