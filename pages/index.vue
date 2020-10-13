@@ -43,18 +43,18 @@ export default {
   },
   mounted(){
     window.addEventListener("load", function() {
-      document.body.classList.add('show-content')
+      document.body.classList.remove('dis-content')
     })
   }
 }
 </script>
 <style lang="sass">
 body
-  opacity: 0
+  opacity: 1
   transition: .8s
 
-.show-content
-  opacity: 1
+.dis-content
+  opacity: 0
 
 .p-index-top
   margin: 112px 14% 0
