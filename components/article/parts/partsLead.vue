@@ -1,5 +1,5 @@
 <template lang="pug">
-section.p-article__lead
+section.p-article__lead(v-if="lead.length > 3")
   h2.p-article__lead-title 目次
   ol.p-article__lead-content
     li.p-article__lead-item(v-for="item in lead", :key="item.id")
