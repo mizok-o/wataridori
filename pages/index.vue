@@ -40,10 +40,22 @@ export default {
     return {
       articles: articles.data.contents
     }
+  },
+  mounted(){
+    window.addEventListener("load", function() {
+      document.body.classList.remove('dis-content')
+    })
   }
 }
 </script>
 <style lang="sass">
+body
+  opacity: 1
+  transition: .8s
+
+.dis-content
+  opacity: 0
+
 .p-index-top
   margin: 112px 14% 0
   +sp-view

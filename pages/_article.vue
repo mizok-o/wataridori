@@ -50,11 +50,23 @@ export default {
       content: content,
       articles: articles
     }
+  },
+  mounted(){
+    window.addEventListener("load", function() {
+      document.body.classList.remove('dis-content')
+    })
   }
 }
 
 </script>
 <style lang="sass">
+.p-article-container
+  opacity: 1
+  transition: .8s
+
+.dis-content
+  opacity: 0
+
 .p-article__main
   display: flex
   max-width: 800px
