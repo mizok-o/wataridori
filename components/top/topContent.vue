@@ -70,7 +70,7 @@
     width: 34px
     height: 9px
     transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
-    background-image: url('~assets/img/top/arrow-right.svg')
+    background-image: url('~assets/img/arrow-right.svg')
     background-repeat: no-repeat
     background-size: cover
     z-index: 1
@@ -97,7 +97,7 @@
     height: 400%
     transform-origin: top left
     transform: rotate(30deg)
-    background-image: url('~assets/img/top/back.svg')
+    background-image: url('~assets/img/back.svg')
     background-repeat: no-repeat
     background-size: cover
     transition: 1s cubic-bezier(0.85, 0, 0.15, 1)

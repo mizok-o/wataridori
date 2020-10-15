@@ -1,7 +1,7 @@
 <template lang="pug">
 a.p-index-top__home(:class="{'showButton': buttonActive}" href="#top" v-smooth-scroll="{ duration: 500, offset: -220 }" @click="invisible")
   .p-index-top__home-img
-    img(src="~/assets/img/top/arrow_top.svg")
+    img(src="~/assets/img/arrow_top.svg")
 </template>
 <script>
 export default{

@@ -38,7 +38,7 @@ export default {
   height: 100%
   opacity: .3
   transition: .4s
-  background-image: url('~assets/img/article/intro-insta.svg')
+  background-image: url('~assets/img/intro-insta.svg')
   background-size: cover
   +sp-view
     opacity: 1

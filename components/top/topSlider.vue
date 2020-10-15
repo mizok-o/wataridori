@@ -179,7 +179,7 @@ export default {
     left: 7px
     width: 34px
     height: 9px
-    background-image: url("~assets/img/top/slider-btn-left.svg")
+    background-image: url("~assets/img/slider-btn-left.svg")
     background-size: auto
     background-repeat: no-repeat
     transition: .6s cubic-bezier(0.85, 0, 0.15, 1)
@@ -206,7 +206,7 @@ export default {
     left: 7px
     width: 34px
     height: 9px
-    background-image: url("~assets/img/top/slider-btn-right.svg")
+    background-image: url("~assets/img/slider-btn-right.svg")
     background-size: auto
     background-repeat: no-repeat
     transition: .6s cubic-bezier(0.85, 0, 0.15, 1)

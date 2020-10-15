@@ -4,7 +4,7 @@ header
     .header-content
       .header__left
         a.header__left__top-link(href="/")
-          img.header__left__logo(src="~/assets/img/header/header.svg")
+          img.header__left__logo(src="~/assets/img/header.svg")
         //ul.header__left-container(:class="{'header__menu-active' : menuActive}")
           li.header__left-item
             a(href="#top" @click="closeMenu") トップ
