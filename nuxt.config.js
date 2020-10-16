@@ -85,12 +85,6 @@ export default {
     start_url: "/"
   },
   axios: {},
- // env: {
- //    baseUrl: baseUrl,
- //  },
- //  router: {
- //    base: baseDir,
- //  },
   generate: {
     async routes () {
       const articles = await axios.get(
