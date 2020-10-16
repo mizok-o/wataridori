@@ -99,7 +99,7 @@ export default {
   &:hover
     .top__slider__img-container
       .top__slider__img
-        transform: scale(1.1)
+        transform: scale(1.08)
   +sp-view
     pointer-events: none
 
