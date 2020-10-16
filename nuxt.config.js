@@ -6,7 +6,7 @@ import axios from "axios"
 export default {
   mode: 'universal',
   head: {
-    title: "wataridori",
+    title: "旅メディアワタリドリ",
     prefix: 'og: http://ogp.me/ns#  fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#',
     meta: [
       { charset: 'utf-8' },
@@ -85,12 +85,6 @@ export default {
     start_url: "/"
   },
   axios: {},
- // env: {
- //    baseUrl: baseUrl,
- //  },
- //  router: {
- //    base: baseDir,
- //  },
   generate: {
     async routes () {
       const articles = await axios.get(

@@ -80,7 +80,7 @@ export default{
   &:hover
     .top__articles-item
       .top__articles-item-img
-        transform: scale(1.12)
+        transform: scale(1.08)
   +sp-view
     width: 100%
     height: 100%

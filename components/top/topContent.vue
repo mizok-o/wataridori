@@ -5,7 +5,7 @@
     |大学生が運営するメディア
     br
     |ワタリドリ
-  a(href="/").p-index-top__about__btn-link
+  a(href="/about").p-index-top__about__btn-link
     .p-index-top__about__btn-container
       button.p-index-top__about-btn
 
