@@ -58,6 +58,7 @@ export default {
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
      '@nuxtjs/pwa',
+     '@nuxtjs/dotenv',
      'nuxt-webfontloader',
      ['@nuxtjs/google-analytics', {id: 'UA-180340144-1'}]
   ],
