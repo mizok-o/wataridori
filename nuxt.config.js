@@ -48,6 +48,12 @@ export default {
   ],
   buildModules: [
   ],
+  privateRuntimeConfig: {
+    apiKey: API_KEY
+  },
+  publicRuntimeConfig: {
+    apiKey: process.env.API_KEY
+  },
   env: {
     API_KEY
   },
