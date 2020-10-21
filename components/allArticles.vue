@@ -54,6 +54,8 @@ export default{
       grid-template-rows: 200px 200px
       gap: 4%
       margin: 0
+    @media screen and (max-width: 325px)
+      grid-template-rows: 178px 178px
 
 .p-index-top__articles-item
   position: relative
@@ -93,6 +95,8 @@ export default{
   +sp-view
     width: 100%
     height: 104px
+    @media screen and (max-width: 325px)
+      height: 90px
 
 .top__articles-item-img
   height: 0
@@ -121,6 +125,8 @@ export default{
     font-size: 14px
   @media screen and (max-width: 374px)
     font-size: 13px
+  @media screen and (max-width: 325px)
+    font-size: 12px
 
 .top__articles-item-textarea
   height: 120px
@@ -129,5 +135,7 @@ export default{
   +sp-view
     height: 96px
     padding: 8px
+    @media screen and (max-width: 325px)
+      height: 88px
 
 </style>
