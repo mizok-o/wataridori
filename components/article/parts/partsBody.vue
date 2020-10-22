@@ -6,12 +6,7 @@ section.p-article__body
 </template>
 <script>
 export default{
-  props: ['content'],
-  computed: {
-    filter(a){
-      console.log(a);
-    }
-  }
+  props: ['content']
 }
 </script>
 <style lang="sass">
@@ -45,4 +40,24 @@ export default{
   img
     width: 100%
     height: auto
+
+/* 表 */
+table
+  width: 100%
+  border: 1px solid #111111
+  border-collapse: collapse
+
+th
+  width: 30%
+  height: 40px
+  border: 1px solid #111111
+  background-color: #fefefe
+
+td
+  width: 70%
+  height: 40px
+  border: 1px solid #111111
+  background-color: #fefefe
+  text-align: center
+
 </style>
