@@ -48,6 +48,12 @@ export default {
   ],
   buildModules: [
   ],
+  privateRuntimeConfig: {
+    apiKey: API_KEY
+  },
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
+  },
   env: {
     API_KEY
   },
