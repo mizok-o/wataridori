@@ -19,7 +19,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "cheerio": "^1.0.0-rc.3",
     "cheerio-httpcli": "^0.8.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.0",
     "nuxt-webfontloader": "^1.1.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",

@@ -52,10 +52,7 @@ export default {
     apiKey: API_KEY
   },
   publicRuntimeConfig: {
-    apiKey: process.env.API_KEY
-  },
-  env: {
-    API_KEY
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
   },
   modules: [
     '@nuxtjs/style-resources',
