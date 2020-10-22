@@ -1,10 +1,17 @@
 <template lang="pug">
 section.p-article__body
-  article.p-article__body-content(v-html="content.body")
+  .p-article__body-content(v-for="item in content.body", :key="'k-' + item.index ")
+    .p-article__body-content(v-html="item.richEditor")
+    .p-article__body-content(v-html="item.html")
 </template>
 <script>
 export default{
-  props: ['content']
+  props: ['content'],
+  computed: {
+    filter(a){
+      console.log(a);
+    }
+  }
 }
 </script>
 <style lang="sass">
