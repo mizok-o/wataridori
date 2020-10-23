@@ -4,8 +4,7 @@ const { API_KEY } = process.env;
 import axios from "axios"
 
 export default {
-  mode: 'universal',
-  target: 'server',
+  target: 'static',
   components: true,
   head: {
     title: "旅メディアワタリドリ",
