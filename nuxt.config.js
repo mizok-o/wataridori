@@ -95,7 +95,6 @@ export default {
   },
   axios: {},
   generate: {
-    crawler: false,
     async routes () {
       const articles = await axios.get(
         "https://wataridori.microcms.io/api/v1/top",
