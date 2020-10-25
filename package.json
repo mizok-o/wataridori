@@ -9,8 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "export": "nuxt export",
-    "serve": "nuxt serve",
-    "generate": "nuxt build && nuxt export"
+    "serve": "nuxt serve"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
