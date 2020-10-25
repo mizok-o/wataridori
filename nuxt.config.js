@@ -5,8 +5,6 @@ import axios from "axios"
 
 export default {
   mode: 'universal',
-  target: 'server',
-  components: true,
   head: {
     title: "旅メディアワタリドリ",
     prefix: 'og: http://ogp.me/ns#  fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#',
