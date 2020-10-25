@@ -7,10 +7,8 @@
   "scripts": {
     "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
     "export": "nuxt export",
-    "serve": "nuxt serve",
-    "generate": "nuxt generate"
+    "serve": "nuxt serve"
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
