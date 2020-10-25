@@ -33,12 +33,12 @@ export default {
     }
   },
   async asyncData({$config}) {
-    const { data } = await axios.get(
+    const articles = await axios.get(
       "https://wataridori.microcms.io/api/v1/top",
       {headers: { 'X-API-KEY': $config.apiKey }}
     )
     return {
-      articles: data.contents
+      articles: articles.data.contents
     }
   },
   mounted(){
