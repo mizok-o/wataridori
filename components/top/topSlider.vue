@@ -111,6 +111,8 @@ export default {
   background-color: #222222
   @media screen and (max-width: 374px)
     width: 100%
+  @media screen and (max-width: 325px)
+    height: 228px
 
 .top__slider__img
   height: 0
@@ -121,7 +123,6 @@ export default {
   transition: 1s cubic-bezier(0.16, 1, 0.3, 1)
   +sp-view
     width: 100%
-
 .p-index-top__slider__textarea
   position: relative
   overflow: hidden
@@ -157,6 +158,8 @@ export default {
     height: 10px
     background-color: #222222
     margin-right: 24px
+    @media screen and (max-width: 325px)
+      margin-right: 20px
     &:focus
       outline: none
     &:last-child

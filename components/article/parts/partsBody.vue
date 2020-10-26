@@ -1,6 +1,8 @@
 <template lang="pug">
 section.p-article__body
-  article.p-article__body-content(v-html="content.body")
+  .p-article__body-content(v-for="item in content.body", :key="'k-' + item.index ")
+    .p-article__body-content(v-html="item.richEditor")
+    .p-article__body-content(v-html="item.html")
 </template>
 <script>
 export default{
@@ -38,4 +40,24 @@ export default{
   img
     width: 100%
     height: auto
+
+/* 表 */
+table
+  width: 100%
+  border: 1px solid #111111
+  border-collapse: collapse
+
+th
+  width: 30%
+  height: 40px
+  border: 1px solid #111111
+  background-color: #fefefe
+
+td
+  width: 70%
+  height: 40px
+  border: 1px solid #111111
+  background-color: #fefefe
+  text-align: center
+
 </style>

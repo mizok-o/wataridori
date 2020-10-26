@@ -8,6 +8,8 @@
     "dev": "HOST=0.0.0.0 PORT=3000 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
+    "export": "nuxt export",
+    "serve": "nuxt serve",
     "generate": "nuxt generate"
   },
   "dependencies": {
@@ -19,7 +21,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "cheerio": "^1.0.0-rc.3",
     "cheerio-httpcli": "^0.8.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.0",
     "nuxt-webfontloader": "^1.1.0",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
@@ -29,9 +31,12 @@
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
+    "acorn": "^6.4.2",
+    "acorn-dynamic-import": "^4.0.0",
     "eslint-loader": "^3.0.3",
     "node-sass": "^4.13.1",
     "sass-loader": "^8.0.2",
-    "vue-loader": "^15.8.3"
+    "vue-loader": "^15.8.3",
+    "webpack": "4.28.4"
   }
 }

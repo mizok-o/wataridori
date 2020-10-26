@@ -5,6 +5,7 @@ import axios from "axios"
 
 export default {
   mode: 'universal',
+  target: 'static',
   head: {
     title: "旅メディアワタリドリ",
     prefix: 'og: http://ogp.me/ns#  fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#',
@@ -46,8 +47,15 @@ export default {
     { src: '~plugins/vue-awesome-swiper', ssr: false },
     { src: '~plugins/v-smooth-scroll', mode: 'client' }
   ],
+  components: true,
   buildModules: [
   ],
+  privateRuntimeConfig: {
+    apiKey: API_KEY
+  },
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
+  },
   env: {
     API_KEY
   },
@@ -58,6 +66,7 @@ export default {
     'vue-scrollto/nuxt',
      ['vue-scrollto/nuxt', { duration: 300 }],
      '@nuxtjs/pwa',
+     '@nuxtjs/dotenv',
      'nuxt-webfontloader',
      ['@nuxtjs/google-analytics', {id: 'UA-180340144-1'}]
   ],
@@ -89,7 +98,7 @@ export default {
     async routes () {
       const articles = await axios.get(
         "https://wataridori.microcms.io/api/v1/top",
-        { headers: { "X-API-KEY": "fcd9d6ee-fbc4-426c-b6be-54afc20ab93f" } }
+        { headers: { "X-API-KEY": API_KEY } }
       )
       return [
         ...articles.data.contents.map(article => `/${article.id}`)
