@@ -50,15 +50,6 @@ export default {
   components: true,
   buildModules: [
   ],
-  privateRuntimeConfig: {
-    apiKey: API_KEY
-  },
-  publicRuntimeConfig: {
-    apiKey: process.env.NODE_ENV !== 'production' ? API_KEY : undefined
-  },
-  env: {
-    API_KEY
-  },
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
@@ -95,7 +86,7 @@ export default {
   },
   axios: {},
   generate: {
-    async routes () {
+    async asyncData () {
       const articles = await axios.get(
         "https://wataridori.microcms.io/api/v1/top",
         { headers: { "X-API-KEY": API_KEY } }
@@ -129,5 +120,8 @@ export default {
     vendor: [
       'vue-awesome-swiper'
     ]
+  },
+  privateRuntimeConfig: {
+    apiKey: API_KEY
   }
 }
