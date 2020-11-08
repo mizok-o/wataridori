@@ -46,8 +46,7 @@ export default {
     { src: '~plugins/vue-awesome-swiper', ssr: false },
     { src: '~plugins/v-smooth-scroll', mode: 'client' }
   ],
-  buildModules: [
-  ],
+  buildModules: [],
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
