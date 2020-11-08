@@ -66,6 +66,9 @@ export default {
       families: ['Noto+Sans+JP']
     }
   },
+  env: {
+    API_KEY
+  },
   markdownit: {
     html: true,
     injected: true,
