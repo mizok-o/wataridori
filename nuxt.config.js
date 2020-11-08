@@ -1,11 +1,7 @@
-require('dotenv').config();
-const { API_KEY } = process.env;
-
 import axios from "axios"
 
 export default {
   mode: 'universal',
-  target: 'static',
   head: {
     title: "旅メディアワタリドリ",
     prefix: 'og: http://ogp.me/ns#  fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#',
@@ -47,9 +43,7 @@ export default {
     { src: '~plugins/vue-awesome-swiper', ssr: false },
     { src: '~plugins/v-smooth-scroll', mode: 'client' }
   ],
-  components: true,
-  buildModules: [
-  ],
+  buildModules: [],
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/markdownit',
@@ -89,7 +83,7 @@ export default {
     async asyncData () {
       const articles = await axios.get(
         "https://wataridori.microcms.io/api/v1/top",
-        { headers: { "X-API-KEY": API_KEY } }
+        { headers: { "X-API-KEY": 'fcd9d6ee-fbc4-426c-b6be-54afc20ab93f' } }
       )
       return [
         ...articles.data.contents.map(article => `/${article.id}`)
@@ -120,8 +114,5 @@ export default {
     vendor: [
       'vue-awesome-swiper'
     ]
-  },
-  privateRuntimeConfig: {
-    apiKey: API_KEY
   }
 }
