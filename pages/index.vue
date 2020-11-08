@@ -45,7 +45,6 @@ export default {
     window.addEventListener("load", function() {
       document.body.classList.remove('dis-content')
     })
-    console.log(process.env.API_KEY);
   }
 }
 </script>
