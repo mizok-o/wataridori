@@ -19,7 +19,7 @@ html
   line-height: 1.4
   +font-regular
   box-sizing: border-box
-  background-color: #fcfbf9
+  background-color: rgb(256, 256, 256)
   color: #222222
 
 body
