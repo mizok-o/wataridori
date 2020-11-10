@@ -14,14 +14,15 @@ footer.footer
         h2.footer__info__title このサイトについて
         ul.footer__info__content
           li.footer__info__item
-            a(href="https://forms.gle/QvBFE1ZXqEZrC2rb8" target="blank") お問い合わせ
+            adress
+              a(href="https://forms.gle/QvBFE1ZXqEZrC2rb8" target="blank") お問い合わせ
           li.footer__info__item
             a(href="https://forms.gle/xvDTBkwGAooyNFRN7" target="blank") メンバー募集
           li.footer__info__item
-            a(href="/privacy") プライバシーボリシー
-          li.footer__info__item
             a(href="/terms") 利用規約
-    p.footer__copy-text All copyright deserved by Kotaro Mizoguchi
+          li.footer__info__item
+            a(href="/privacy") プライバシーボリシー
+    small.footer__copy-text &copy; 2020 Kotaro Mizoguchi
 </template>
 <style lang="sass">
 /* 入れ物 */
@@ -30,22 +31,30 @@ footer.footer
   height: auto
   margin: 112px 0 0
   background-color: #f5f5f5
-  +sp-view
-    margin-top: 56px
 
 .footer__container
   padding: 48px 0 32px
+  +sp-view
+    padding: 32px 0
 
 /* メインコンテンツの入れ物 */
 .footer__main-content
   display: flex
   justify-content: space-between
-  margin: 0 200px
+  margin: 0 14%
+  +sp-view
+    display: block
+    text-align: center
+    margin: 0 20px
 
 /* ロゴ */
 .footer__logo__container
   width: 240px
   height: 36px
+  +sp-view
+    width: 160px
+    height: 24px
+    margin: 0 auto
 
 .footer__logo
   display: block
@@ -60,6 +69,8 @@ footer.footer
   width: 46px
   height: 46px
   margin-top: 24px
+  +sp-view
+    margin: 8px auto 0
 
 .footer__sns__link
   display: block
@@ -91,38 +102,58 @@ footer.footer
 /* このサイトについて */
 .footer__right
   margin-top: 8px
+  +sp-view
+    margin-top: 16px
 
 .footer__info__title
-  font-size: 20px
+  font-size: 18px
 
 .footer__info__content
   display: flex
   margin-top: 24px
+  +pc-md-view
+    display: block
+    margin-top: 0
+  +sp-view
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
 
 .footer__info__item
-  position: relative
   margin-right: 24px
-  &::after
-    content: ""
-    position: absolute
-    bottom: 0
-    left: 0
-    width: 100%
-    height: 1px
-    background-color: #222222
-    transform: scale(0, 1)
-    transform-origin: top left
-    transition: .2s
-  &:hover
+  font-size: 15px
+  +pc-md-view
+    margin: 8px 0 0
+  +sp-view
+    margin-right: 16px
+  a
+    position: relative
     &::after
-      transform-origin: top right
-      transform: scale(1, 1)
+      content: ""
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 1px
+      background-color: #222222
+      transform: scale(0, 1)
+      transform-origin: top left
+      transition: .2s
+      +sp-view
+        content: none
+    &:hover
+      &::after
+        transform-origin: top right
+        transform: scale(1, 1)
 
 /* コピーライトのテキスト */
 .footer__copy-text
+  display: block
   margin-top: 40px
   font-size: 10px
   opacity: .5
   text-align: center
   white-space: nowrap
+  +sp-view
+    margin-top: 16px
 </style>
