@@ -14,7 +14,7 @@ footer.footer
         h2.footer__info__title このサイトについて
         ul.footer__info__content
           li.footer__info__item
-            adress
+            address
               a(href="https://forms.gle/QvBFE1ZXqEZrC2rb8" target="blank") お問い合わせ
           li.footer__info__item
             a(href="https://forms.gle/xvDTBkwGAooyNFRN7" target="blank") メンバー募集
