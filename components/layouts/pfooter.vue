@@ -18,7 +18,7 @@ footer.footer
           li.footer__info__item
             a(href="https://forms.gle/QvBFE1ZXqEZrC2rb8" target="blank") お問い合わせ
           li.footer__info__item
-            a(href="/") メンバー募集
+            a(href="https://forms.gle/xvDTBkwGAooyNFRN7" target="blank") メンバー募集
           li.footer__info__item
             a(href="/privacy") プライバシーボリシー
           li.footer__info__item
@@ -76,14 +76,27 @@ footer.footer
   margin-top: 24px
 
 .footer__info__item
+  position: relative
   margin-right: 24px
-  transition: .2s all
+  &::after
+    content: ""
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 1px
+    background-color: #222222
+    transform: scale(0, 1)
+    transform-origin: top left
+    transition: .2s
   &:hover
-    opacity: .3
+    &::after
+      transform-origin: top right
+      transform: scale(1, 1)
 
 /* コピーライトのテキスト */
 .footer__copy-text
-  margin-top: 24px
+  margin-top: 40px
   font-size: 10px
   opacity: .5
   text-align: center
