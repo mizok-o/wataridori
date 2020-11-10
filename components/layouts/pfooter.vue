@@ -22,7 +22,7 @@ footer.footer
           li.footer__info__item
             a(href="/privacy") プライバシーボリシー
           li.footer__info__item
-            a(href="/") 利用規約
+            a(href="/terms") 利用規約
     p.footer__copy-text All copyright deserved by Kotaro Mizoguchi
 </template>
 <style lang="sass">
