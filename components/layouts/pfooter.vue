@@ -113,8 +113,9 @@ footer.footer
   margin-top: 24px
   +pc-md-view
     display: block
-    margin-top: 0
+    margin-top: 16px
   +sp-view
+    margin-top: 0
     display: flex
     justify-content: center
     flex-wrap: wrap
