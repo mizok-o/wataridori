@@ -53,7 +53,7 @@ footer.footer
   height: 100%
   background-size: contain
   background-repeat: no-repeat
-  background-image: url('~assets/img/footer/wataridori.svg')
+  background-image: url('~assets/img/footer/Wataridori.svg')
 
 /* SNS */
 .footer__sns
