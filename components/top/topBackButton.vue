@@ -34,15 +34,13 @@ export default{
   display: inline-block
   position: fixed
   bottom: 48px
-  right: 14%
+  right: 48px
   width: 48px
   height: 48px
   opacity: 0
   pointer-events: none
   transition: .2s
   z-index: 12
-  +pc-md-view
-    right: 9%
   +sp-view
     bottom: 24px
     right: 12px

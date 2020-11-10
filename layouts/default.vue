@@ -70,6 +70,9 @@ a
   &:focus,
     outline: none
 
+address
+  font-style: normal
+
 hr
   margin: 0
   border: none
