@@ -3,7 +3,7 @@ footer.footer
   .footer__container
     .footer__main-content
       .footer__left
-        figure.footer__logo__container
+        .footer__logo__container
           .footer__logo
         .footer__sns
           a.footer__sns__link(href="https://www.instagram.com/s_enposhi/" target="blank")
